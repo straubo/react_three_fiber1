@@ -5,7 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { EffectComposer, Pixelation } from "@react-three/postprocessing";
-import { Water } from './water.js';
+import { Ocean } from './ocean.js';
 
 
 function Box(props) {
@@ -39,24 +39,25 @@ ReactDOM.render(
   // <React.StrictMode>
   //   <App />
   // </React.StrictMode>,
-  // <div>
-    <Canvas shadows dpr={[1, 2]} camera={{ fov: 50 }}>
-      <EffectComposer>
-        <Pixelation granularity={20} />
-      </EffectComposer>
-      <ambientLight />
-      <pointLight position={[10, 10, 10]} />
-      <Box position={[-3, 0, -3]}  />
-      <Box position={[0, 0, -3]} />
-      <Box position={[3, 0, -3]} />
-      {/* rotation={[Math.PI / 2, 0, 0]} */}
-      <mesh visible position={[0, -3, -3]} rotation={[-1.6, 0, 0]}>
-        <planeGeometry args={[100, 100]} />
-        {/* color="blue" */}
-        <meshStandardMaterial />
-      </mesh>
-      {/* </div> */}
-    </Canvas>,
+  <>
+      <Canvas shadows dpr={[1, 2]} camera={{ fov: 50 }}>
+        <EffectComposer>
+          <Pixelation granularity={20} />
+        </EffectComposer>
+        <ambientLight />
+        <pointLight position={[10, 10, 10]} />
+        <Box position={[-3, 0, -3]}  />
+        <Box position={[0, 0, -3]} />
+        <Box position={[3, 0, -3]} />
+        {/* rotation={[Math.PI / 2, 0, 0]} */}
+        <mesh visible position={[0, -3, -3]} rotation={[-1.6, 0, 0]}>
+          <planeGeometry args={[100, 100]} />
+          {/* color="blue" */}
+          <meshStandardMaterial />
+        </mesh>
+        <Ocean />
+      </Canvas>
+    </>,
   
   document.getElementById('root')
 );
