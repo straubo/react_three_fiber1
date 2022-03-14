@@ -5,7 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { EffectComposer, Pixelation } from "@react-three/postprocessing";
-import { Ocean } from './ocean.js';
+import ocean  from './ocean.js';
 
 
 function Box(props) {
@@ -31,7 +31,7 @@ function Box(props) {
   )
 }
 
-const hello = "hello";
+console.log(ocean);
 
 
 
@@ -52,10 +52,9 @@ ReactDOM.render(
         {/* rotation={[Math.PI / 2, 0, 0]} */}
         <mesh visible position={[0, -3, -3]} rotation={[-1.6, 0, 0]}>
           <planeGeometry args={[100, 100]} />
-          {/* color="blue" */}
           <meshStandardMaterial />
         </mesh>
-        <Ocean />
+        {/* <ocean /> */}
       </Canvas>
     </>,
   
