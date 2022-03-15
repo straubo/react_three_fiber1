@@ -1,19 +1,22 @@
-import React, {useRef, useState, useMemo} from 'react';
+import React, {useRef, Suspense, useState, useMemo} from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { Canvas, useFrame, useThree, useLoader } from '@react-three/fiber';
+import { Canvas, extend, useFrame, useThree, useLoader } from '@react-three/fiber';
 import { EffectComposer, Pixelation } from "@react-three/postprocessing";
-import * as THREE from 'three'
+import * as THREE from 'three';
+import { OrbitControls } from '@react-three/drei';
 // import ocean  from './ocean.js';
 
 import { Water } from 'three-stdlib'
 
+extend({ Water })
+
 function Ocean() {
   const ref = useRef()
   const gl = useThree((state) => state.gl)
-  const waterNormals = useLoader(THREE.TextureLoader, '/waternormals.jpeg')
+  const waterNormals = useLoader(THREE.TextureLoader, "https://raw.githubusercontent.com/mrdoob/three.js/master/examples/textures/waternormals.jpg")
   waterNormals.wrapS = waterNormals.wrapT = THREE.RepeatWrapping
   const geom = useMemo(() => new THREE.PlaneGeometry(10000, 10000), [])
   const config = useMemo(
@@ -58,27 +61,46 @@ function Box(props) {
   )
 }
 
+function Box2() {
+  const ref = useRef()
+  useFrame((state, delta) => {
+    ref.current.position.y = 10 + Math.sin(state.clock.elapsedTime) * 20
+    ref.current.rotation.x = ref.current.rotation.y = ref.current.rotation.z += delta
+  })
+  return (
+    <mesh ref={ref} scale={20}>
+      <boxGeometry />
+      <meshStandardMaterial />
+    </mesh>
+  )
+}
 
 ReactDOM.render(
   // <React.StrictMode>
   //   <App />
   // </React.StrictMode>,
   <>
-      <Canvas shadows dpr={[1, 2]} camera={{ fov: 50 }}>
-        <EffectComposer>
-          <Pixelation granularity={20} />
-        </EffectComposer>
+      {/* <Canvas shadows dpr={[1, 2]} camera={{ fov: 50 }}> */}
+      <Canvas camera={{ position: [0, 5, 100], fov: 55, near: 1, far: 20000 }}>
+        {/* <EffectComposer>
+          <Pixelation granularity={5} />
+        </EffectComposer> */}
         <ambientLight />
         <pointLight position={[10, 10, 10]} />
+        <pointLight position={[100, 100, 100]} />
+        <pointLight position={[-100, -100, -100]} />
         <Box position={[-3, 0, -3]}  />
         <Box position={[0, 0, -3]} />
         <Box position={[3, 0, -3]} />
-        {/* rotation={[Math.PI / 2, 0, 0]} */}
-        <mesh visible position={[0, -3, -3]} rotation={[-1.6, 0, 0]}>
-          <planeGeometry args={[100, 100]} />
-          <meshStandardMaterial />
-        </mesh>
-        {/* <ocean /> */}
+        <Suspense fallback={null}>
+          <Ocean />
+          {/* <Box2 /> */}
+          {/* <mesh visible position={[0, -3, -3]} rotation={[-1.6, 0, 0]}>
+            <planeGeometry args={[100, 100]} />
+            <meshStandardMaterial />
+          </mesh> */}
+        </Suspense>
+        <OrbitControls />
       </Canvas>
     </>,
   
