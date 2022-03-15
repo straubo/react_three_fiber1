@@ -26,7 +26,8 @@ function Ocean() {
       waterNormals,
       sunDirection: new THREE.Vector3(),
       sunColor: 0xffffff,
-      waterColor: 0x001e0f,
+      // waterColor: 0x001e0f,
+      waterColor: 0x000000,
       distortionScale: 3.7,
       fog: false,
       format: gl.encoding
@@ -64,7 +65,7 @@ function Box(props) {
 function Box2() {
   const ref = useRef()
   useFrame((state, delta) => {
-    ref.current.position.y = 10 + Math.sin(state.clock.elapsedTime) * 20
+    ref.current.position.y = 11 + Math.sin(state.clock.elapsedTime) * 20
     ref.current.rotation.x = ref.current.rotation.y = ref.current.rotation.z += delta
   })
   return (
@@ -80,25 +81,21 @@ ReactDOM.render(
   //   <App />
   // </React.StrictMode>,
   <>
-      {/* <Canvas shadows dpr={[1, 2]} camera={{ fov: 50 }}> */}
       <Canvas camera={{ position: [0, 5, 100], fov: 55, near: 1, far: 20000 }}>
+        {/* currently not used, but effectcomposer will likely be used later */}
         {/* <EffectComposer>
           <Pixelation granularity={5} />
         </EffectComposer> */}
         <ambientLight />
-        <pointLight position={[10, 10, 10]} />
+        {/* <pointLight position={[10, 10, 10]} />
         <pointLight position={[100, 100, 100]} />
-        <pointLight position={[-100, -100, -100]} />
-        <Box position={[-3, 0, -3]}  />
+        <pointLight position={[-100, -100, -100]} /> */}
+        {/* <Box position={[-3, -.8, -3]}  />
         <Box position={[0, 0, -3]} />
-        <Box position={[3, 0, -3]} />
+        <Box position={[3, 0, -3]} /> */}
         <Suspense fallback={null}>
           <Ocean />
-          {/* <Box2 /> */}
-          {/* <mesh visible position={[0, -3, -3]} rotation={[-1.6, 0, 0]}>
-            <planeGeometry args={[100, 100]} />
-            <meshStandardMaterial />
-          </mesh> */}
+          <Box2 />
         </Suspense>
         <OrbitControls />
       </Canvas>
