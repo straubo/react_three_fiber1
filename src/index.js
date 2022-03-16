@@ -7,7 +7,10 @@ import { Canvas, extend, useFrame, useThree, useLoader } from '@react-three/fibe
 import { EffectComposer, Pixelation } from "@react-three/postprocessing";
 import * as THREE from 'three';
 import { OrbitControls } from '@react-three/drei';
-// import ocean  from './ocean.js';
+
+// bloom effects
+import { Bloom, SSAO } from '@react-three/postprocessing'
+import { BlurPass, Resizer, KernelSize } from 'postprocessing'
 
 import { Water } from 'three-stdlib'
 
@@ -64,13 +67,18 @@ function Box(props) {
 
 function Box2() {
   const ref = useRef()
+  // ref.current.rotation.z = 45;
+  console.log(ref);
   useFrame((state, delta) => {
     ref.current.position.y = 11 + Math.sin(state.clock.elapsedTime) * 20
-    ref.current.rotation.x = ref.current.rotation.y = ref.current.rotation.z += delta
+    ref.current.rotation.x += 0.01
+    // ref.current.rotation.y 
+    ref.current.rotation.x = ref.current.rotation.z += delta
   })
   return (
     <mesh ref={ref} scale={20}>
       <boxGeometry />
+      {/* <icosahedronGeometry /> */}
       <meshStandardMaterial />
     </mesh>
   )
@@ -82,18 +90,25 @@ ReactDOM.render(
   // </React.StrictMode>,
   <>
       <Canvas camera={{ position: [0, 5, 100], fov: 55, near: 1, far: 20000 }}>
-        {/* currently not used, but effectcomposer will likely be used later */}
-        {/* <EffectComposer>
-          <Pixelation granularity={5} />
-        </EffectComposer> */}
         <ambientLight />
         {/* <pointLight position={[10, 10, 10]} />
         <pointLight position={[100, 100, 100]} />
         <pointLight position={[-100, -100, -100]} /> */}
-        {/* <Box position={[-3, -.8, -3]}  />
+        <Box position={[-30, -.8, -3]}  />
         <Box position={[0, 0, -3]} />
-        <Box position={[3, 0, -3]} /> */}
+        <Box position={[3, 0, -3]} />
         <Suspense fallback={null}>
+        <EffectComposer>
+          <Bloom
+            intensity={1} // The bloom intensity.
+            blurPass={undefined} // A blur pass.
+            width={Resizer.AUTO_SIZE} // render width
+            height={Resizer.AUTO_SIZE} // render height
+            kernelSize={KernelSize.LARGE} // blur kernel size
+            luminanceThreshold={0} // luminance threshold. Raise this value to mask out darker elements in the scene.
+            luminanceSmoothing={0.025} // smoothness of the luminance threshold. Range is [0, 1]
+          />
+        </EffectComposer>
           <Ocean />
           <Box2 />
         </Suspense>
