@@ -80,13 +80,16 @@ function Box2(props) {
       ref={ref} 
       scale={20}
       {...props}
-      onClick={(event) => setActive(true)}
+      onClick={(event) => setActive(!active)}
     >
       {/* <boxGeometry /> */}
       <icosahedronGeometry />
       {/* <meshStandardMaterial color={'black'} /> */}
-      <meshPhongMaterial color={active ? 'black' : 'grey'} />
-      {/* <meshStandardMaterial color={active ? 'black' : 'grey'} /> */}
+      {/* <meshPhongMaterial color={active ? 'black' : 'grey'} /> */}
+      {/* '001e0f */}
+      <meshStandardMaterial color={active ? 0x629f60 : 0x001e0f} />
+      
+      {/* 0xffffff */}
     </mesh>
   )
 }
