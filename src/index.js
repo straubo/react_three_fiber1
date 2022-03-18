@@ -111,8 +111,7 @@ ReactDOM.render(
               blurPass={undefined} // A blur pass.
               width={Resizer.AUTO_SIZE} // render width
               height={Resizer.AUTO_SIZE} // render height
-              // kernelSize={KernelSize.LARGE} // blur kernel size
-              kernelSize={KernelSize.SMALL} // blur kernel size
+              kernelSize={KernelSize.LARGE} // blur kernel size
               luminanceThreshold={0} // luminance threshold. Raise this value to mask out darker elements in the scene.
               luminanceSmoothing={0.025} // smoothness of the luminance threshold. Range is [0, 1]
             />
