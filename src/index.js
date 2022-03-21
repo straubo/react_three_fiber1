@@ -58,7 +58,7 @@ function Box(props) {
     <mesh
       {...props}
       ref={mesh}
-      scale={active ? 3 : 2}
+      scale={active ? 30 : 20}
       onClick={(event) => setActive(!active)}
       onPointerOver={(event) => setHover(true)}
       onPointerOut={(event) => setHover(false)}>
@@ -99,17 +99,20 @@ ReactDOM.render(
   //   <App />
   // </React.StrictMode>,
   <>
+    <div className='hi'>
+      hi hi
+    </div>
       <Canvas camera={{ position: [0, 5, 100], fov: 55, near: 1, far: 20000 }}>
         <ambientLight />
         <pointLight position={[10, 10, 10]} />
         <pointLight position={[100, 100, 100]} />
         <pointLight position={[-100, -100, -100]} />
-        <Box position={[-30, -.8, -3]}  />
+        <Box position={[-60, -.8, -3]}  />
         <Box position={[0, 0, -3]} />
-        <Box position={[3, 0, -3]} />
+        <Box position={[60, 0, -3]} />
         <Suspense fallback={null}>
           <EffectComposer>
-            <Bloom
+            {/* <Bloom
               intensity={1} // The bloom intensity.
               blurPass={undefined} // A blur pass.
               width={Resizer.AUTO_SIZE} // render width
@@ -117,7 +120,7 @@ ReactDOM.render(
               kernelSize={KernelSize.LARGE} // blur kernel size
               luminanceThreshold={0} // luminance threshold. Raise this value to mask out darker elements in the scene.
               luminanceSmoothing={0.025} // smoothness of the luminance threshold. Range is [0, 1]
-            />
+            /> */}
             {/* <Outline
               selection={[Box2]} // selection of objects that will be outlined
               selectionLayer={10} // selection layer
