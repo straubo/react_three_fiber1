@@ -12,7 +12,10 @@ code {
     monospace;
 }
 
-.hi {
+.site_header {
+  width: 100vw;
   position: absolute;
   z-index: 5;
+  text-align: center;
+  font-size: 4em;
 }

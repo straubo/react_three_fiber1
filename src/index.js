@@ -10,18 +10,18 @@ import * as THREE from 'three';
 import { OrbitControls } from '@react-three/drei';
 import waterNormalsJPEG from './waternormals.jpg';
 
+
 // bloom effects
 import { Bloom, SSAO } from '@react-three/postprocessing'
 import { BlurPass, Resizer, KernelSize } from 'postprocessing'
 
+// water
 import { Water } from 'three-stdlib'
-
 extend({ Water })
 
 function Ocean() {
   const ref = useRef()
   const gl = useThree((state) => state.gl)
-  // const waterNormals = useLoader(THREE.TextureLoader, "https://raw.githubusercontent.com/mrdoob/three.js/master/examples/textures/waternormals.jpg")
   const waterNormals = useLoader(THREE.TextureLoader, waterNormalsJPEG);
   waterNormals.wrapS = waterNormals.wrapT = THREE.RepeatWrapping
   const geom = useMemo(() => new THREE.PlaneGeometry(10000, 10000), [])
@@ -46,7 +46,6 @@ function Ocean() {
 
 
 function Box(props) {
-  // This reference will give us direct access to the mesh
   const mesh = useRef()
   // Set up state for the hovered and active state
   const [hovered, setHover] = useState(false)
@@ -73,6 +72,7 @@ function Box2(props) {
   const [active, setActive] = useState(false)
   useFrame((state, delta) => {
     ref.current.position.y = 11 + Math.sin(state.clock.elapsedTime) * 20
+    // ref.current.position.y = 20 + Math.sin(state.clock.elapsedTime) 
     ref.current.rotation.x = ref.current.rotation.z += delta
   })
   return (
@@ -82,15 +82,55 @@ function Box2(props) {
       {...props}
       onClick={(event) => setActive(!active)}
     >
-      {/* <boxGeometry /> */}
       <icosahedronGeometry />
-      {/* <meshStandardMaterial color={'black'} /> */}
-      {/* <meshPhongMaterial color={active ? 'black' : 'grey'} /> */}
       {/* '001e0f */}
-      <meshStandardMaterial color={active ? 0x629f60 : 0x001e0f} />
-      
-      {/* 0xffffff */}
+      <meshStandardMaterial color={active ? 0x629f60 : 0xffffff} />
     </mesh>
+  )
+}
+
+class Box1Container extends React.Component {
+  render() {
+    return (
+      <>
+        <Box position={[-60, -.8, -3]} />
+        <Box position={[0, 0, -3]} />
+        <Box position={[60, 0, -3]} />
+      </>
+    );
+  }
+}
+
+function PostProcessingWrapper() {
+  return (
+    <EffectComposer>
+      <Bloom
+        intensity={.3} // The bloom intensity.
+        blurPass={undefined} // A blur pass.
+        width={Resizer.AUTO_SIZE} // render width
+        height={Resizer.AUTO_SIZE} // render height
+        kernelSize={KernelSize.LARGE} // blur kernel size
+        luminanceThreshold={0} // luminance threshold. Raise this value to mask out darker elements in the scene.
+        luminanceSmoothing={0.025} // smoothness of the luminance threshold. Range is [0, 1]
+      />
+      
+      {/* <Outline
+      // Box2
+        selection={[]} // selection of objects that will be outlined
+        selectionLayer={10} // selection layer
+        blendFunction={BlendFunction.SCREEN} // set this to BlendFunction.ALPHA for dark outlines
+        patternTexture={null} // a pattern texture
+        edgeStrength={2.5} // the edge strength
+        pulseSpeed={0.0} // a pulse speed. A value of zero disables the pulse effect
+        visibleEdgeColor={0xffffff} // the color of visible edges
+        hiddenEdgeColor={0x22090a} // the color of hidden edges
+        width={Resizer.AUTO_SIZE} // render width
+        height={Resizer.AUTO_SIZE} // render height
+        kernelSize={KernelSize.LARGE} // blur kernel size
+        blur={false} // whether the outline should be blurred
+        xRay={true} // indicates whether X-Ray outlines are enabled
+      /> */}
+    </EffectComposer>
   )
 }
 
@@ -99,46 +139,20 @@ ReactDOM.render(
   //   <App />
   // </React.StrictMode>,
   <>
-    <div className='hi'>
-      hi hi
+    <div className='site_header'>
+      casey berman
     </div>
+    
       <Canvas camera={{ position: [0, 5, 100], fov: 55, near: 1, far: 20000 }}>
         <ambientLight />
         <pointLight position={[10, 10, 10]} />
         <pointLight position={[100, 100, 100]} />
         <pointLight position={[-100, -100, -100]} />
-        <Box position={[-60, -.8, -3]}  />
-        <Box position={[0, 0, -3]} />
-        <Box position={[60, 0, -3]} />
         <Suspense fallback={null}>
-          <EffectComposer>
-            {/* <Bloom
-              intensity={1} // The bloom intensity.
-              blurPass={undefined} // A blur pass.
-              width={Resizer.AUTO_SIZE} // render width
-              height={Resizer.AUTO_SIZE} // render height
-              kernelSize={KernelSize.LARGE} // blur kernel size
-              luminanceThreshold={0} // luminance threshold. Raise this value to mask out darker elements in the scene.
-              luminanceSmoothing={0.025} // smoothness of the luminance threshold. Range is [0, 1]
-            /> */}
-            {/* <Outline
-              selection={[Box2]} // selection of objects that will be outlined
-              selectionLayer={10} // selection layer
-              blendFunction={BlendFunction.SCREEN} // set this to BlendFunction.ALPHA for dark outlines
-              patternTexture={null} // a pattern texture
-              edgeStrength={2.5} // the edge strength
-              pulseSpeed={0.0} // a pulse speed. A value of zero disables the pulse effect
-              visibleEdgeColor={0xffffff} // the color of visible edges
-              hiddenEdgeColor={0x22090a} // the color of hidden edges
-              width={Resizer.AUTO_SIZE} // render width
-              height={Resizer.AUTO_SIZE} // render height
-              kernelSize={KernelSize.LARGE} // blur kernel size
-              blur={false} // whether the outline should be blurred
-              xRay={true} // indicates whether X-Ray outlines are enabled
-            /> */}
-          </EffectComposer>
           <Ocean />
           <Box2 />
+          {/* <Box1Container /> */}
+          {/* <PostProcessingWrapper /> */}
         </Suspense>
         <OrbitControls />
       </Canvas>
