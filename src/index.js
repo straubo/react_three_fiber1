@@ -150,26 +150,35 @@ function PostProcessingWrapper() {
   )
 }
 
-ReactDOM.render(
-  // <React.StrictMode>
-  //   <App />
-  // </React.StrictMode>,
-  <>
+function UIWrapper() {
+  return (
     <div className='site_header'>
       casey berman
     </div>
-    
-      <Canvas camera={{ position: [0, 5, 100], fov: 55, near: 1, far: 20000 }}>
-        <LightingWrapper />
-        <Suspense fallback={null}>
-          <Ocean />
-          <Box2 />
-          {/* <Box1Container /> */}
-          {/* <PostProcessingWrapper /> */}
-        </Suspense>
-        <OrbitControls />
-      </Canvas>
-    </>,
+  )
+}
+
+function CanvasWrapper() {
+  return (
+    <Canvas camera={{ position: [0, 5, 100], fov: 55, near: 1, far: 20000 }}>
+      <LightingWrapper />
+      <Suspense fallback={null}>
+        <Ocean />
+        <Box2 />
+        {/* <Box1Container /> */}
+        {/* <PostProcessingWrapper /> */}
+      </Suspense>
+      <OrbitControls />
+    </Canvas>
+  )
+}
+
+ReactDOM.render(
+  <React.StrictMode>
+    {/* <App /> */}
+      <UIWrapper />
+      <CanvasWrapper />
+  </React.StrictMode>,
   
   document.getElementById('root')
 );
