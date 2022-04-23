@@ -71,8 +71,12 @@ function Box2(props) {
   const ref = useRef()
   const [active, setActive] = useState(false)
   useFrame((state, delta) => {
-    ref.current.position.y = 11 + Math.sin(state.clock.elapsedTime) * 20
-    // ref.current.position.y = 20 + Math.sin(state.clock.elapsedTime) 
+    // ref.current.position.y = 11 + Math.sin(state.clock.elapsedTime) * 20
+    if (active) {
+      ref.current.position.y = ref.current.position.y
+    } else {
+      ref.current.position.y = 11 + Math.sin(state.clock.elapsedTime) * 20
+    }
     ref.current.rotation.x = ref.current.rotation.z += delta
   })
   return (
@@ -100,6 +104,18 @@ class Box1Container extends React.Component {
     );
   }
 }
+
+function LightingWrapper() {
+  return (
+    <>
+      <ambientLight />
+      <pointLight position={[10, 10, 10]} />
+      <pointLight position={[100, 100, 100]} />
+      <pointLight position={[-100, -100, -100]} />
+    </>
+  )
+}
+
 
 function PostProcessingWrapper() {
   return (
@@ -144,10 +160,7 @@ ReactDOM.render(
     </div>
     
       <Canvas camera={{ position: [0, 5, 100], fov: 55, near: 1, far: 20000 }}>
-        <ambientLight />
-        <pointLight position={[10, 10, 10]} />
-        <pointLight position={[100, 100, 100]} />
-        <pointLight position={[-100, -100, -100]} />
+        <LightingWrapper />
         <Suspense fallback={null}>
           <Ocean />
           <Box2 />
