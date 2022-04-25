@@ -1,13 +1,13 @@
 import React, {useRef, Suspense, useState, useMemo} from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import PostProcessingWrapper from './postProcessing'
 import reportWebVitals from './reportWebVitals';
 import { Canvas, extend, useFrame, useThree, useLoader } from '@react-three/fiber';
-import * as THREE from 'three';
 import { OrbitControls } from '@react-three/drei';
-import waterNormalsJPEG from './waternormals.jpg';
-import Ocean from './ocean';
+import './index.css';
+
+// 3D helpers
+import Ocean from './three_components/ocean';
+import PostProcessingWrapper from './postProcessing'
 
 function Box(props) {
   const mesh = useRef()

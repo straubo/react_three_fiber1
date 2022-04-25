@@ -1,7 +1,7 @@
 import React, { useRef, useMemo } from "react";
 import { extend, useThree, useLoader, useFrame } from "@react-three/fiber";
 import * as THREE from "three";
-import waterNormalsJPEG from './waternormals.jpg';
+import waterNormalsJPEG from '../3d_assets/waternormals.jpg';
 
 // import { Water } from "three/examples/jsm/objects/Water.js";
 import { Water } from 'three-stdlib'
