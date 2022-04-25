@@ -1,15 +1,26 @@
 function Bio() {
     return (
-        <div className ='uiWrapper'>
+        <div>
             <div className='siteHeader'>
                 casey berman
             </div>
-            <div className='siteBody'>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
-                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
-                nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			<div className='siteBody'>
+                Casey Berman is a creative technologist, developer and musician living in Brooklyn, New York.
+				Casey currently works at Elephant, a creative company, as a senior Creative Technologist and front-end developer.
+				Working almost exclusively on the Comcast account, Casey has helped push Xfinity's in-store experience into the 
+				21st century using VR, AR and 3D web technologies for over two and a half years. Much of the R&D and prototyping Casey does lays the groundwork
+				for in-store experiences, whether these be for the premiere and flagship stores or nationwide. In his spare time, Casey
+				twiddles knobs on his army of analog synthesizers, breaks things in TouchDesigner, and
+				spends time with his sphynx cat, Phoebe. 
+				<br/> 
             </div>
+			<div className='siteHeader'>
+                work
+            </div>
+			<div className="siteBody">
+				Web AR experiences in-store (Xfinity)<br/>
+				
+			</div>
         </div>
     )
 }

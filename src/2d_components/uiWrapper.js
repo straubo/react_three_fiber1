@@ -2,7 +2,9 @@ import Bio from './bio';
 
 function UIWrapper() {
     return(
-        <Bio />
+        <div className='uiWrapper'>
+            <Bio />
+        </div>
     )
 }
 
