@@ -2,18 +2,12 @@ import React, {useRef, Suspense, useState, useMemo} from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import PostProcessingWrapper from './postProcessing'
 import reportWebVitals from './reportWebVitals';
 import { Canvas, extend, useFrame, useThree, useLoader } from '@react-three/fiber';
-import { EffectComposer, Pixelation, Outline } from "@react-three/postprocessing";
-import { BlendFunction } from 'postprocessing'
 import * as THREE from 'three';
 import { OrbitControls } from '@react-three/drei';
 import waterNormalsJPEG from './waternormals.jpg';
-
-
-// bloom effects
-import { Bloom, SSAO } from '@react-three/postprocessing'
-import { BlurPass, Resizer, KernelSize } from 'postprocessing'
 
 // water
 import { Water } from 'three-stdlib'
@@ -58,7 +52,7 @@ function Box(props) {
       {...props}
       ref={mesh}
       scale={active ? 30 : 20}
-      onClick={(event) => setActive(!active)}
+      onClick={(event) => {setActive(!active)}}
       onPointerOver={(event) => setHover(true)}
       onPointerOut={(event) => setHover(false)}>
       <boxGeometry args={[1, 1, 1]} />
@@ -116,44 +110,18 @@ function LightingWrapper() {
   )
 }
 
-
-function PostProcessingWrapper() {
-  return (
-    <EffectComposer>
-      <Bloom
-        intensity={.3} // The bloom intensity.
-        blurPass={undefined} // A blur pass.
-        width={Resizer.AUTO_SIZE} // render width
-        height={Resizer.AUTO_SIZE} // render height
-        kernelSize={KernelSize.LARGE} // blur kernel size
-        luminanceThreshold={0} // luminance threshold. Raise this value to mask out darker elements in the scene.
-        luminanceSmoothing={0.025} // smoothness of the luminance threshold. Range is [0, 1]
-      />
-      
-      {/* <Outline
-      // Box2
-        selection={[]} // selection of objects that will be outlined
-        selectionLayer={10} // selection layer
-        blendFunction={BlendFunction.SCREEN} // set this to BlendFunction.ALPHA for dark outlines
-        patternTexture={null} // a pattern texture
-        edgeStrength={2.5} // the edge strength
-        pulseSpeed={0.0} // a pulse speed. A value of zero disables the pulse effect
-        visibleEdgeColor={0xffffff} // the color of visible edges
-        hiddenEdgeColor={0x22090a} // the color of hidden edges
-        width={Resizer.AUTO_SIZE} // render width
-        height={Resizer.AUTO_SIZE} // render height
-        kernelSize={KernelSize.LARGE} // blur kernel size
-        blur={false} // whether the outline should be blurred
-        xRay={true} // indicates whether X-Ray outlines are enabled
-      /> */}
-    </EffectComposer>
-  )
-}
-
 function UIWrapper() {
   return (
-    <div className='site_header'>
-      casey berman
+    <div className ='uiWrapper'>
+      <div className='siteHeader'>
+        casey berman
+      </div>
+      <div className='siteBody'>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+      incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
+      nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </div>
     </div>
   )
 }
@@ -165,8 +133,7 @@ function CanvasWrapper() {
       <Suspense fallback={null}>
         <Ocean />
         <Box2 />
-        {/* <Box1Container /> */}
-        {/* <PostProcessingWrapper /> */}
+        <PostProcessingWrapper />
       </Suspense>
       <OrbitControls />
     </Canvas>
@@ -175,7 +142,6 @@ function CanvasWrapper() {
 
 ReactDOM.render(
   <React.StrictMode>
-    {/* <App /> */}
       <UIWrapper />
       <CanvasWrapper />
   </React.StrictMode>,

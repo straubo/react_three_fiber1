@@ -12,10 +12,19 @@ code {
     monospace;
 }
 
-.site_header {
-  width: 100vw;
+.uiWrapper {
   position: absolute;
   z-index: 5;
   text-align: center;
+  width: 70%;
+  margin: auto 15%;
+}
+
+.siteHeader {
   font-size: 4em;
+  text-align: center;
+}
+
+.siteBody {
+  padding-top:25px;
 }
