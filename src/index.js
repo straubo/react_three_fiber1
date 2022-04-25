@@ -5,9 +5,13 @@ import { Canvas, extend, useFrame, useThree, useLoader } from '@react-three/fibe
 import { OrbitControls } from '@react-three/drei';
 import './index.css';
 
+// 2d
+import UIWrapper from './2d_components/uiWrapper';
+
 // 3D helpers
 import Ocean from './three_components/ocean';
-import PostProcessingWrapper from './three_components/postProcessing'
+import PostProcessingWrapper from './three_components/postProcessing';
+import LightingWrapper from './three_components/lighting.js';
 
 function Box(props) {
   const mesh = useRef()
@@ -68,34 +72,6 @@ class Box1Container extends React.Component {
     );
   }
 }
-
-function LightingWrapper() {
-  return (
-    <>
-      <ambientLight />
-      <pointLight position={[10, 10, 10]} />
-      <pointLight position={[100, 100, 100]} />
-      <pointLight position={[-100, -100, -100]} />
-    </>
-  )
-}
-
-function UIWrapper() {
-  return (
-    <div className ='uiWrapper'>
-      <div className='siteHeader'>
-        casey berman
-      </div>
-      <div className='siteBody'>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
-      incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
-      nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </div>
-    </div>
-  )
-}
-
 function CanvasWrapper() {
   return (
     <Canvas camera={{ position: [0, 5, 100], fov: 55, near: 1, far: 20000 }}>
@@ -105,7 +81,7 @@ function CanvasWrapper() {
         <Box2 />
         {/* <PostProcessingWrapper /> */}
       </Suspense>
-      <OrbitControls />
+      {/* <OrbitControls /> */}
     </Canvas>
   )
 }
