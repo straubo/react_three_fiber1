@@ -7,7 +7,7 @@ import './index.css';
 
 // 3D helpers
 import Ocean from './three_components/ocean';
-import PostProcessingWrapper from './postProcessing'
+import PostProcessingWrapper from './three_components/postProcessing'
 
 function Box(props) {
   const mesh = useRef()
