@@ -18,8 +18,17 @@ function Bio() {
                 work
             </div>
 			<div className="siteBody">
-				Web AR experiences in-store (Xfinity)<br/>
-				
+				Casey uses technologies such as Three.js, Unity, React, 8th Wall, Spark AR and many others to make a wide range of colorful, impactful experiences. Some examples of his work:
+				<br/> <br/>
+				<span>Web AR experiences in-store (Xfinity)</span><br/>
+				Maintenance for all experiences in Xfinity's flagship and premiere stores
+				<br/>
+				Flat Web:
+				<br/>
+				Elephant website (Webby-nominated)
+				<br/>
+				Marc Jacobs
+				<br/> <br/>
 			</div>
         </div>
     )
