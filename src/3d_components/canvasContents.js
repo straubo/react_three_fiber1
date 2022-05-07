@@ -5,6 +5,8 @@ import Ocean from "../three_js_components/ocean"
 import Box2 from './origBox'
 import PostProcessingWrapper from '../three_js_components/postProcessing'
 import LightingWrapper from '../three_js_components/lighting'
+import ModelLoader from './loader'
+
 function CanvasContents() {
     return (
         <Canvas camera={{ position: [0, 5, 100], fov: 55, near: 1, far: 20000 }}>
@@ -14,12 +16,26 @@ function CanvasContents() {
                 {/* <PostProcessingWrapper /> */}
                 <Ocean />
                 {/* <OrbitControls /> */}
+                {/* <ModelLoader /> */}
             </Suspense>
         </Canvas>
     )
 }
 
 export default CanvasContents
+
+
+
+
+
+
+
+
+
+
+
+
+
 // old stuff, will prob delete
 
 // function Box(props) {
