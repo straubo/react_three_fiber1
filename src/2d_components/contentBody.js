@@ -3,8 +3,8 @@ import Work from "./work"
 function ContentBody() {
     return (
         <div className='siteBody'>
-            {/* <Work /> */}
             <Bio />
+            {/* <Work /> */}
         </div>
     )
 }
