@@ -50,6 +50,19 @@ code {
   padding-top: 25px;
 }
 
+.navMenu {
+  width: 100%;
+}
+
+.navMenuItem {
+  display: inline-block;
+  width: 25%;
+}
+
+/* .uiWrapper {
+  display: none;
+} */
+
 @media only screen and (max-width: 600px) {
   .siteHeader {
     font-size: 3em;

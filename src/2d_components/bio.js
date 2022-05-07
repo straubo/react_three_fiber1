@@ -1,9 +1,6 @@
 function Bio() {
     return (
         <div>
-            <div className='siteHeader'>
-                casey berman
-            </div>
 			<div className='siteBody'>
                 Casey Berman is a creative technologist, developer and <span>musician</span> living in Brooklyn, New York.
 				Casey currently works at Elephant, a creative company, as a senior Creative Technologist and front-end developer.

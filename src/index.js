@@ -40,6 +40,7 @@ function Box2(props) {
   const [active, setActive] = useState(false)
   useFrame((state, delta) => {
     // ref.current.position.y = 11 + Math.sin(state.clock.elapsedTime) * 20
+    // create var containing current location when clicked
     if (active) {
       ref.current.position.y = ref.current.position.y
     } else {
@@ -78,17 +79,17 @@ function CanvasWrapper() {
       <LightingWrapper />
       <Suspense fallback={null}>
         <Ocean />
-        <Box2 />
+        {/* <Box2 /> */}
         {/* <PostProcessingWrapper /> */}
       </Suspense>
-      {/* <OrbitControls /> */}
+      <OrbitControls />
     </Canvas>
   )
 }
 
 ReactDOM.render(
   <React.StrictMode>
-      <UIWrapper />
+      <UIWrapper className="uiContainer"/>
       <CanvasWrapper />
   </React.StrictMode>,
   
