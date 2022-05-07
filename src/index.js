@@ -9,9 +9,9 @@ import './index.css';
 import UIWrapper from './2d_components/uiWrapper';
 
 // 3D helpers
-import Ocean from './three_components/ocean';
-import PostProcessingWrapper from './three_components/postProcessing';
-import LightingWrapper from './three_components/lighting.js';
+import Ocean from './three_js_components/ocean';
+import PostProcessingWrapper from './three_js_components/postProcessing';
+import LightingWrapper from './three_js_components/lighting.js';
 
 function Box(props) {
   const mesh = useRef()
