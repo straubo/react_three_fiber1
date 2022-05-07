@@ -1,11 +1,13 @@
-import Bio from './bio'
 import Header from './header'
+import ContentBody from './contentBody'
+import Bio from './bio'
 
 function UIWrapper() {
     return(
         <div className='uiWrapper'>
             <Header />
-            <Bio />
+            {/* <Bio /> */}
+            <ContentBody />
         </div>
     )
 }

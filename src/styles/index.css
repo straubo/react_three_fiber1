@@ -21,6 +21,7 @@ code {
   text-align: center;
   padding: 0 15%;
   height: 100vh;
+  /* width: 100%; */
   background-color: rgba(255, 255, 255, 0.35);
   overflow-y: scroll;
 
@@ -47,6 +48,7 @@ code {
 
 .siteBody {
   padding-top: 25px;
+  width: 100%;
 }
 
 .navMenu {
@@ -74,6 +76,6 @@ code {
     font-size: 1.2em;
   }
   .uiWrapper {
-    padding: 0 6%;
+    padding: 0 5%;
   }
 } 
