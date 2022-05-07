@@ -19,7 +19,6 @@ code {
   position: absolute;
   z-index: 5;
   text-align: center;
-  /* width: 70%; */
   padding: 0 15%;
   height: 100vh;
   background-color: rgba(255, 255, 255, 0.35);
@@ -77,4 +76,4 @@ code {
   .uiWrapper {
     padding: 0 6%;
   }
-}
+} 
