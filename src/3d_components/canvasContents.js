@@ -10,9 +10,10 @@ function CanvasContents() {
         <Canvas camera={{ position: [0, 5, 100], fov: 55, near: 1, far: 20000 }}>
             <LightingWrapper />
             <Suspense fallback={null}>
-                {/* <Box2 /> */}
+                <Box2 />
                 {/* <PostProcessingWrapper /> */}
                 <Ocean />
+                {/* <OrbitControls /> */}
             </Suspense>
         </Canvas>
     )
