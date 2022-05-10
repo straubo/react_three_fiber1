@@ -1,6 +1,6 @@
 import React, {useRef, Suspense, useState, useMemo} from 'react';
 import { Canvas, extend, useFrame, useThree, useLoader } from '@react-three/fiber'
-import { OrbitControls } from '@react-three/drei'
+import { OrbitControls, useGLTF } from '@react-three/drei'
 import Ocean from "../three_js_components/ocean"
 import Box2 from './origBox'
 import PostProcessingWrapper from '../three_js_components/postProcessing'
@@ -8,15 +8,18 @@ import LightingWrapper from '../three_js_components/lighting'
 import ModelLoader from './loader'
 
 function CanvasContents() {
+
+    // const {headset} = useGLTF('../3d_assets/headset.glb')
+
     return (
-        <Canvas camera={{ position: [0, 5, 100], fov: 55, near: 1, far: 20000 }}>
+        <Canvas camera={{ position: [0, 1, 100], fov: 55, near: 1, far: 20000 }}>
             <LightingWrapper />
             <Suspense fallback={null}>
                 <Box2 />
                 {/* <PostProcessingWrapper /> */}
                 <Ocean />
-                {/* <OrbitControls /> */}
-                {/* <ModelLoader /> */}
+                <OrbitControls />
+                <ModelLoader />
             </Suspense>
         </Canvas>
     )
