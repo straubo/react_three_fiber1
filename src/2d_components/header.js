@@ -6,7 +6,7 @@ function Header() {
     return (
         <div>
             <div className='siteHeader'>casey berman</div>
-            <Menu menuClicked={(section)=>console.log(section)}/>
+            <Menu menuClicked={(section)=>menuClicked(section)}/>
         </div>
     )
 }

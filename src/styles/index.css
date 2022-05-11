@@ -25,7 +25,7 @@ code {
   /* background-color: rgba(255, 255, 255, 0.35); */
   overflow-y: scroll;
   /* lets mouse input go through it: */
-  pointer-events: none;
+  /* pointer-events: none; */
 
 }
 
