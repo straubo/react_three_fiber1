@@ -8,17 +8,19 @@ function Box2(props) {
     useFrame((state, delta) => {
       // ref.current.position.y = 11 + Math.sin(state.clock.elapsedTime) * 20
       // create var containing current location when clicked
-		if (active) {
-			ref.current.position.y = ref.current.position.y
-		} else {
-			ref.current.position.y = 11 + Math.sin(state.clock.elapsedTime) * 20
-		}
+
+		// if (active) {
+		// 	ref.current.position.y = ref.current.position.y
+		// } else {
+		// 	ref.current.position.y = 11 + Math.sin(state.clock.elapsedTime) * 20
+		// }
 		ref.current.rotation.x = ref.current.rotation.z += delta
     })
     return (
         <mesh 
             ref={ref} 
             scale={20}
+			position={[0, 35, 0]}
             {...props}
             onClick={(event) => setActive(!active)}
         >

@@ -1,4 +1,7 @@
-function Menu() {
+function Menu(props) {
+    function menuClicked() {
+        console.log('hi')
+    }
     return (
         <div className="navMenu">
             <div className="navMenuItem" onClick={(event) => console.log('about')}
