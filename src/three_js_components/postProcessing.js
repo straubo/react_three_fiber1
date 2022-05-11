@@ -1,4 +1,4 @@
-import { EffectComposer, Pixelation, Outline } from "@react-three/postprocessing";
+import { EffectComposer, Pixelation, Outline, Noise } from "@react-three/postprocessing";
 import { BlendFunction } from 'postprocessing'
 import { Bloom, SSAO } from '@react-three/postprocessing'
 import { BlurPass, Resizer, KernelSize } from 'postprocessing'
@@ -6,7 +6,7 @@ import { BlurPass, Resizer, KernelSize } from 'postprocessing'
 function PostProcessingWrapper() {
     return (
       <EffectComposer>
-        <Bloom
+        {/* <Bloom
           intensity={.3} // The bloom intensity.
           blurPass={undefined} // A blur pass.
           width={Resizer.AUTO_SIZE} // render width
@@ -14,6 +14,10 @@ function PostProcessingWrapper() {
           kernelSize={KernelSize.LARGE} // blur kernel size
           luminanceThreshold={0} // luminance threshold. Raise this value to mask out darker elements in the scene.
           luminanceSmoothing={0.025} // smoothness of the luminance threshold. Range is [0, 1]
+        /> */}
+        <Noise premultiply blendFunction={BlendFunction.ADD} />
+        <Pixelation
+          granularity={2.6} // pixel granularity
         />
         
         {/* <Outline

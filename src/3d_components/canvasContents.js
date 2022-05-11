@@ -16,7 +16,7 @@ function CanvasContents() {
             <LightingWrapper />
             <Suspense fallback={null}>
                 <Box2 />
-                {/* <PostProcessingWrapper /> */}
+                <PostProcessingWrapper />
                 <Ocean />
                 <OrbitControls />
                 <ModelLoader />
