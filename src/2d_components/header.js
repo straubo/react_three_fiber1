@@ -1,12 +1,9 @@
 import Menu from './menu'
-function Header() {
-    function menuClicked(section) {
-        console.log(section)
-    }
+function Header(props) {
     return (
         <div>
             <div className='siteHeader'>casey berman</div>
-            <Menu menuClicked={(section)=>menuClicked(section)}/>
+            <Menu menuClicked={(section)=>props.menuClicked(section)}/>
         </div>
     )
 }

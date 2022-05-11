@@ -1,6 +1,9 @@
 import Bio from "./bio"
 import Work from "./work"
-function ContentBody() {
+function ContentBody(props) {
+    // function createSection() {
+
+    // }
     return (
         <div className='siteBody'>
             <Bio />
