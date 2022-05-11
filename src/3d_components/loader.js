@@ -10,6 +10,7 @@ function ModelLoader (props) {
 
     useFrame((state, delta) => {
         ref.current.rotation.z = ref.current.rotation.z += delta
+        // ref.current.rotation.y = ref.current.rotation.y += delta * 1.5
     })
 
     return (
