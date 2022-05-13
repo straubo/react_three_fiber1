@@ -9,9 +9,8 @@ function ModelLoader (props) {
     const ref = useRef()
     const modelString = '/' + props.modelName + '.glb'
     const {nodes, materials} = useGLTF(modelString)
-    const meshExtension = props.meshExtension.toString()
-    const meshName = nodes.meshExtension
-    // console.log(nodes.BaseMesh_Man_Simple.geometry)
+    // const meshExtension = props.meshExtension.toString()
+    // const meshName = nodes.meshExtension
     
     const shinyMaterial = new THREE.MeshPhysicalMaterial({
         color: new THREE.Color('#000000').convertSRGBToLinear(),
@@ -20,8 +19,8 @@ function ModelLoader (props) {
         clearcoatRoughness: 0,
     })
 
-    const [active, setActive] = useState(false)
-    const [zoom, set] = useState(false)
+    const [active, set] = useState(false)
+    const [zoom, setActive] = useState(false)
 
     useCursor(active)
     useFrame((state, delta) => {
@@ -38,9 +37,9 @@ function ModelLoader (props) {
 
     return (
         <mesh
-            onClick={() => set(!zoom)} 
-            onPointerOver={() => setActive(true)} 
-            onPointerOut={() => setActive(false)}
+            onClick={() => setActive(!zoom)} 
+            onPointerOver={() => set(true)} 
+            onPointerOut={() => set(false)}
             receiveShadow
             castShadow
             ref={ref} 

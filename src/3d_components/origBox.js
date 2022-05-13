@@ -20,13 +20,13 @@ function Box2(props) {
         // this one the one always on
 		// ref.current.rotation.x = ref.current.rotation.z += delta
         ref.current.rotation.y = ref.current.rotation.y -= delta * 2.5
-        ref.current.position.y = 35 + Math.sin(state.clock.elapsedTime * 3) * 5
+        ref.current.position.y = 10 + Math.sin(state.clock.elapsedTime * 3) * 2
     })
     return (
         <mesh 
             ref={ref} 
-            scale={20}
-			position={[0, 35, 0]}
+            scale={5}
+			position={[35, 0, 0]}
             {...props}
             onClick={(event) => setActive(!active)}
         >

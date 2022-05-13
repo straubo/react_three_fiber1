@@ -36,7 +36,6 @@ function CanvasContents() {
                     position={[-35, 0, 0]}
                 />
                 <CameraShake yawFrequency={0.2} pitchFrequency={0.2} rollFrequency={0.2} intensity={0.5}/>
-                {/* intensity={0.5} */}
             </Suspense>
             
         </Canvas>
