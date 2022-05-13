@@ -17,7 +17,7 @@ function PostProcessingWrapper() {
         /> */}
         <Noise premultiply blendFunction={BlendFunction.ADD} />
         <Pixelation
-          granularity={2.6} // pixel granularity
+          granularity={2.9} // pixel granularity
         />
         
         {/* <Outline

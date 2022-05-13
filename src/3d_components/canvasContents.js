@@ -1,6 +1,6 @@
 import React, {useRef, Suspense, useState, useMemo} from 'react';
 import { Canvas, extend, useFrame, useThree, useLoader } from '@react-three/fiber'
-import { OrbitControls, useGLTF } from '@react-three/drei'
+import { OrbitControls } from '@react-three/drei'
 import Ocean from "../three_js_components/ocean"
 import Box2 from './origBox'
 import PostProcessingWrapper from '../three_js_components/postProcessing'
@@ -9,7 +9,14 @@ import ModelLoader from './loader'
 
 function CanvasContents() {
 
-    // const {headset} = useGLTF('../3d_assets/headset.glb')
+    // const { camera, mouse } = useThree()
+    // ^^ look into what this means!
+    // useFrame((state) => {
+        // state.camera.fov = THREE.MathUtils.lerp(state.camera.fov, zoom ? 10 : 42, 0.05)
+        // state.camera.position.lerp(v.set(zoom ? 25 : 10, zoom ? 1 : 5, zoom ? 0 : 10), 0.05)
+        // state.camera.lookAt(0, 0, 0)
+        // state.camera.updateProjectionMatrix()
+    // })
 
     return (
         <Canvas camera={{ position: [0, 1, 100], fov: 55, near: 1, far: 20000 }}>
@@ -18,7 +25,7 @@ function CanvasContents() {
                 <Box2 />
                 <PostProcessingWrapper />
                 <Ocean />
-                <OrbitControls />
+                <OrbitControls makeDefault/>
                 <ModelLoader />
             </Suspense>
         </Canvas>
