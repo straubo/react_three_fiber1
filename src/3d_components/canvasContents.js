@@ -1,6 +1,6 @@
 import React, {useRef, Suspense, useState, useMemo} from 'react';
 import { Canvas, extend, useFrame, useThree, useLoader } from '@react-three/fiber'
-import { OrbitControls } from '@react-three/drei'
+import { OrbitControls, CameraShake } from '@react-three/drei'
 import Ocean from "../three_js_components/ocean"
 import Box2 from './origBox'
 import PostProcessingWrapper from '../three_js_components/postProcessing'
@@ -11,23 +11,19 @@ function CanvasContents() {
 
     // const { camera, mouse } = useThree()
     // ^^ look into what this means!
-    // useFrame((state) => {
-        // state.camera.fov = THREE.MathUtils.lerp(state.camera.fov, zoom ? 10 : 42, 0.05)
-        // state.camera.position.lerp(v.set(zoom ? 25 : 10, zoom ? 1 : 5, zoom ? 0 : 10), 0.05)
-        // state.camera.lookAt(0, 0, 0)
-        // state.camera.updateProjectionMatrix()
-    // })
 
     return (
         <Canvas camera={{ position: [0, 1, 100], fov: 55, near: 1, far: 20000 }}>
             <LightingWrapper />
             <Suspense fallback={null}>
                 <Box2 />
-                <PostProcessingWrapper />
+                {/* <PostProcessingWrapper /> */}
                 <Ocean />
                 <OrbitControls makeDefault/>
+                    {/* makeDefault */}
                 <ModelLoader />
             </Suspense>
+            <CameraShake yawFrequency={0.2} pitchFrequency={0.2} rollFrequency={0.2} intensity={0.5}/>
         </Canvas>
     )
 }

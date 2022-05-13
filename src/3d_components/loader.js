@@ -16,13 +16,17 @@ function ModelLoader ({props, v = new THREE.Vector3()}) {
     })
 
     const [active, setActive] = useState(false)
-    const [zoom, set] = useState(true)
+    const [zoom, set] = useState(false)
 
     useCursor(active)
     useFrame((state, delta) => {
         state.camera.fov = THREE.MathUtils.lerp(state.camera.fov, zoom ? 55 : 42, 0.05)
-        state.camera.position.lerp(v.set(zoom ? 0 : 0, zoom ? 40 : 35, zoom ? 150 : 125), 0.11)
-        state.camera.lookAt(0, 0, 0)
+        if (zoom) {
+            state.camera.position.lerp(v.set(0, 40, 150), 0.01)
+            state.camera.lookAt(0, 0, 0)
+        }
+        // state.camera.position.lerp(v.set(zoom ? 0 : 0, zoom ? 40 : 35, zoom ? 150 : 125), 0.01)
+        
         state.camera.updateProjectionMatrix()
         ref.current.rotation.z = ref.current.rotation.z += delta * 1.5
       })
@@ -37,10 +41,11 @@ function ModelLoader ({props, v = new THREE.Vector3()}) {
             geometry={nodes.VR_simple.geometry} 
             rotation={[Math.PI / 2, 0, 0]} 
             {...props}
-            material={shinyMaterial}
+            // material={shinyMaterial}
             
         >
             {/* <meshStandardMaterial color={0x000000}/> */}
+            <meshStandardMaterial color={0xFFFFFF}/>
         </mesh>
     )
 }
