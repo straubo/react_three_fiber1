@@ -19,12 +19,12 @@ function ModelLoader ({props, v = new THREE.Vector3()}) {
     const [zoom, set] = useState(true)
 
     useCursor(active)
-    useFrame((state) => {
-        state.camera.fov = THREE.MathUtils.lerp(state.camera.fov, zoom ? 10 : 42, 0.05)
-        state.camera.position.lerp(v.set(zoom ? 25 : 10, zoom ? 1 : 5, zoom ? 0 : 10), 0.05)
+    useFrame((state, delta) => {
+        state.camera.fov = THREE.MathUtils.lerp(state.camera.fov, zoom ? 55 : 42, 0.05)
+        state.camera.position.lerp(v.set(zoom ? 0 : 0, zoom ? 40 : 35, zoom ? 150 : 125), 0.11)
         state.camera.lookAt(0, 0, 0)
         state.camera.updateProjectionMatrix()
-        // ref.current.rotation.y = ref.current.rotation.y += delta * 1.5
+        ref.current.rotation.z = ref.current.rotation.z += delta * 1.5
       })
 
     return (
