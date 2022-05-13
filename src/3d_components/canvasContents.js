@@ -6,6 +6,7 @@ import Box2 from './origBox'
 import PostProcessingWrapper from '../three_js_components/postProcessing'
 import LightingWrapper from '../three_js_components/lighting'
 import ModelLoader from './loader'
+import ModelLoader2 from './loader2'
 
 function CanvasContents() {
 
@@ -17,13 +18,27 @@ function CanvasContents() {
             <LightingWrapper />
             <Suspense fallback={null}>
                 <Box2 />
-                {/* <PostProcessingWrapper /> */}
+                <PostProcessingWrapper />
                 <Ocean />
                 <OrbitControls makeDefault/>
-                    {/* makeDefault */}
-                <ModelLoader />
+                {/* tried generifying... try again later */}
+                <ModelLoader 
+                    scale={5} 
+                    modelName={'headset'} 
+                    modelExtension={'VR_simple'}
+                    position={[0, 7, 0]}
+                />
+                <ModelLoader2 
+                    scale={0.1} 
+                    modelName={'human'} 
+                    meshExtension={'BaseMesh_Man_Simple'}
+                    fullMeshExtension={'nodes.BaseMesh_Man_Simple.geometry'}
+                    position={[-35, 0, 0]}
+                />
+                <CameraShake yawFrequency={0.2} pitchFrequency={0.2} rollFrequency={0.2} intensity={0.5}/>
+                {/* intensity={0.5} */}
             </Suspense>
-            <CameraShake yawFrequency={0.2} pitchFrequency={0.2} rollFrequency={0.2} intensity={0.5}/>
+            
         </Canvas>
     )
 }

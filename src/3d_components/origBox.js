@@ -20,7 +20,7 @@ function Box2(props) {
         // this one the one always on
 		// ref.current.rotation.x = ref.current.rotation.z += delta
         ref.current.rotation.y = ref.current.rotation.y -= delta * 2.5
-        ref.current.position.y = 25 + Math.sin(state.clock.elapsedTime * 3) * 5
+        ref.current.position.y = 35 + Math.sin(state.clock.elapsedTime * 3) * 5
     })
     return (
         <mesh 

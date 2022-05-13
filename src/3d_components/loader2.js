@@ -4,11 +4,15 @@ import {useFrame} from '@react-three/fiber'
 import { useGLTF, useCursor } from "@react-three/drei";
 
 
-function ModelLoader (props) {   
+function ModelLoader (props) {
     const v = new THREE.Vector3()
-    // ref and mesh/material stuff 
     const ref = useRef()
-    const {nodes, materials} = useGLTF('/headset.glb')
+    const modelString = '/' + props.modelName + '.glb'
+    const {nodes, materials} = useGLTF(modelString)
+    const meshExtension = props.meshExtension.toString()
+    const meshName = nodes.meshExtension
+    // console.log(nodes.BaseMesh_Man_Simple.geometry)
+    
     const shinyMaterial = new THREE.MeshPhysicalMaterial({
         color: new THREE.Color('#000000').convertSRGBToLinear(),
         roughness: 0,
@@ -34,16 +38,16 @@ function ModelLoader (props) {
 
     return (
         <mesh
-            ref={ref} 
-            // scale={6} 
-            {...props}
             onClick={() => set(!zoom)} 
             onPointerOver={() => setActive(true)} 
             onPointerOut={() => setActive(false)}
             receiveShadow
             castShadow
-            geometry={nodes.VR_simple.geometry} 
+            ref={ref} 
+            scale={5} 
+            geometry={nodes.BaseMesh_Man_Simple.geometry} 
             rotation={[Math.PI / 2, 0, 0]} 
+            {...props}
             material={shinyMaterial}
             
         >
