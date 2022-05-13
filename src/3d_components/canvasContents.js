@@ -21,9 +21,9 @@ function CanvasContents() {
                 <PostProcessingWrapper />
                 <Ocean />
                 <OrbitControls makeDefault/>
-                {/* tried generifying... try again later */}
+                {/* tried generifying as they're largely the same... try again later */}
                 <ModelLoader 
-                    scale={5} 
+                    scale={5}
                     modelName={'headset'} 
                     modelExtension={'VR_simple'}
                     position={[0, 7, 0]}
@@ -35,7 +35,7 @@ function CanvasContents() {
                     fullMeshExtension={'nodes.BaseMesh_Man_Simple.geometry'}
                     position={[-35, 0, 0]}
                 />
-                <CameraShake yawFrequency={0.2} pitchFrequency={0.2} rollFrequency={0.2} intensity={0.5}/>
+                {/* <CameraShake yawFrequency={0.2} pitchFrequency={0.2} rollFrequency={0.2} intensity={0.5}/> */}
             </Suspense>
             
         </Canvas>

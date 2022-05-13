@@ -15,10 +15,10 @@ function PostProcessingWrapper() {
           luminanceThreshold={0} // luminance threshold. Raise this value to mask out darker elements in the scene.
           luminanceSmoothing={0.025} // smoothness of the luminance threshold. Range is [0, 1]
         /> */}
-        {/* <Noise premultiply blendFunction={BlendFunction.ADD} />
+        <Noise premultiply blendFunction={BlendFunction.ADD} />
         <Pixelation
           granularity={2} // pixel granularity
-        /> */}
+        />
         
         {/* <Outline
         // Box2

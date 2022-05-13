@@ -4,7 +4,7 @@ import {useFrame} from '@react-three/fiber'
 import { useGLTF, useCursor } from "@react-three/drei";
 
 
-function ModelLoader (props) {
+function ModelLoader2 (props) {
     const v = new THREE.Vector3()
     const ref = useRef()
     const modelString = '/' + props.modelName + '.glb'
@@ -21,15 +21,26 @@ function ModelLoader (props) {
 
     const [active, set] = useState(false)
     const [zoom, setActive] = useState(false)
+    const startLook = new THREE.Vector3(0, 25, 0)
+    const endLook = new THREE.Vector3(0, 50, 0)
 
     useCursor(active)
     useFrame((state, delta) => {
-        state.camera.fov = THREE.MathUtils.lerp(state.camera.fov, zoom ? 55 : 42, 0.05)
+        // second param: zoom ? 55 : 42
+        // state.camera.fov = THREE.MathUtils.lerp(state.camera.fov, 42, 0.05)
+        // if (zoom) {
+        //     // state.camera.position.lerp(v.set(0, 40, 50), 0.01)
+        //     state.camera.lookAt(250, 2000, 0)
+        // }
+        // zoom ? 0 : 
+        state.camera.position.lerp(v.set(0, zoom ? 40 : 35, zoom ? 100 : 125), 0.01)
         if (zoom) {
-            state.camera.position.lerp(v.set(0, 40, 150), 0.01)
-            state.camera.lookAt(0, 0, 0)
+            state.camera.lookAt(endLook)
+        } else {
+            state.camera.lookAt(startLook)
         }
-        // state.camera.position.lerp(v.set(zoom ? 0 : 0, zoom ? 40 : 35, zoom ? 150 : 125), 0.01)
+        
+        // state.camera.lookAt(105585943, 0, 0)
         
         state.camera.updateProjectionMatrix()
         ref.current.rotation.z = ref.current.rotation.z += delta * 1.5
@@ -56,4 +67,4 @@ function ModelLoader (props) {
     )
 }
 
-export default ModelLoader
+export default ModelLoader2
