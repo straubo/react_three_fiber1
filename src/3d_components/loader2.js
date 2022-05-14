@@ -1,7 +1,8 @@
 import * as THREE from 'three'
 import React, { useRef, useState } from 'react'
 import {useFrame} from '@react-three/fiber'
-import { useGLTF, useCursor } from "@react-three/drei";
+import { useGLTF } from "@react-three/drei";
+// , useCursor
 
 
 function ModelLoader2 (props) {
@@ -31,7 +32,7 @@ function ModelLoader2 (props) {
     //     state.camera.lookAt(currentLook.x, currentLook.y, currentLook.z)
     // }
 
-    useCursor(active)
+    // useCursor(active)
     useFrame((state, delta) => {
         // second param: zoom ? 55 : 42
         // state.camera.fov = THREE.MathUtils.lerp(state.camera.fov, 42, 0.05)
@@ -46,19 +47,20 @@ function ModelLoader2 (props) {
         // failed experiment:
         // if (zoom) {
         //     state.camera.lookAt(endLook)
-            currentLook.lerp(endLook, 0.1)
+            currentLook.lerp(endLook, 0.5)
         // } else {
         //     state.camera.lookAt(startLook)
         //     // currentLook.lerp(startLook)
         // }
         state.camera.lookAt(currentLook)
+        // console.log(currentLook)
         
 
         // state.camera.quaternion.slerp(targetQuaternion, 0.3)   
         // quaternion.slerp(targetQuaternion, t)
         
-        state.camera.updateProjectionMatrix()
         ref.current.rotation.z = ref.current.rotation.z += delta * 1.5
+        state.camera.updateProjectionMatrix()
       })
 
     return (
