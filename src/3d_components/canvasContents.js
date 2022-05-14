@@ -20,7 +20,8 @@ function CanvasContents() {
                 <Box2 />
                 <PostProcessingWrapper />
                 <Ocean />
-                <OrbitControls makeDefault/>
+                <OrbitControls />
+                {/* makeDefault */}
                 {/* tried generifying as they're largely the same... try again later */}
                 <ModelLoader 
                     scale={5}

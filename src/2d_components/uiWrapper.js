@@ -1,19 +1,28 @@
+import React from 'react'
 import Header from './header'
 import ContentBody from './contentBody'
-import Bio from './bio'
 
-function UIWrapper() {
-    let selectedSection
-    function menuClicked(section) {
-        selectedSection = section
-        console.log(selectedSection + ' is selected now')
+class UIWrapper extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            activeSection: null
+        }
     }
-    return(
-        <div className='uiWrapper'>
-            <Header menuClicked={(section)=> menuClicked(section)}/>
-            <ContentBody selectedSection={selectedSection} />
-        </div>
-    )
+
+    menuClicked(section) {
+        this.state.activeSection = section
+        console.log(this.state.activeSection)
+    }
+
+    render() {
+        return (
+            <div className='uiWrapper'>
+                <Header menuClicked={(section)=> this.menuClicked(section)}/>
+                <ContentBody selectedSection={this.state.activeSection} />
+            </div>
+        )
+    }
 }
 
 export default UIWrapper

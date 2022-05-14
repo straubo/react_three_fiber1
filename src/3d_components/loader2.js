@@ -21,8 +21,15 @@ function ModelLoader2 (props) {
 
     const [active, set] = useState(false)
     const [zoom, setActive] = useState(false)
-    const startLook = new THREE.Vector3(0, 25, 0)
+    const startLook = new THREE.Vector3(0, 0, 0)
     const endLook = new THREE.Vector3(0, 50, 0)
+    let currentLook = new THREE.Vector3(0, 0, 0)
+    // let targetQuaternion = new THREE.Quaternion(1, 0, 0, (Math.PI/2))
+
+    // function onStart(state) {
+    //     console.log('starting!')
+    //     state.camera.lookAt(currentLook.x, currentLook.y, currentLook.z)
+    // }
 
     useCursor(active)
     useFrame((state, delta) => {
@@ -33,14 +40,22 @@ function ModelLoader2 (props) {
         //     state.camera.lookAt(250, 2000, 0)
         // }
         // zoom ? 0 : 
-        state.camera.position.lerp(v.set(0, zoom ? 40 : 35, zoom ? 100 : 125), 0.01)
-        if (zoom) {
-            state.camera.lookAt(endLook)
-        } else {
-            state.camera.lookAt(startLook)
-        }
         
-        // state.camera.lookAt(105585943, 0, 0)
+        // state.camera.position.lerp(v.set(0, zoom ? 40 : 35, zoom ? 50 : 75), 0.01)
+        
+        // failed experiment:
+        // if (zoom) {
+        //     state.camera.lookAt(endLook)
+            currentLook.lerp(endLook, 0.1)
+        // } else {
+        //     state.camera.lookAt(startLook)
+        //     // currentLook.lerp(startLook)
+        // }
+        state.camera.lookAt(currentLook)
+        
+
+        // state.camera.quaternion.slerp(targetQuaternion, 0.3)   
+        // quaternion.slerp(targetQuaternion, t)
         
         state.camera.updateProjectionMatrix()
         ref.current.rotation.z = ref.current.rotation.z += delta * 1.5
@@ -58,10 +73,10 @@ function ModelLoader2 (props) {
             geometry={nodes.BaseMesh_Man_Simple.geometry} 
             rotation={[Math.PI / 2, 0, 0]} 
             {...props}
-            material={shinyMaterial}
+            // material={shinyMaterial}
             
         >
-            {/* <meshStandardMaterial color={0x000000}/> */}
+            <meshStandardMaterial color={0x000000}/>
             {/* <meshStandardMaterial color={0xFFFFFF}/> */}
         </mesh>
     )
