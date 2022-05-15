@@ -77,7 +77,7 @@ function ModelLoader2 (props) {
             onClick={() => {
                 setActive(!zoom)
                 props.updatedCameraDirection('t-pose')
-                clickyTime()
+                // clickyTime()
             }
             }
             onPointerOver={() => set(true)} 

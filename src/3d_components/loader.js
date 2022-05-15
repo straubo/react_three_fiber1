@@ -37,7 +37,10 @@ function ModelLoader (props) {
             ref={ref} 
             // scale={6} 
             {...props}
-            onClick={() => set(!zoom)} 
+            onClick={() => {
+                set(!zoom)
+                props.updatedCameraDirection('vr')
+            }} 
             onPointerOver={() => setActive(true)} 
             onPointerOut={() => setActive(false)}
             receiveShadow
