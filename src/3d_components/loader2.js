@@ -53,7 +53,7 @@ function ModelLoader2 (props) {
         <mesh
             onClick={() => {
                 setActive(!zoom)
-                props.updatedCameraDirection('t-pose')
+                props.updatedCameraDirection('about')
             }}
             onPointerOver={() => set(true)} 
             onPointerOut={() => set(false)}

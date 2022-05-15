@@ -30,7 +30,7 @@ function Box2(props) {
             {...props}
             onClick={(event) => {
                 setActive(!active)
-                props.updatedCameraDirection('diamond')
+                props.updatedCameraDirection('contact')
             }}
         >
         {/* <icosahedronGeometry /> */}

@@ -35,11 +35,10 @@ function ModelLoader (props) {
     return (
         <mesh
             ref={ref} 
-            // scale={6} 
             {...props}
             onClick={() => {
                 set(!zoom)
-                props.updatedCameraDirection('vr')
+                props.updatedCameraDirection('work')
             }} 
             onPointerOver={() => setActive(true)} 
             onPointerOut={() => setActive(false)}

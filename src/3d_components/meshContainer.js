@@ -5,14 +5,14 @@ import ModelLoader from './loader'
 import ModelLoader2 from './loader2'
 import Box2 from './origBox'
 
-function MeshContainer() {
+function MeshContainer(props) {
     const [currentLook, setCurrentLook] = useState(new THREE.Vector3(0, 0, 0))
     const [nextLook, setNextLook] = useState(new THREE.Vector3(0, 0, 0))
     const [currentObj, setCurrentObj] = useState(null)
 
     function updateCameraLook(a) {
-        if (a == 't-pose') {
-            if (currentObj != 't-pose') {
+        if (a == 'about') {
+            if (currentObj != 'about') {
                 setNextLook(new THREE.Vector3(0, 60, 0))
                 setCurrentObj(a)
             } 
@@ -20,8 +20,8 @@ function MeshContainer() {
                 setNextLook(new THREE.Vector3(0, 0, 0))
                 setCurrentObj(null)
             }
-        } else if (a == 'vr') {
-            if (currentObj != 'vr') {
+        } else if (a == 'work') {
+            if (currentObj != 'work') {
                 setNextLook(new THREE.Vector3(0, -25, 0))
                 setCurrentObj(a)
             } 
@@ -32,8 +32,8 @@ function MeshContainer() {
                 // state.camera.updateProjectionMatrix();
                 //  ^^ same treatment
             }
-        } else if (a == 'diamond') {
-            if (currentObj != 'diamond') {
+        } else if (a == 'contact') {
+            if (currentObj != 'contact') {
                 setNextLook(new THREE.Vector3(-100, 0, 0))
                 // we're going to turn around and have the 
                 // text be half black half white ya know?
