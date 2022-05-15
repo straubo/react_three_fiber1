@@ -9,6 +9,7 @@ function MeshContainer() {
     const [currentLook, setCurrentLook] = useState(new THREE.Vector3(0, 0, 0))
     const [nextLook, setNextLook] = useState(new THREE.Vector3(0, 0, 0))
     const [currentObj, setCurrentObj] = useState(null)
+
     function updateCameraLook(a) {
         if (a == 't-pose') {
             if (currentObj != 't-pose') {
@@ -28,13 +29,28 @@ function MeshContainer() {
                 setNextLook(new THREE.Vector3(0, 0, 0))
                 setCurrentObj(null)
                 // state.camera.position.lerp(v.set(0, 40, 150), 0.01)
+                // state.camera.updateProjectionMatrix();
+                //  ^^ same treatment
+            }
+        } else if (a == 'diamond') {
+            if (currentObj != 'diamond') {
+                setNextLook(new THREE.Vector3(-100, 0, 0))
+                // we're going to turn around and have the 
+                // text be half black half white ya know?
+                setCurrentObj(a)
+            } 
+            else {
+                setNextLook(new THREE.Vector3(0, 0, 0))
+                setCurrentObj(null)
+                // state.camera.position.lerp(v.set(0, 40, 150), 0.01)
+                // state.camera.updateProjectionMatrix();
                 //  ^^ same treatment
             }
         }
     }
     useFrame((state, delta) => {
         state.camera.lookAt(currentLook)
-        setCurrentLook(currentLook.lerp(nextLook, 0.1))
+        setCurrentLook(currentLook.lerp(nextLook, 0.09))
     })
     return (<>
         {/* tried generifying as they're largely the 
@@ -54,7 +70,9 @@ function MeshContainer() {
             position={[-35, 0, 0]}
             updatedCameraDirection={updateCameraLook}
         />
-        <Box2 />
+        <Box2 
+            updatedCameraDirection={updateCameraLook}
+        />
     </>)
 }
 

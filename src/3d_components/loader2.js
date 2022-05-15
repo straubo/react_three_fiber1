@@ -30,9 +30,6 @@ function ModelLoader2 (props) {
     //     console.log('starting!')
     //     state.camera.lookAt(currentLook.x, currentLook.y, currentLook.z)
     // }
-    function clickyTime() {
-        currentLook.lerp(endLook)
-    }
 
     useCursor(active)
     useFrame((state, delta) => {
@@ -42,28 +39,8 @@ function ModelLoader2 (props) {
         //     // state.camera.position.lerp(v.set(0, 40, 50), 0.01)
         //     state.camera.lookAt(250, 2000, 0)
         // }
-        // zoom ? 0 : 
         
         // state.camera.position.lerp(v.set(0, zoom ? 40 : 35, zoom ? 50 : 75), 0.01)
-        
-        // failed experiment:
-        // if (zoom) {
-        //     state.camera.lookAt(endLook)
-
-            // currentLook.lerp(endLook, 0.01)
-
-        // } else {
-        //     state.camera.lookAt(startLook)
-        //     // currentLook.lerp(startLook)
-        // }
-
-        // if (zoom) {
-        //     state.camera.lookAt(endLook)
-        // } else {
-        //     state.camera.lookAt(currentLook)
-        // }
-        // console.log(currentLook)
-        
 
         // state.camera.quaternion.slerp(targetQuaternion, 0.3)   
         // quaternion.slerp(targetQuaternion, t)
@@ -77,9 +54,7 @@ function ModelLoader2 (props) {
             onClick={() => {
                 setActive(!zoom)
                 props.updatedCameraDirection('t-pose')
-                // clickyTime()
-            }
-            }
+            }}
             onPointerOver={() => set(true)} 
             onPointerOut={() => set(false)}
             receiveShadow

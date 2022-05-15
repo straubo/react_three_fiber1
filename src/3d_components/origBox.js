@@ -17,7 +17,7 @@ function Box2(props) {
 			// ref.current.position.y = 11 + Math.sin(state.clock.elapsedTime) * 20
 		// }
 
-        // this one the one always on
+        // this one *was* always on
 		// ref.current.rotation.x = ref.current.rotation.z += delta
         ref.current.rotation.y = ref.current.rotation.y -= delta * 2.5
         ref.current.position.y = 10 + Math.sin(state.clock.elapsedTime * 3) * 2
@@ -28,7 +28,10 @@ function Box2(props) {
             scale={5}
 			position={[35, 0, 0]}
             {...props}
-            onClick={(event) => setActive(!active)}
+            onClick={(event) => {
+                setActive(!active)
+                props.updatedCameraDirection('diamond')
+            }}
         >
         {/* <icosahedronGeometry /> */}
         <octahedronGeometry />
