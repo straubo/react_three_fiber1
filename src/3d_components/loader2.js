@@ -30,6 +30,9 @@ function ModelLoader2 (props) {
     //     console.log('starting!')
     //     state.camera.lookAt(currentLook.x, currentLook.y, currentLook.z)
     // }
+    function clickyTime() {
+        currentLook.lerp(endLook)
+    }
 
     useCursor(active)
     useFrame((state, delta) => {
@@ -53,7 +56,12 @@ function ModelLoader2 (props) {
         //     state.camera.lookAt(startLook)
         //     // currentLook.lerp(startLook)
         // }
-        // state.camera.lookAt(currentLook)
+
+        // if (zoom) {
+        //     state.camera.lookAt(endLook)
+        // } else {
+        //     state.camera.lookAt(currentLook)
+        // }
         // console.log(currentLook)
         
 
@@ -68,8 +76,8 @@ function ModelLoader2 (props) {
         <mesh
             onClick={() => {
                 setActive(!zoom)
-                console.log(zoom)
                 props.updatedCameraDirection('t-pose')
+                clickyTime()
             }
             }
             onPointerOver={() => set(true)} 

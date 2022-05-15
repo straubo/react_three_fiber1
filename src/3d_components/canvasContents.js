@@ -12,32 +12,38 @@ import CameraHandler from './cameraHandler'
 
 function CanvasContents() {
     // for camera direction lerping
-    let currentLook = new THREE.Vector3(0, 0, 0)
+    // let currentLook = new THREE.Vector3(0, 0, 0)
     const startLook = new THREE.Vector3(0, 0, 0)
     const endLook = new THREE.Vector3(0, 50, 0)
+
+    const [currentLook, setCurrentLook] = useState(new THREE.Vector3(0, 0, 0))
+
+    // const [activeMesh, setActiveMesh] = useState(null)
 
     // const { camera, mouse } = useThree()
     // ^^ look into what this means!
     function updateCameraLook(a) {
         if (a == 't-pose') {
-            currentLook = endLook
-            console.log(currentLook)
-            cameraHandle.current.checkingRef()
+            setCurrentLook(new THREE.Vector3(0, 50, 0))
+            // cameraHandle.current.checkingRef()
         }
     }
-
+    // useFrame((state, delta) => {
+    //     state.camera.lookAt(currentLook)
+    // })
+    console.log(currentLook)
     return (
         <Canvas camera={{ position: [0, 1, 80], fov: 55, near: 1, far: 20000 }}>
             <CameraHandler
-                lookAtThis={currentLook}
-                ref={cameraHandle}
+                currentLook={currentLook}
+                // ref={cameraHandle}
             />
             <LightingWrapper />
             <Suspense fallback={null}>
                 <Box2 />
                 <PostProcessingWrapper />
                 <Ocean />
-                {/* <OrbitControls /> */}
+                <OrbitControls />
                 {/* makeDefault */}
                 {/* tried generifying as they're largely the same... 
                 try again later */}
