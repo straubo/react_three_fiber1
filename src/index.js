@@ -7,7 +7,7 @@ import UIWrapper from './2d_components/uiWrapper';
 
 ReactDOM.render(
   <React.StrictMode>
-      {/* <UIWrapper /> */}
+      <UIWrapper />
       <CanvasContents />
   </React.StrictMode>,
   
