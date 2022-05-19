@@ -20,18 +20,6 @@ function ModelLoader3 (props) {
 
 
     const ref3 = useRef()
-    const { camera } = useThree();
-    useEffect(() => {
-        console.log("it's firing")
-        // Add mesh to camera
-        const meshRef = ref3.current;
-        camera.add(meshRef);
-    
-        // Cleanup on unmount
-        // return () => {
-        //   camera.remove(meshRef);
-        // };
-      }, [camera, ref3.current]);
 
     const [active, setActive] = useState(false)
     const [zoom, set] = useState(false)
@@ -60,9 +48,9 @@ function ModelLoader3 (props) {
             receiveShadow
             castShadow
             geometry={nodes.VR_simple.geometry} 
-            rotation={[Math.PI / 2, 0, 0]} 
+            // rotation={[Math.PI / 2, 0, 0]} 
             material={shinyMaterial}
-            position={[0, 0, -5]}
+            // position={[0, 0, -5]}
         >
             {/* <meshStandardMaterial color={0x000000}/> */}
             {/* <meshStandardMaterial color={0xFFFFFF}/> */}
