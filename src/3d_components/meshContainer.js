@@ -3,54 +3,45 @@ import React, {useRef, Suspense, useState, useMemo} from 'react';
 import { Canvas, extend, useFrame, useThree, useLoader } from '@react-three/fiber'
 import ModelLoader from './loader'
 import ModelLoader2 from './loader2'
+import ModelLoader3 from './loader3'
 import Box2 from './origBox'
 
 function MeshContainer(props) {
     const [currentLook, setCurrentLook] = useState(new THREE.Vector3(0, 0, 0))
     const [nextLook, setNextLook] = useState(new THREE.Vector3(0, 0, 0))
     const [currentObj, setCurrentObj] = useState(null)
+    const { gl, size, camera } = useThree()
+    const [currentCameraPosition, setCurrentCameraPosition] = useState(new THREE.Vector3(0, 30, 0))
 
     function updateCameraLook(a) {
-        if (a == 'about') {
-            if (currentObj != 'about') {
-                setNextLook(new THREE.Vector3(0, 60, 0))
-                setCurrentObj(a)
-            } 
-            else {
-                setNextLook(new THREE.Vector3(0, 0, 0))
-                setCurrentObj(null)
-            }
-        } else if (a == 'work') {
-            if (currentObj != 'work') {
-                setNextLook(new THREE.Vector3(0, -25, 0))
-                setCurrentObj(a)
-            } 
-            else {
-                setNextLook(new THREE.Vector3(0, 0, 0))
-                setCurrentObj(null)
-                // state.camera.position.lerp(v.set(0, 40, 150), 0.01)
-                // state.camera.updateProjectionMatrix();
-                //  ^^ same treatment
-            }
-        } else if (a == 'contact') {
-            if (currentObj != 'contact') {
-                setNextLook(new THREE.Vector3(-100, 0, 0))
-                // we're going to turn around and have the 
-                // text be half black half white ya know?
-                setCurrentObj(a)
-            } 
-            else {
-                setNextLook(new THREE.Vector3(0, 0, 0))
-                setCurrentObj(null)
-                // state.camera.position.lerp(v.set(0, 40, 150), 0.01)
-                // state.camera.updateProjectionMatrix();
-                //  ^^ same treatment
-            }
+        // let cameraPos = camera.position
+        // setCurrentCameraPosition(cameraPos)
+        console.log(currentCameraPosition)
+        if (a == currentObj) {
+            setNextLook(new THREE.Vector3(0, 0, 0))
+            setCurrentObj(null)
+            return
         }
+        // cameraPosition = camera.position
+        switch(a) {
+            case 'about':
+                setNextLook(new THREE.Vector3(0, 60, 0))
+                break
+            case 'work':
+                setNextLook(new THREE.Vector3(0, -25, 0))
+                break
+            case 'contact':
+                setNextLook(new THREE.Vector3(-100, 0, 0))
+                break
+        }
+        setCurrentObj(a)
     }
-    useFrame((state, delta) => {
+    useFrame((state) => {
         state.camera.lookAt(currentLook)
         setCurrentLook(currentLook.lerp(nextLook, 0.09))
+        // setCurrentCameraPosition(new THREE.Vector3([state.camera.position.x, state.camera.position.y, state.camera.position.z ]))
+        // console.log(state.camera.position)
+        // console.log(currentCameraPosition)
     })
     return (<>
         {/* tried generifying as they're largely the 
@@ -72,6 +63,17 @@ function MeshContainer(props) {
         />
         <Box2 
             updatedCameraDirection={updateCameraLook}
+        />
+        <ModelLoader3
+            scale={1}
+            modelName={'headset'} 
+            modelExtension={'VR_simple'}
+            // currentCameraPosition
+            // [currentCameraPosition.x, currentCameraPosition.y, currentCameraPosition.z]
+            // currentCameraPosition
+            // new THREE.Vector3([currentCameraPosition.x, currentCameraPosition.y, currentCameraPosition.z])
+            // position={[0, 0, -5]}
+            // updatedCameraDirection={updateCameraLook}
         />
     </>)
 }

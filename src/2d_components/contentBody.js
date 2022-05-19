@@ -1,6 +1,7 @@
-import React from "react";
+import React, {useEffect, useState} from "react"
 import Bio from "./bio"
 import Work from "./work"
+import Contact from "./contact"
 class ContentBody extends React.Component {
     constructor(props) {
         super(props);
@@ -10,15 +11,18 @@ class ContentBody extends React.Component {
     }
     render() {
         let showedSection
-        switch(this.props.selectedSection) {
-            case  'bio':
-                showedSection = <Bio />
-                break;
-            case 'work':
-                showedSection = <Work />
-            default:
-                showedSection = <Bio />
-        }
+        // function chooseWhichSectionIsShowed() {
+            switch(this.props.selectedSection) {
+                case  'bio':
+                    showedSection = <Bio />
+                    break;
+                case 'work':
+                    showedSection = <Work />
+                default:
+                    showedSection = <Bio />
+            }
+        // }
+        // chooseWhichSectionIsShowed()
         return (
             <div className='siteBody'>
                 {showedSection}
@@ -26,4 +30,23 @@ class ContentBody extends React.Component {
         )
     }
 }
+// function ContentBody(props) {
+//     const [showedSection, setShowedSection] = useState('bio')
+//     function selectShowedSection() {
+//         switch(this.props.selectedSection) {
+//             case  'bio':
+//                 showedSection = <Bio />
+//                 break;
+//             case 'work':
+//                 showedSection = <Work />
+//             default:
+//                 showedSection = <Contact />
+//         }
+//     }
+//     return (
+//         <div className='siteBody'>
+//             {showedSection}
+//         </div>
+//     )
+// }
 export default ContentBody

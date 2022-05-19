@@ -16,7 +16,7 @@ function CanvasContents() {
             <Suspense fallback={null}>
                 <PostProcessingWrapper />
                 <Ocean />
-                {/* <OrbitControls /> */}
+                <OrbitControls makeDefault  />
                 {/* makeDefault */}
                 <MeshContainer />
                 {/* <CameraShake yawFrequency={0.2} pitchFrequency={0.2} rollFrequency={0.2} intensity={0.5}/> */}
