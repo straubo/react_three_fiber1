@@ -26,15 +26,6 @@ function ModelLoader3 (props) {
 
     useCursor(active)
 
-    useFrame(({ camera }) => {
-        // Move mesh to be flush with camera
-        ref3.current.position.copy(camera.position);
-        ref3.current.quaternion.copy(camera.quaternion);
-    
-        // Apply offset
-        ref3.current.translateZ(-5);
-      });
-
     return (
         <mesh
             ref={ref3} 
@@ -48,7 +39,7 @@ function ModelLoader3 (props) {
             receiveShadow
             castShadow
             geometry={nodes.VR_simple.geometry} 
-            // rotation={[Math.PI / 2, 0, 0]} 
+            rotation={[Math.PI / 2, 0, 0]} 
             material={shinyMaterial}
             // position={[0, 0, -5]}
         >
