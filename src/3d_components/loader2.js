@@ -13,7 +13,7 @@ function ModelLoader2 (props) {
     // const meshName = nodes.meshExtension
     
     const shinyMaterial = new THREE.MeshPhysicalMaterial({
-        color: new THREE.Color('#000000').convertSRGBToLinear(),
+        color: new THREE.Color('#bb86a1').convertSRGBToLinear(),
         roughness: 0,
         clearcoat: 1,
         clearcoatRoughness: 0,

@@ -12,11 +12,10 @@ function Caption({ children }) {
     const { width } = useThree((state) => state.viewport)
     return (
       <Text
-        position={[0, 15, -5]}
+        position={[0, 18, -5]}
         lineHeight={0.8}
         font="/Ki-Medium.ttf"
         fontSize={width / 8}
-        // color={}
         material-toneMapped={false}
         anchorX="center"
         anchorY="middle"
@@ -42,13 +41,13 @@ function MeshContainer(props) {
         }
         switch(a) {
             case 'about':
-                setNextLook(new THREE.Vector3(0, 60, 0))
+                // setNextLook(new THREE.Vector3(0, 60, 0))
                 break
             case 'work':
-                setNextLook(new THREE.Vector3(0, -25, 0))
+                // setNextLook(new THREE.Vector3(0, -25, 0))
                 break
             case 'contact':
-                setNextLook(new THREE.Vector3(-100, 0, 0))
+                // setNextLook(new THREE.Vector3(-100, 0, 0))
                 break
         }
         setCurrentObj(a)
@@ -61,13 +60,13 @@ function MeshContainer(props) {
         // console.log(currentCameraPosition)
     })
     return (<>
-        {/* tried generifying as they're largely the 
-            same... try again later */}
         {/* <Text3D font={fontUrl} {...textOptions}>
             Hello world!
             <meshNormalMaterial />
         </Text3D> */}
         <Caption>{`casey berman`}</Caption>
+        {/* tried generifying as they're largely the 
+            same... try again later */}
         <ModelLoader 
             scale={5}
             modelName={'headset'} 

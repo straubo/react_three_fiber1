@@ -18,7 +18,7 @@ class UIWrapper extends React.Component {
     render() {
         return (
             <div className='uiWrapper'>
-                <Header menuClicked={(section)=> this.menuClicked(section)}/>
+                {/* <Header menuClicked={(section)=> this.menuClicked(section)}/> */}
                 <ContentBody selectedSection={this.state.activeSection} />
             </div>
         )

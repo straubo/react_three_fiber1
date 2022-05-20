@@ -28,7 +28,9 @@ function Ocean() {
     }),
     [waterNormals]
   )
-	useFrame((state, delta) => (ref.current.material.uniforms.time.value += delta))
+	useFrame((state, delta) => {
+		ref.current.material.uniforms.time.value += (delta * 3/5 )
+	})
 	return <water ref={ref} args={[geom, config]} rotation-x={-Math.PI / 2} />
 }
 

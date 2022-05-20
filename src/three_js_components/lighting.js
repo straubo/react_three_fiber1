@@ -1,7 +1,18 @@
+import { useFrame } from "@react-three/fiber"
+import { useRef } from "react"
+
 function LightingWrapper() {
+    const light = useRef()
+    useFrame((state) => {
+        light.current.position.x = state.mouse.x * 20
+        light.current.position.y = state.mouse.y * 20
+    })
+
     return (
         <>
             <ambientLight />
+            {/* intensity={env} */}
+            <pointLight ref={light} position-z={-15} color="#F8C069" />
             <pointLight position={[10, 10, 10]} />
             <pointLight position={[100, 100, 100]} />
             <pointLight position={[-100, -100, -100]} />
