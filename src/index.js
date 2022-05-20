@@ -1,16 +1,13 @@
-import React, {useRef, Suspense, useState, useMemo} from 'react';
-import ReactDOM from 'react-dom';
-import reportWebVitals from './reportWebVitals';
-import CanvasContents  from './3d_components/canvasContents'
-import './styles/index.css';
-import UIWrapper from './2d_components/uiWrapper';
+import React, {useRef, Suspense, useMemo} from 'react'
+import ReactDOM from 'react-dom'
+import reportWebVitals from './reportWebVitals'
+import './styles/index.css'
+import App from './app'
 
 ReactDOM.render(
-  <React.StrictMode>
-      <UIWrapper />
-      <CanvasContents />
-  </React.StrictMode>,
-  
+	<React.StrictMode>
+		<App /> 
+	</React.StrictMode>,
   document.getElementById('root')
 );
 

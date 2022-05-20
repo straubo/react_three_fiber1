@@ -3,7 +3,7 @@ function Contact() {
 
         <div>
             <div className='sectionHeader'>contact</div>
-			<div className='siteBody'>email: caseybermanprograms@gmail.com</div>
+			<div>email: caseybermanprograms@gmail.com</div>
         </div>
     )
 }

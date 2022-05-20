@@ -29,7 +29,7 @@ function ModelLoader (props) {
         
     //     state.camera.updateProjectionMatrix()
     //     ref.current.rotation.z = ref.current.rotation.z += delta * 1.5
-    //   })
+    // })
 
     return (
         <mesh
@@ -46,7 +46,6 @@ function ModelLoader (props) {
             geometry={nodes.VR_simple.geometry} 
             rotation={[Math.PI / 2, 0, 0]} 
             material={shinyMaterial}
-            
         >
             {/* <meshStandardMaterial color={0x000000}/> */}
             {/* <meshStandardMaterial color={0xFFFFFF}/> */}

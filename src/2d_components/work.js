@@ -4,7 +4,8 @@ function Work() {
             <div className='sectionHeader'>
                 work
             </div>
-			<div className="siteBody">
+			{/* className="siteBody" */}
+			<div>
 				Casey uses technologies such as THREE.js, Unity, React, 8th Wall, Spark AR and many others to make a wide range of colorful, impactful experiences. Some examples of his work:
 				<br/> <br/>
 				<span className="subHeader">Web AR experiences (Xfinity)</span><br/>

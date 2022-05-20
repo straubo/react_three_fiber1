@@ -24,6 +24,7 @@ code {
   /* overflow-y: scroll; */
   /* lets mouse input go through it: */
   pointer-events: none;
+  color: white;
 
 }
 
