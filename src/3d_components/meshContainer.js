@@ -52,13 +52,14 @@ function MeshContainer(props) {
         }
         setCurrentObj(a)
     }
-    useFrame((state) => {
-        state.camera.lookAt(currentLook)
-        setCurrentLook(currentLook.lerp(nextLook, 0.09))
-        // setCurrentCameraPosition(new THREE.Vector3([state.camera.position.x, state.camera.position.y, state.camera.position.z ]))
-        // console.log(state.camera.position)
-        // console.log(currentCameraPosition)
-    })
+
+    // useFrame((state) => {
+    //     state.camera.lookAt(currentLook)
+    //     setCurrentLook(currentLook.lerp(nextLook, 0.09))
+    //     // setCurrentCameraPosition(new THREE.Vector3([state.camera.position.x, state.camera.position.y, state.camera.position.z ]))
+    //     // console.log(state.camera.position)
+    //     // console.log(currentCameraPosition)
+    // })
     return (<>
         {/* <Text3D font={fontUrl} {...textOptions}>
             Hello world!
@@ -72,7 +73,8 @@ function MeshContainer(props) {
             modelName={'headset'} 
             modelExtension={'VR_simple'}
             position={[0, 7, 0]}
-            updatedCameraDirection={updateCameraLook}
+            // updatedCameraDirection={updateCameraLook}
+            updatedCameraDirection={props.selectObj}
         />
         <ModelLoader2 
             scale={0.1} 
@@ -80,12 +82,17 @@ function MeshContainer(props) {
             meshExtension={'BaseMesh_Man_Simple'}
             fullMeshExtension={'nodes.BaseMesh_Man_Simple.geometry'}
             position={[-35, 0, 0]}
-            updatedCameraDirection={updateCameraLook}
+            // updatedCameraDirection={updateCameraLook}
+            updatedCameraDirection={props.selectObj}
         />
         <Box2 
-            updatedCameraDirection={updateCameraLook}
+            // updatedCameraDirection={updateCameraLook}
+            updatedCameraDirection={props.selectObj}
         />
-        <Menu3D activeItem={currentObj}/>
+        <Menu3D
+            // activeItem={currentObj}
+            activeItem={props.currentObject}
+        />
     </>)
 }
 

@@ -17,6 +17,7 @@ function Menu3D(props) {
         ref.current.translateX(-4.4) // full screen pc
         ref.current.translateY(2)
     });
+    console.log(props.activeItem)
     return (
         <mesh
         ref={ref}
