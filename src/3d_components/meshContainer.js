@@ -6,6 +6,26 @@ import ModelLoader2 from './loader2'
 import ModelLoader3 from './loader3'
 import Box2 from './origBox'
 import Menu3D from './menu3D'
+import { Text, Text3D } from '@react-three/drei'
+
+function Caption({ children }) {
+    const { width } = useThree((state) => state.viewport)
+    return (
+      <Text
+        position={[0, 15, -5]}
+        lineHeight={0.8}
+        font="/Ki-Medium.ttf"
+        fontSize={width / 8}
+        // color={}
+        material-toneMapped={false}
+        anchorX="center"
+        anchorY="middle"
+        color={'#001e0f'}
+        >
+        {children}
+      </Text>
+    )
+  }
 
 function MeshContainer(props) {
     const [currentLook, setCurrentLook] = useState(new THREE.Vector3(0, 0, 0))
@@ -15,15 +35,11 @@ function MeshContainer(props) {
     const [currentCameraPosition, setCurrentCameraPosition] = useState(new THREE.Vector3(0, 30, 0))
 
     function updateCameraLook(a) {
-        // let cameraPos = camera.position
-        // setCurrentCameraPosition(cameraPos)
-        console.log(currentCameraPosition)
         if (a == currentObj) {
             setNextLook(new THREE.Vector3(0, 0, 0))
             setCurrentObj(null)
             return
         }
-        // cameraPosition = camera.position
         switch(a) {
             case 'about':
                 setNextLook(new THREE.Vector3(0, 60, 0))
@@ -47,6 +63,11 @@ function MeshContainer(props) {
     return (<>
         {/* tried generifying as they're largely the 
             same... try again later */}
+        {/* <Text3D font={fontUrl} {...textOptions}>
+            Hello world!
+            <meshNormalMaterial />
+        </Text3D> */}
+        <Caption>{`casey berman`}</Caption>
         <ModelLoader 
             scale={5}
             modelName={'headset'} 

@@ -64,10 +64,10 @@ function ModelLoader2 (props) {
             geometry={nodes.BaseMesh_Man_Simple.geometry} 
             rotation={[Math.PI / 2, 0, 0]} 
             {...props}
-            // material={shinyMaterial}
+            material={shinyMaterial}
             
         >
-            <meshStandardMaterial color={0x000000}/>
+            {/* <meshStandardMaterial color={0x000000}/> */}
             {/* <meshStandardMaterial color={0xFFFFFF}/> */}
         </mesh>
     )
