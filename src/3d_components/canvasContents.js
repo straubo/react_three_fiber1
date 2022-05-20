@@ -11,13 +11,14 @@ function CanvasContents() {
     return (
         <Canvas camera={{ position: [0, 10, 80], fov: 55, near: 1, far: 20000 }}>
             <LightingWrapper />
+            <color attach="background" args={['black']} />
             <Suspense fallback={null}>
                 {/* <PostProcessingWrapper /> */}
                 <Ocean />
                 {/* <OrbitControls makeDefault  /> */}
                 <MeshContainer />
                 <CameraShake yawFrequency={0.2} pitchFrequency={0.2} rollFrequency={0.2} intensity={0.5}/>
-                <Environment preset="warehouse" />
+                <Environment preset="night" />
             </Suspense>
             
         </Canvas>

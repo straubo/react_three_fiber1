@@ -2,7 +2,8 @@ function Bio() {
     return (
         <div>
 			<div className='sectionHeader'>bio</div>
-			<div className='siteBody'>
+			{/* className='siteBody' */}
+			<div>
                 Casey Berman is a creative technologist, developer and <span>musician</span> living in Brooklyn, New York.
 				Casey currently works at Elephant, a creative company, as a senior Creative Technologist and front-end developer.
 				Working almost exclusively on the Comcast account, Casey has helped push Xfinity's in-store experience into the 

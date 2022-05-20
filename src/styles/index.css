@@ -47,9 +47,8 @@ code {
 }
 
 .siteBody {
-  padding-top: 25px;
-  /* width: 100%; */
-  padding: 35px 15% 0px 15%;
+  padding: 57vh 15% 0px 15%;
+  color: white;
 }
 
 .navMenu {
@@ -77,6 +76,9 @@ code {
     font-size: 1.2em;
   }
   .siteBody {
-    padding: 15px 5%;
+    padding: 50vh 5% 0px 5%;
+    height: 46vh;
+    overflow-y: scroll;
+    /* pointer-events: ; */
   }
 } 

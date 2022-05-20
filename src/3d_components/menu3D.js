@@ -14,14 +14,13 @@ function Menu3D(props) {
         // going to have to make this responsive
         ref.current.translateZ(-5)
         // ref.current.translateX(-2) // 1 on mobile
-        ref.current.translateX(-4) // full screen pc
-        ref.current.translateY(1.7)
+        ref.current.translateX(-4.4) // full screen pc
+        ref.current.translateY(2)
     });
     return (
         <mesh
         ref={ref}
         visible={props.activeItem != null}
-        // I don't know why ^^ doesn't work
             >
             <ModelLoader3
                 scale={.2}
