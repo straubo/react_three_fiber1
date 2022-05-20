@@ -14,7 +14,7 @@ function CanvasContents() {
         <Canvas camera={{ position: [-15, 10, 80], fov: 55, near: 1, far: 20000 }}>
             <LightingWrapper />
             <Suspense fallback={null}>
-                <PostProcessingWrapper />
+                {/* <PostProcessingWrapper /> */}
                 <Ocean />
                 <OrbitControls makeDefault  />
                 {/* makeDefault */}

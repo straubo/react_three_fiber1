@@ -2,7 +2,7 @@ import ModelLoader3 from "./loader3"
 import { useRef } from "react"
 import { useFrame } from "@react-three/fiber";
 
-function Menu3D() {
+function Menu3D(props) {
     const ref = useRef()
     useFrame(({ camera }) => {
         // Move mesh to be flush with camera
@@ -20,6 +20,8 @@ function Menu3D() {
     return (
         <mesh
         ref={ref}
+        visible={props.activeItem != null}
+        // I don't know why ^^ doesn't work
             >
             <ModelLoader3
                 scale={.2}

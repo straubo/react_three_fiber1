@@ -65,7 +65,7 @@ function MeshContainer(props) {
         <Box2 
             updatedCameraDirection={updateCameraLook}
         />
-        <Menu3D />
+        <Menu3D activeItem={currentObj}/>
     </>)
 }
 
