@@ -48,8 +48,14 @@ code {
 }
 
 .siteBody {
-  padding: 57vh 15% 0px 15%;
+  /* padding: 57vh 15% 0px 15%; */
+  padding: 47vh 15% 0px 15%;
+  /* padding: 0px 15%; */
   color: white;
+}
+
+.siteBodyInner {
+  /* padding-top: 45vh; */
 }
 
 .navMenu {
@@ -77,8 +83,10 @@ code {
     font-size: 1.2em;
   }
   .siteBody {
-    padding: 50vh 5% 0px 5%;
-    height: 46vh;
+    /* padding: 50vh 5% 0px 5%; */
+    padding: 44vh 5% 0px 5%;
+    /* padding: 0px 5%; */
+    /* height: 46vh; */
     overflow-y: scroll;
     /* pointer-events: ; */
   }

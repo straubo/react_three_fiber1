@@ -33,23 +33,25 @@ import Contact from "./contact"
 
 
 function ContentBody(props) {
-    console.log(props.currentObj)
     return (
         <div 
             className='siteBody'
                 style={props.currentObj == null ? {display: 'none'} : {display: 'block'}}
         >   
             <div
+                className="siteBodyInner"
                 style={props.currentObj == 'about' ? {display: 'block'} : {display: 'none'}}
             >
                 <Bio/>
             </div>
             <div
+                className="siteBodyInner"
                 style={props.currentObj == 'work' ? {display: 'block'} : {display: 'none'}}
             >
                 <Work/>
             </div>
             <div
+                className="siteBodyInner"
                 style={props.currentObj == 'contact' ? {display: 'block'} : {display: 'none'}}
             >
                 <Contact/>
