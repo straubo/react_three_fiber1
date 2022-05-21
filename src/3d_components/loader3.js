@@ -4,7 +4,7 @@
 import * as THREE from 'three'
 import React, { useEffect, useRef, useState } from 'react'
 import {useFrame, useThree } from '@react-three/fiber'
-import { useGLTF, useCursor } from "@react-three/drei"
+import { useGLTF, useCursor, Edges } from "@react-three/drei"
 
 
 function ModelLoader3 (props) {   
@@ -40,8 +40,11 @@ function ModelLoader3 (props) {
             castShadow
             geometry={nodes.VR_simple.geometry} 
             rotation={[Math.PI / 2, 0, 0]} 
-            material={shinyMaterial}
-        ></mesh>
+            // material={shinyMaterial}
+        >
+            <meshStandardMaterial transparent />
+            <Edges />
+        </mesh>
     )
 }
 

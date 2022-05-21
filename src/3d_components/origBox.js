@@ -1,7 +1,5 @@
 import React, {useRef, useState} from 'react'
 import {useFrame} from '@react-three/fiber'
-import { Octahedron } from '@react-three/drei'
-import { OctahedronGeometry } from 'three'
 
 function Box2(props) {
     const ref = useRef()
