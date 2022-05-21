@@ -39,9 +39,9 @@ function MeshContainer(props) {
     <color attach="background" args={
         props.currentObject == null ? ['black'] : 
         props.currentObject == 'about' ? ['pink'] : 
-        props.currentObject == 'work' ? ['white'] :
-        ['midnightblue']
-        } />
+        props.currentObject == 'work' ? ['whitesmoke'] :
+        ['wheat']} 
+    />
         {/* <Text3D font={fontUrl} {...textOptions}>
             Hello world!
             <meshNormalMaterial />
