@@ -25,7 +25,7 @@ function Model({ open, hinge, ...props }) {
         
         group.current.position.x = THREE.MathUtils.lerp(group.current.position.x, open ? 0 : -25, 0.007)
         group.current.position.y = THREE.MathUtils.lerp(group.current.position.y, open ? 0 : 60, 0.007)
-        group.current.position.z = THREE.MathUtils.lerp(group.current.position.z, open ? 0 : -75, 0.014)
+        group.current.position.z = THREE.MathUtils.lerp(group.current.position.z, open ? -3 : -75, 0.014)
         // group.current.position.y = THREE.MathUtils.lerp(group.current.position.y, open ? 0 : 4, 0.02)
         // group.current.position.z = THREE.MathUtils.lerp(group.current.position.z, open ? -2 : -53, 0.04)
 
@@ -47,7 +47,7 @@ function Model({ open, hinge, ...props }) {
                     <mesh material={materials['matte.001']} geometry={nodes['Cube008_1'].geometry} />
                     <mesh material={materials['screen.001']} geometry={nodes['Cube008_2'].geometry} />
                 </group>
-                {/* <Html 
+                <Html 
                     scale={1} 
                     rotation={[0, 0, 0]} 
                     position={[0, 5, 0]} 
@@ -57,7 +57,7 @@ function Model({ open, hinge, ...props }) {
                     <div className="annotation">
                         welcome to Casey Berman's web site <span style={{ fontSize: '4em' }}>🥲</span>
                     </div>
-                </Html> */}
+                </Html>
             </three.group>
             <mesh material={materials.keys} geometry={nodes.keyboard.geometry} position={[1.79, 0, 3.45]} />
             <group position={[0, -0.1, 3.39]}>

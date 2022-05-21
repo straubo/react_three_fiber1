@@ -13,7 +13,7 @@ function CanvasContents(props) {
             <LightingWrapper />
             {/* <color attach="background" args={['black']} /> */}
             <Suspense fallback={null}>
-                {/* <PostProcessingWrapper /> */}
+                {/* <PostProcessingWrapper />    */}
                 <Ocean />
                 {/* <OrbitControls makeDefault /> */}
                 <MeshContainer 

@@ -19,7 +19,7 @@ function ModelLoader (props) {
     })
 
     useCursor(active)
-    // useFrame((state, delta) => {
+    useFrame((state, delta) => {
     //     state.camera.fov = THREE.MathUtils.lerp(state.camera.fov, zoom ? 55 : 42, 0.05)
     //     if (zoom) {
     //         state.camera.position.lerp(v.set(0, 40, 150), 0.01)
@@ -28,8 +28,8 @@ function ModelLoader (props) {
     //     // state.camera.position.lerp(v.set(zoom ? 0 : 0, zoom ? 40 : 35, zoom ? 150 : 125), 0.01)
         
     //     state.camera.updateProjectionMatrix()
-    //     ref.current.rotation.z = ref.current.rotation.z += delta * 1.5
-    // })
+        ref.current.rotation.z = ref.current.rotation.z += delta * 1.5
+    })
 
     return (
         <mesh

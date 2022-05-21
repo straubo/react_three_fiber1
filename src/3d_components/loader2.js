@@ -1,7 +1,7 @@
 import * as THREE from 'three'
 import React, { useRef, useState } from 'react'
 import {useFrame} from '@react-three/fiber'
-import { useGLTF, useCursor } from "@react-three/drei";
+import { useGLTF, useCursor, MeshDistortMaterial, MeshWobbleMaterial } from "@react-three/drei";
 
 
 function ModelLoader2 (props) {
@@ -18,10 +18,7 @@ function ModelLoader2 (props) {
     })
 
     const [active, set] = useState(false)
-    const [zoom, setActive] = useState(false)
-    const startLook = new THREE.Vector3(0, 0, 0)
-    const endLook = new THREE.Vector3(0, 50, 0)
-    let currentLook = new THREE.Vector3(0, 0, 0)
+    // const [zoom, setActive] = useState(false)
     // let targetQuaternion = new THREE.Quaternion(1, 0, 0, (Math.PI/2))
     useCursor(active)
     useFrame((state, delta) => {
@@ -44,7 +41,7 @@ function ModelLoader2 (props) {
     return (
         <mesh
             onClick={() => {
-                setActive(!zoom)
+                // setActive(!zoom)
                 props.updatedCameraDirection('about')
             }}
             onPointerOver={() => set(true)} 
@@ -59,6 +56,9 @@ function ModelLoader2 (props) {
             material={shinyMaterial}
             
         >
+            {/* <MeshWobbleMaterial factor={0.001} speed={1} /> */}
+            {/* distort={0.2} speed={4}  */}
+            {/* <MeshDistortMaterial distort={0.05} color={0x000000} /> */}
             {/* <meshStandardMaterial color={0x000000}/> */}
             {/* <meshStandardMaterial color={0xFFFFFF}/> */}
         </mesh>
