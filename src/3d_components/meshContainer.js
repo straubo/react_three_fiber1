@@ -28,32 +28,6 @@ function Caption({ children }) {
   }
 
 function MeshContainer(props) {
-    const [currentLook, setCurrentLook] = useState(new THREE.Vector3(0, 0, 0))
-    const [nextLook, setNextLook] = useState(new THREE.Vector3(0, 0, 0))
-    const [currentObj, setCurrentObj] = useState(null)
-    const { gl, size, camera } = useThree()
-    const [currentCameraPosition, setCurrentCameraPosition] = useState(new THREE.Vector3(0, 30, 0))
-
-    function updateCameraLook(a) {
-        if (a == currentObj) {
-            setNextLook(new THREE.Vector3(0, 0, 0))
-            setCurrentObj(null)
-            return
-        }
-        switch(a) {
-            case 'about':
-                // setNextLook(new THREE.Vector3(0, 60, 0))
-                break
-            case 'work':
-                // setNextLook(new THREE.Vector3(0, -25, 0))
-                break
-            case 'contact':
-                // setNextLook(new THREE.Vector3(-100, 0, 0))
-                break
-        }
-        setCurrentObj(a)
-    }
-
     // useFrame((state) => {
     //     state.camera.lookAt(currentLook)
     //     setCurrentLook(currentLook.lerp(nextLook, 0.09))
@@ -62,6 +36,12 @@ function MeshContainer(props) {
     //     // console.log(currentCameraPosition)
     // })
     return (<>
+    <color attach="background" args={
+        props.currentObject == null ? ['black'] : 
+        props.currentObject == 'about' ? ['pink'] : 
+        props.currentObject == 'work' ? ['white'] :
+        ['midnightblue']
+        } />
         {/* <Text3D font={fontUrl} {...textOptions}>
             Hello world!
             <meshNormalMaterial />

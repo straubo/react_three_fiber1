@@ -8,23 +8,14 @@ import LightingWrapper from '../three_js_components/lighting'
 import MeshContainer from './meshContainer';
 
 function CanvasContents(props) {
-    const [currentObj, setCurrentObj] = useState(null)
-    
-    // function setCurrentObject(input) {
-    //     if (currentObj == input) {
-    //         setCurrentObj(null)
-    //     } else {
-    //         setCurrentObj(input)
-    //     }
-    // }
     return (
         <Canvas camera={{ position: [0, 10, 80], fov: 55, near: 1, far: 20000 }}>
             <LightingWrapper />
-            <color attach="background" args={['black']} />
+            {/* <color attach="background" args={['black']} /> */}
             <Suspense fallback={null}>
                 {/* <PostProcessingWrapper /> */}
                 <Ocean />
-                {/* <OrbitControls makeDefault  /> */}
+                {/* <OrbitControls makeDefault /> */}
                 <MeshContainer 
                     currentObject={props.currentObj} 
                     selectObj={props.setCurrentObject}

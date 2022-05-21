@@ -41,11 +41,7 @@ function ModelLoader3 (props) {
             geometry={nodes.VR_simple.geometry} 
             rotation={[Math.PI / 2, 0, 0]} 
             material={shinyMaterial}
-            // position={[0, 0, -5]}
-        >
-            {/* <meshStandardMaterial color={0x000000}/> */}
-            {/* <meshStandardMaterial color={0xFFFFFF}/> */}
-        </mesh>
+        ></mesh>
     )
 }
 

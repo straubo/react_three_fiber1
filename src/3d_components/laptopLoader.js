@@ -1,7 +1,7 @@
 import * as THREE from 'three'
 import React, { Suspense, useEffect, useRef, useState } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
-import { Environment, useGLTF, ContactShadows } from '@react-three/drei'
+import { Environment, useGLTF, ContactShadows, Html } from '@react-three/drei'
 import { useSpring } from '@react-spring/core'
 import { a as three } from '@react-spring/three'
 import { a as web } from '@react-spring/web'
@@ -20,10 +20,14 @@ function Model({ open, hinge, ...props }) {
         // group.current.rotation.x = THREE.MathUtils.lerp(group.current.rotation.x, open ? Math.cos(t / 2) / 8 + 0.25 : 0, 0.1)
         // group.current.rotation.y = THREE.MathUtils.lerp(group.current.rotation.y, open ? Math.sin(t / 4) / 4 : 0, 0.1)
         // group.current.rotation.z = THREE.MathUtils.lerp(group.current.rotation.z, open ? Math.sin(t / 4) / 4 : 0, 0.1)
-
-        group.current.position.x = THREE.MathUtils.lerp(group.current.position.x, open ? 0 : -25, 0.05)
-        group.current.position.y = THREE.MathUtils.lerp(group.current.position.y, open ? 0 : 50, 0.02)
-        group.current.position.z = THREE.MathUtils.lerp(group.current.position.z, open ? 0 : -75, 0.04)
+        
+        // group.current.rotation.copy(state.camera.rotation)
+        
+        group.current.position.x = THREE.MathUtils.lerp(group.current.position.x, open ? 0 : -25, 0.007)
+        group.current.position.y = THREE.MathUtils.lerp(group.current.position.y, open ? 0 : 60, 0.007)
+        group.current.position.z = THREE.MathUtils.lerp(group.current.position.z, open ? 0 : -75, 0.014)
+        // group.current.position.y = THREE.MathUtils.lerp(group.current.position.y, open ? 0 : 4, 0.02)
+        // group.current.position.z = THREE.MathUtils.lerp(group.current.position.z, open ? -2 : -53, 0.04)
 
         group.current.rotation.x = THREE.MathUtils.lerp(group.current.rotation.x, open ? 0.2 : Math.PI/2, 0.06)
     })
@@ -43,6 +47,17 @@ function Model({ open, hinge, ...props }) {
                     <mesh material={materials['matte.001']} geometry={nodes['Cube008_1'].geometry} />
                     <mesh material={materials['screen.001']} geometry={nodes['Cube008_2'].geometry} />
                 </group>
+                {/* <Html 
+                    scale={1} 
+                    rotation={[0, 0, 0]} 
+                    position={[0, 5, 0]} 
+                    transform 
+                    occlude
+                >
+                    <div className="annotation">
+                        welcome to Casey Berman's web site <span style={{ fontSize: '4em' }}>🥲</span>
+                    </div>
+                </Html> */}
             </three.group>
             <mesh material={materials.keys} geometry={nodes.keyboard.geometry} position={[1.79, 0, 3.45]} />
             <group position={[0, -0.1, 3.39]}>
@@ -62,9 +77,16 @@ export default function LaptopLoader() {
     <group
         // rotation={[0, 0, 0]} 
         onClick={(e) => (e.stopPropagation(), setOpen(!open))}
-        position={[0, 7, 77]}
+        position={[0, 6.3, 77]}
     >
-        <Model open={open} hinge={props.open.to([0, 1], [1.575, -0.425])} />
+        <Model 
+            open={open} 
+            hinge={props.open.to([0, 1], [1.575, -0.25])}
+            // closeLaptop={() => {
+            //     console.log('hi')
+            //     setOpen(!open)
+            // }}
+        />
     </group>
   )
 }

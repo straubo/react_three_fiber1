@@ -9,8 +9,6 @@ function ModelLoader2 (props) {
     const ref = useRef()
     const modelString = '/' + props.modelName + '.glb'
     const {nodes, materials} = useGLTF(modelString)
-    // const meshExtension = props.meshExtension.toString()
-    // const meshName = nodes.meshExtension
     
     const shinyMaterial = new THREE.MeshPhysicalMaterial({
         color: new THREE.Color('#bb86a1').convertSRGBToLinear(),
@@ -25,12 +23,6 @@ function ModelLoader2 (props) {
     const endLook = new THREE.Vector3(0, 50, 0)
     let currentLook = new THREE.Vector3(0, 0, 0)
     // let targetQuaternion = new THREE.Quaternion(1, 0, 0, (Math.PI/2))
-
-    // function onStart(state) {
-    //     console.log('starting!')
-    //     state.camera.lookAt(currentLook.x, currentLook.y, currentLook.z)
-    // }
-
     useCursor(active)
     useFrame((state, delta) => {
         // second param: zoom ? 55 : 42
