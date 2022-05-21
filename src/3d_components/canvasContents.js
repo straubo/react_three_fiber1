@@ -23,7 +23,7 @@ function CanvasContents(props) {
             <color attach="background" args={['black']} />
             <Suspense fallback={null}>
                 {/* <PostProcessingWrapper /> */}
-                {/* <Ocean /> */}
+                <Ocean />
                 {/* <OrbitControls makeDefault  /> */}
                 <MeshContainer 
                     currentObject={props.currentObj} 
