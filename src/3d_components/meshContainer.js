@@ -7,6 +7,7 @@ import ModelLoader3 from './loader3'
 import Box2 from './origBox'
 import Menu3D from './menu3D'
 import { Text, Text3D } from '@react-three/drei'
+import LaptopLoader from './laptopLoader'
 
 function Caption({ children }) {
     const { width } = useThree((state) => state.viewport)
@@ -89,6 +90,7 @@ function MeshContainer(props) {
             // updatedCameraDirection={updateCameraLook}
             updatedCameraDirection={props.selectObj}
         />
+        <LaptopLoader />
         <Menu3D
             // activeItem={currentObj}
             activeItem={props.currentObject}
