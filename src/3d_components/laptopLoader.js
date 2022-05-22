@@ -45,9 +45,27 @@ function Model({ open, hinge, ...props }) {
                 <group position={[0, 2.96, -0.13]} rotation={[Math.PI / 2, 0, 0]}>
                     <mesh material={materials.aluminium} geometry={nodes['Cube008'].geometry} />
                     <mesh material={materials['matte.001']} geometry={nodes['Cube008_1'].geometry} />
-                    <mesh material={materials['screen.001']} geometry={nodes['Cube008_2'].geometry} />
+                    <mesh material={materials['screen.001']} geometry={nodes['Cube008_2'].geometry} >
+                    <Html 
+                        scale={1} 
+                        rotation-x={-Math.PI/2} 
+                        position={[0, 0.05, -0.09]}
+                        transform 
+                        occlude
+                        {...props}
+                    >
+                    <div className="annotation"
+                    onClick={function() {
+                        console.log('hi')
+                        props.laptopChange()
+
+                    }}>
+                        welcome to Casey Berman's web site <span style={{ fontSize: '4em' }}>🥲</span>
+                    </div>
+                </Html>
+                    </mesh>
                 </group>
-                <Html 
+                {/* <Html 
                     scale={1} 
                     rotation={[0, 0, 0]} 
                     position={[0, 5, 0]} 
@@ -57,7 +75,7 @@ function Model({ open, hinge, ...props }) {
                     <div className="annotation">
                         welcome to Casey Berman's web site <span style={{ fontSize: '4em' }}>🥲</span>
                     </div>
-                </Html>
+                </Html> */}
             </three.group>
             <mesh material={materials.keys} geometry={nodes.keyboard.geometry} position={[1.79, 0, 3.45]} />
             <group position={[0, -0.1, 3.39]}>
@@ -73,11 +91,19 @@ export default function LaptopLoader() {
   const [open, setOpen] = useState(true)
   // spring animation interpolates between 0 and 1
   const props = useSpring({ open: Number(open) })
+  const laptopChange = function() {
+    setOpen(!open)
+  }
   return (   
     <group
         // rotation={[0, 0, 0]} 
-        onClick={(e) => (e.stopPropagation(), setOpen(!open))}
+        // onClick={(e) => (e.stopPropagation(), setOpen(!open))}
+        onClick={(e) => {
+            e.stopPropagation()
+            laptopChange()
+        }}
         position={[0, 6.3, 77]}
+        laptopChange={laptopChange}
     >
         <Model 
             open={open} 

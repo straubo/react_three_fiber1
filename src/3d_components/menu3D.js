@@ -1,3 +1,5 @@
+import ModelLoader5 from "./loader5"
+import ModelLoader4 from "./loader4"
 import ModelLoader3 from "./loader3"
 import { useRef } from "react"
 import { useFrame } from "@react-three/fiber";
@@ -23,23 +25,24 @@ function Menu3D(props) {
         ref={ref}
         visible={props.activeItem != null}
             >
-            <ModelLoader3
-                scale={.2}
-                modelName={'headset'} 
-                modelExtension={'VR_simple'}
-                position={[0, 0, 0]}
+            <ModelLoader4
+                scale={0.006} 
+                modelName={'human'} 
+                meshExtension={'BaseMesh_Man_Simple'}
+                fullMeshExtension={'nodes.BaseMesh_Man_Simple.geometry'}
+                position={[0, -1, 0]}
             />
             <ModelLoader3
-                scale={.2}
-                modelName={'headset'} 
+                scale={0.2}
+                modelName={'headset'}
                 modelExtension={'VR_simple'}
-                position={[0, -2, 0]}
+                position={[0, -2.1, 0]}
             />
-            <ModelLoader3
-                scale={.2}
+            <ModelLoader5
+                scale={0.2}
                 modelName={'headset'} 
                 modelExtension={'VR_simple'}
-                position={[0, -4, 0]}
+                position={[0, -3.8, 0]}
             />
         </ mesh>
     )

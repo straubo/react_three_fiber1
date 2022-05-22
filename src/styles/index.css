@@ -77,10 +77,10 @@ code {
   border: none;
   font-size: 24px;
   font-weight: 300;
-  background: black;
-  color: #f0f0f0;
+  background: rgb(215, 215, 215);
+  color: #000000;
   padding: 2px 10px;
-  border-radius: 4px;
+  /* border-radius: 4px; */
   letter-spacing: 1px;
   display: flex;
   justify-content: center;
@@ -88,8 +88,7 @@ code {
   gap: 5px;
   width: 312px;
   height: 212px;
-  margin-top: 155px;
-  pointer-events: none;
+  /* pointer-events: none; */
 }
 
 @media only screen and (max-width: 600px) {

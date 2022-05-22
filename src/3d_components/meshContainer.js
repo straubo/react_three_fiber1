@@ -6,7 +6,7 @@ import ModelLoader2 from './loader2'
 import ModelLoader3 from './loader3'
 import Box2 from './origBox'
 import Menu3D from './menu3D'
-import { Text, Text3D } from '@react-three/drei'
+import { Text, Text3D, MeshDistortMaterial, PointMaterial } from '@react-three/drei'
 import LaptopLoader from './laptopLoader'
 
 function Caption({ children }) {
@@ -49,25 +49,22 @@ function MeshContainer(props) {
         <Caption>{`casey berman`}</Caption>
         {/* tried generifying as they're largely the 
             same... try again later */}
-        <ModelLoader 
+        {/* <ModelLoader 
             scale={5}
             modelName={'headset'} 
             modelExtension={'VR_simple'}
             position={[0, 7, 0]}
-            // updatedCameraDirection={updateCameraLook}
             updatedCameraDirection={props.selectObj}
-        />
+        /> */}
         <ModelLoader2 
             scale={0.1} 
             modelName={'human'} 
             meshExtension={'BaseMesh_Man_Simple'}
             fullMeshExtension={'nodes.BaseMesh_Man_Simple.geometry'}
             position={[-35, 0, 0]}
-            // updatedCameraDirection={updateCameraLook}
             updatedCameraDirection={props.selectObj}
         />
         <Box2 
-            // updatedCameraDirection={updateCameraLook}
             updatedCameraDirection={props.selectObj}
         />
         <LaptopLoader />
@@ -75,6 +72,19 @@ function MeshContainer(props) {
             // activeItem={currentObj}
             activeItem={props.currentObject}
         />
+        {/* <mesh
+            position={[0, 0, 0]}
+        >
+            <sphereBufferGeometry  
+            args={[1, 64, 64]} 
+            >
+            </sphereBufferGeometry>
+            <MeshDistortMaterial 
+                color={0x000000}
+                distort={0.7}
+                speed={1.4}
+                />
+        </mesh> */}
     </>)
 }
 

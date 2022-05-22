@@ -15,12 +15,13 @@ function CanvasContents(props) {
             <Suspense fallback={null}>
                 {/* <PostProcessingWrapper />    */}
                 <Ocean />
-                {/* <OrbitControls makeDefault /> */}
+                <OrbitControls makeDefault />
                 <MeshContainer 
                     currentObject={props.currentObj} 
                     selectObj={props.setCurrentObject}
                 />
-                <CameraShake yawFrequency={0.2} pitchFrequency={0.2} rollFrequency={0.2} intensity={0.5}/>
+                {/* <CameraShake yawFrequency={0.2} pitchFrequency={0.2} rollFrequency={0.2} intensity={0.5}/> */}
+                <CameraShake yawFrequency={0} pitchFrequency={0} rollFrequency={0} intensity={0}/>
                 <Environment preset="night" />
             </Suspense>
             
