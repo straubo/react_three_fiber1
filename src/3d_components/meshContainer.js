@@ -6,8 +6,10 @@ import ModelLoader2 from './loader2'
 import ModelLoader3 from './loader3'
 import Box2 from './origBox'
 import Menu3D from './menu3D'
-import { Text, Text3D, MeshDistortMaterial, PointMaterial, Environment, CameraShake } from '@react-three/drei'
+import { Text, MeshDistortMaterial, Environment, CameraShake } from '@react-three/drei'
 import LaptopLoader from './laptopLoader'
+import { a } from '@react-spring/three'
+import { useSpring } from 'react-spring'
 
 function Caption({ children }) {
     const { width } = useThree((state) => state.viewport)
@@ -36,17 +38,29 @@ function MeshContainer(props) {
     //     // console.log(currentCameraPosition)
     // })
     // const fontUrl = './3dfont.json'
+
+    // const color = useSpring(
+    //     color = props.currentObject == null ? ['black'] : 
+    //         props.currentObject == 'about' ? ['pink'] : 
+    //         props.currentObject == 'work' ? ['whitesmoke'] :
+    //         ['wheat']
+    // )
+    const assignColor = useSpring({
+        to: 'blue',
+        from: 'red',
+        reset: true,
+        // reverse: flip,
+        delay: 200
+    })
     return (<>
-    <color attach="background" args={
-        props.currentObject == null ? ['black'] : 
-        props.currentObject == 'about' ? ['pink'] : 
-        props.currentObject == 'work' ? ['whitesmoke'] :
-        ['wheat']} 
-    />
-        {/* <Text3D font={fontUrl} {...textOptions}>
-            Hello world!
-            <meshNormalMaterial />
-        </Text3D> */}
+            {/* <a.color attach="background" args={[
+                props.currentObject == null ? 'black' : 
+                props.currentObject == 'about' ? 'pink' : 
+                props.currentObject == 'work' ? 'whitesmoke' :
+                'wheat'
+            ]}/> */}
+        
+        <a.color attach="background" args={[assignColor]}></a.color>
 
         <Caption>{`casey berman`}</Caption>
         {/* <ModelLoader 
@@ -88,6 +102,17 @@ function MeshContainer(props) {
                 speed={1.4}
                 />
         </mesh> */}
+        <a.mesh>
+        <sphereBufferGeometry  
+            args={[2, 64, 64]} 
+            >
+            </sphereBufferGeometry>
+            <MeshDistortMaterial 
+                color={0x000000}
+                distort={0.7}
+                speed={1.4}
+                />
+        </a.mesh>
     </>)
 }
 
