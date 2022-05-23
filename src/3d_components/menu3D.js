@@ -2,7 +2,7 @@ import ModelLoader5 from "./loader5"
 import ModelLoader4 from "./loader4"
 import ModelLoader3 from "./loader3"
 import { useRef } from "react"
-import { useFrame } from "@react-three/fiber";
+import { useFrame } from "@react-three/fiber"
 
 function Menu3D(props) {
     const ref = useRef()
@@ -10,16 +10,13 @@ function Menu3D(props) {
         // Move mesh to be flush with camera
         ref.current.position.copy(camera.position)
         ref.current.quaternion.copy(camera.quaternion)
-        // ref.current.rotation.x += 0.9
-    
-        // Apply offset
-        // going to have to make this responsive
+        // Apply offset - going to have to make this responsive
         ref.current.translateZ(-5)
-        // ref.current.translateX(-2) // 1 on mobile
-        ref.current.translateX(-4.4) // full screen pc
+        ref.current.translateX(-4.4) // full screen pc, 1 on mobile
         ref.current.translateY(2)
     })
-    
+    // apparently theres a drei thing for this called Billboard.. 
+    // maybe refactor to use that later
     return (
         <mesh
         ref={ref}

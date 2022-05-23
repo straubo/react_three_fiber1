@@ -11,7 +11,6 @@ function CanvasContents(props) {
     return (
         <Canvas camera={{ position: [0, 10, 80], fov: 55, near: 1, far: 20000 }}>
             <LightingWrapper />
-            {/* <color attach="background" args={['black']} /> */}
             <Suspense fallback={null}>
                 {/* <PostProcessingWrapper />    */}
                 <Ocean />
@@ -21,8 +20,8 @@ function CanvasContents(props) {
                     selectObj={props.setCurrentObject}
                 />
                 {/* <CameraShake yawFrequency={0.2} pitchFrequency={0.2} rollFrequency={0.2} intensity={0.5}/> */}
-                <CameraShake yawFrequency={0} pitchFrequency={0} rollFrequency={0} intensity={0}/>
-                <Environment preset="night" />
+                {/* <CameraShake yawFrequency={0} pitchFrequency={0} rollFrequency={0} intensity={0}/>
+                <Environment preset="night" /> */}
             </Suspense>
             
         </Canvas>

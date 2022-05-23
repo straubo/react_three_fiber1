@@ -6,7 +6,7 @@ import ModelLoader2 from './loader2'
 import ModelLoader3 from './loader3'
 import Box2 from './origBox'
 import Menu3D from './menu3D'
-import { Text, Text3D, MeshDistortMaterial, PointMaterial } from '@react-three/drei'
+import { Text, Text3D, MeshDistortMaterial, PointMaterial, Environment, CameraShake } from '@react-three/drei'
 import LaptopLoader from './laptopLoader'
 
 function Caption({ children }) {
@@ -35,6 +35,7 @@ function MeshContainer(props) {
     //     // console.log(state.camera.position)
     //     // console.log(currentCameraPosition)
     // })
+    // const fontUrl = './3dfont.json'
     return (<>
     <color attach="background" args={
         props.currentObject == null ? ['black'] : 
@@ -46,9 +47,8 @@ function MeshContainer(props) {
             Hello world!
             <meshNormalMaterial />
         </Text3D> */}
+
         <Caption>{`casey berman`}</Caption>
-        {/* tried generifying as they're largely the 
-            same... try again later */}
         {/* <ModelLoader 
             scale={5}
             modelName={'headset'} 
@@ -72,6 +72,9 @@ function MeshContainer(props) {
             // activeItem={currentObj}
             activeItem={props.currentObject}
         />
+        <CameraShake yawFrequency={0} pitchFrequency={0} rollFrequency={0} intensity={0}/>
+        <Environment preset="night" />
+        {/* undulating sphere, only useful at radius=1 */}
         {/* <mesh
             position={[0, 0, 0]}
         >

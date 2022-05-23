@@ -5,6 +5,8 @@ import { Environment, useGLTF, ContactShadows, Html } from '@react-three/drei'
 import { useSpring } from '@react-spring/core'
 import { a as three } from '@react-spring/three'
 import { a as web } from '@react-spring/web'
+import { MeshStandardMaterial } from 'three'
+import LaptopScreen from '../2d_components/laptopScreen'
 
 const vec = new THREE.Vector3()
 
@@ -46,36 +48,34 @@ function Model({ open, hinge, ...props }) {
                     <mesh material={materials.aluminium} geometry={nodes['Cube008'].geometry} />
                     <mesh material={materials['matte.001']} geometry={nodes['Cube008_1'].geometry} />
                     <mesh material={materials['screen.001']} geometry={nodes['Cube008_2'].geometry} >
-                    <Html 
-                        scale={1} 
-                        rotation-x={-Math.PI/2} 
-                        position={[0, 0.05, -0.09]}
-                        transform 
-                        occlude
-                        {...props}
-                    >
-                    <div className="annotation"
-                    onClick={function() {
-                        console.log('hi')
-                        props.laptopChange()
+                        <Html 
+                            scale={1} 
+                            rotation-x={-Math.PI/2} 
+                            position={[0, 0.05, -0.09]}
+                            transform 
+                            occlude
+                            {...props}
+                        >
+                            {/* <div className="annotation"
+                            onClick={function() {
+                                console.log('hi')
+                                // props.laptopChange()
+                                console.log(props)
 
-                    }}>
-                        welcome to Casey Berman's web site <span style={{ fontSize: '4em' }}>🥲</span>
-                    </div>
-                </Html>
+                            }}>
+                                welcome to Casey Berman's web site <span style={{ fontSize: '4em' }}>🥲</span>
+                            </div> */}
+                            <LaptopScreen 
+                            laptopChange={props.everywhere}
+                            />
+                        </Html>
+                        <planeGeometry
+                            rotation={[Math.PI/2, 0, 0]}
+                        >
+                            <meshStandardMaterial color={'white'} />
+                        </planeGeometry>
                     </mesh>
                 </group>
-                {/* <Html 
-                    scale={1} 
-                    rotation={[0, 0, 0]} 
-                    position={[0, 5, 0]} 
-                    transform 
-                    occlude
-                >
-                    <div className="annotation">
-                        welcome to Casey Berman's web site <span style={{ fontSize: '4em' }}>🥲</span>
-                    </div>
-                </Html> */}
             </three.group>
             <mesh material={materials.keys} geometry={nodes.keyboard.geometry} position={[1.79, 0, 3.45]} />
             <group position={[0, -0.1, 3.39]}>
