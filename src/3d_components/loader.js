@@ -9,6 +9,7 @@ function ModelLoader (props) {
     const ref = useRef()
     const modelString = '/' + props.modelName + '.glb'
     const {nodes, materials} = useGLTF(modelString)
+
     const [active, setActive] = useState(false)
     const [zoom, set] = useState(false)
 
@@ -38,13 +39,13 @@ function ModelLoader (props) {
             {...props}
             onClick={() => {
                 set(!zoom)
-                props.updatedCameraDirection('work')
+                props.updatedCameraDirection(props.section)
             }} 
             onPointerOver={() => setActive(true)} 
             onPointerOut={() => setActive(false)}
             receiveShadow
             castShadow
-            geometry={nodes.VR_simple.geometry} 
+            geometry={nodes[props.modelExtension].geometry} 
             rotation={[Math.PI / 2, 0, 0]} 
             material={shinyMaterial}
         >

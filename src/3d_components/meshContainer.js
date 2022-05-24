@@ -84,14 +84,15 @@ function MeshContainer(props) {
             modelExtension={'VR_simple'}
             position={[0, 7, 0]}
             updatedCameraDirection={props.selectObj}
+            section={'work'}
         />
-        <ModelLoader2 
+        <ModelLoader 
             scale={0.1} 
             modelName={'human'} 
-            meshExtension={'BaseMesh_Man_Simple'}
-            fullMeshExtension={'nodes.BaseMesh_Man_Simple.geometry'}
+            modelExtension={'BaseMesh_Man_Simple'}
             position={[-35, 0, 0]}
             updatedCameraDirection={props.selectObj}
+            section={'about'}
         />
         <Box2 
             updatedCameraDirection={props.selectObj}

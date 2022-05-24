@@ -48,7 +48,8 @@ function ModelLoader2 (props) {
             receiveShadow
             castShadow
             ref={ref} 
-            geometry={nodes.BaseMesh_Man_Simple.geometry} 
+            // geometry={nodes.BaseMesh_Man_Simple.geometry} 
+            geometry={nodes[props.modelExtension].geometry}
             rotation={[Math.PI / 2, 0, 0]} 
             {...props}
             // material={shinyMaterial}
@@ -56,7 +57,7 @@ function ModelLoader2 (props) {
         >
             {/* <MeshWobbleMaterial factor={0.001} speed={1} /> */}
             {/* distort={0.2} speed={4}  */}
-            <MeshDistortMaterial distort={0.1} speed={.5} color={0x000000} />
+            <MeshDistortMaterial distort={0.05} speed={5} color={0x000000} />
             {/* <meshStandardMaterial color={0x000000}/> */}
             {/* <meshStandardMaterial color={0xFFFFFF}/> */}
         </mesh>
