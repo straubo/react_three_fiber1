@@ -8,8 +8,9 @@ import Box2 from './origBox'
 import Menu3D from './menu3D'
 import { Text, MeshDistortMaterial, Environment, CameraShake } from '@react-three/drei'
 import LaptopLoader from './laptopLoader'
-import { a } from '@react-spring/three'
-import { useSpring } from 'react-spring'
+import { a as three, useSpring } from '@react-spring/three'
+// import { a as web } from '@react-spring/web'
+// import { useSpring } from 'react-spring'
 
 function Caption({ children }) {
     const { width } = useThree((state) => state.viewport)
@@ -27,7 +28,8 @@ function Caption({ children }) {
         {children}
       </Text>
     )
-  }
+}
+  
 
 function MeshContainer(props) {
     // useFrame((state) => {
@@ -45,13 +47,26 @@ function MeshContainer(props) {
     //         props.currentObject == 'work' ? ['whitesmoke'] :
     //         ['wheat']
     // )
-    const assignColor = useSpring({
+    const [flip, set] = useState(false)
+    const { assignColor } = useSpring({
         to: 'blue',
         from: 'red',
         reset: true,
-        // reverse: flip,
-        delay: 200
+        reverse: flip,
+        delay: 200,
+        onRest: () => set(!flip),
     })
+
+    // other try
+    const [active, setActive] = useState(0)
+
+    const { spring } = useSpring({
+        spring: active,
+        config: { mass: 5, tension: 400, friction: 50, precision: 0.0001 }
+    })
+
+    const color = spring.to([0, 1], ['#6246ea', '#e45858'])
+
     return (<>
             {/* <a.color attach="background" args={[
                 props.currentObject == null ? 'black' : 
@@ -60,16 +75,16 @@ function MeshContainer(props) {
                 'wheat'
             ]}/> */}
         
-        <a.color attach="background" args={[assignColor]}></a.color>
+        <three.color attach="background" args={[color]}></three.color>
 
         <Caption>{`casey berman`}</Caption>
-        {/* <ModelLoader 
+        <ModelLoader 
             scale={5}
             modelName={'headset'} 
             modelExtension={'VR_simple'}
             position={[0, 7, 0]}
             updatedCameraDirection={props.selectObj}
-        /> */}
+        />
         <ModelLoader2 
             scale={0.1} 
             modelName={'human'} 
@@ -88,21 +103,9 @@ function MeshContainer(props) {
         />
         <CameraShake yawFrequency={0} pitchFrequency={0} rollFrequency={0} intensity={0}/>
         <Environment preset="night" />
-        {/* undulating sphere, only useful at radius=1 */}
-        {/* <mesh
-            position={[0, 0, 0]}
-        >
-            <sphereBufferGeometry  
-            args={[1, 64, 64]} 
-            >
-            </sphereBufferGeometry>
-            <MeshDistortMaterial 
-                color={0x000000}
-                distort={0.7}
-                speed={1.4}
-                />
-        </mesh> */}
-        <a.mesh>
+
+        {/* undulating sphere, only useful at radius~1 */}
+        {/* <a.mesh>
         <sphereBufferGeometry  
             args={[2, 64, 64]} 
             >
@@ -112,7 +115,8 @@ function MeshContainer(props) {
                 distort={0.7}
                 speed={1.4}
                 />
-        </a.mesh>
+        </a.mesh> */}
+
     </>)
 }
 

@@ -5,7 +5,6 @@ import { Environment, useGLTF, ContactShadows, Html } from '@react-three/drei'
 import { useSpring } from '@react-spring/core'
 import { a as three } from '@react-spring/three'
 import { a as web } from '@react-spring/web'
-import { MeshStandardMaterial } from 'three'
 import LaptopScreen from '../2d_components/laptopScreen'
 
 const vec = new THREE.Vector3()
@@ -66,14 +65,13 @@ function Model({ open, hinge, ...props }) {
                                 welcome to Casey Berman's web site <span style={{ fontSize: '4em' }}>🥲</span>
                             </div> */}
                             <LaptopScreen 
-                            laptopChange={props.everywhere}
+                            // laptopChange={props.laptopChange}
+                            everything = {function() {
+                                // props.laptopChange
+                                console.log(props)}
+                            }
                             />
                         </Html>
-                        <planeGeometry
-                            rotation={[Math.PI/2, 0, 0]}
-                        >
-                            <meshStandardMaterial color={'white'} />
-                        </planeGeometry>
                     </mesh>
                 </group>
             </three.group>
