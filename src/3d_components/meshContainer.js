@@ -48,23 +48,23 @@ function MeshContainer(props) {
     //         props.currentObject == 'work' ? ['whitesmoke'] :
     //         ['wheat']
     // )
-    const [flip, set] = useState(false)
-    const { assignColor } = useSpring({
-        to: 'blue',
-        from: 'red',
-        reset: true,
-        reverse: flip,
-        delay: 200,
-        onRest: () => set(!flip),
-    })
+    // const [flip, set] = useState(false)
+    // const { assignColor } = useSpring({
+    //     to: 'blue',
+    //     from: 'red',
+    //     reset: true,
+    //     reverse: flip,
+    //     delay: 200,
+    //     onRest: () => set(!flip),
+    // })
 
     // other try
-    const [active, setActive] = useState(0)
+    // const [active, setActive] = useState(0)
 
-    const { spring } = useSpring({
-        spring: active,
-        config: { mass: 5, tension: 400, friction: 50, precision: 0.0001 }
-    })
+    // const { spring } = useSpring({
+    //     spring: active,
+    //     config: { mass: 5, tension: 400, friction: 50, precision: 0.0001 }
+    // })
 
     // const color = spring.to([0, 1], ['#6246ea', '#e45858'])
 
@@ -99,7 +99,7 @@ function MeshContainer(props) {
             updatedCameraDirection={props.selectObj}
         />
         <LaptopLoader />
-        {/* <MyRotatingBox /> */}
+        <MyRotatingBox />
         
 
         <Menu3D
