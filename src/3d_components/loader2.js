@@ -21,7 +21,7 @@ function ModelLoader2 (props) {
     // const [zoom, setActive] = useState(false)
     // let targetQuaternion = new THREE.Quaternion(1, 0, 0, (Math.PI/2))
     useCursor(active)
-    useFrame((state, delta) => {
+    // useFrame((state, delta) => {
         // second param: zoom ? 55 : 42
         // state.camera.fov = THREE.MathUtils.lerp(state.camera.fov, 42, 0.05)
         // if (zoom) {
@@ -35,7 +35,7 @@ function ModelLoader2 (props) {
         // quaternion.slerp(targetQuaternion, t)
         
         // ref.current.rotation.z = ref.current.rotation.z += delta * 1.5
-    })
+    // })
 
     return (
         <mesh

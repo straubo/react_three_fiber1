@@ -7,7 +7,8 @@ import { useGLTF, useCursor } from "@react-three/drei";
 function ModelLoader (props) {   
     const v = new THREE.Vector3()
     const ref = useRef()
-    const {nodes, materials} = useGLTF('/headset.glb')
+    const modelString = '/' + props.modelName + '.glb'
+    const {nodes, materials} = useGLTF(modelString)
     const [active, setActive] = useState(false)
     const [zoom, set] = useState(false)
 
