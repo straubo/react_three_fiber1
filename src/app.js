@@ -1,5 +1,5 @@
 import { useState } from "react"
-import CanvasContents from "./3d_components/canvasContents"
+import CanvasContainer from "./3d_components/canvasContainer"
 import UIWrapper from "./2d_components/uiWrapper"
 import './styles/index.css'
 
@@ -19,7 +19,7 @@ function App() {
             <UIWrapper 
                 currentObj={currentObj}
             />
-            <CanvasContents 
+            <CanvasContainer 
                 currentObj={currentObj}
                 setCurrentObject={setCurrentObject}
             />

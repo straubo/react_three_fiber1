@@ -1,16 +1,17 @@
 import * as THREE from 'three'
 import React, {useRef, Suspense, useState, useMemo} from 'react';
 import { Canvas, extend, useFrame, useThree, useLoader } from '@react-three/fiber'
-import ModelLoader from './loader'
-import ModelLoader2 from './loader2'
-import ModelLoader3 from './loader3'
-import Box2 from './origBox'
-import Menu3D from './menu3D'
 import { Text, MeshDistortMaterial, Environment, CameraShake } from '@react-three/drei'
-import LaptopLoader from './laptopLoader'
 import { a as three, useSpring } from '@react-spring/three'
 // import { a as web } from '@react-spring/web'
 // import { useSpring } from 'react-spring'
+
+import ModelLoader from './loader'
+import ModelLoader3 from './loader3'
+import Box2 from './origBox'
+import LaptopLoader from './laptopLoader'
+import Menu3D from './menu3D'
+import MyRotatingBox from './box_again'
 
 function Caption({ children }) {
     const { width } = useThree((state) => state.viewport)
@@ -65,17 +66,17 @@ function MeshContainer(props) {
         config: { mass: 5, tension: 400, friction: 50, precision: 0.0001 }
     })
 
-    const color = spring.to([0, 1], ['#6246ea', '#e45858'])
+    // const color = spring.to([0, 1], ['#6246ea', '#e45858'])
 
     return (<>
-            {/* <a.color attach="background" args={[
+            <color attach="background" args={[
                 props.currentObject == null ? 'black' : 
                 props.currentObject == 'about' ? 'pink' : 
                 props.currentObject == 'work' ? 'whitesmoke' :
                 'wheat'
-            ]}/> */}
+            ]}/>
         
-        <three.color attach="background" args={[color]}></three.color>
+        {/* <three.color attach="background" args={[color]}></three.color> */}
 
         <Caption>{`casey berman`}</Caption>
         <ModelLoader 
@@ -98,6 +99,9 @@ function MeshContainer(props) {
             updatedCameraDirection={props.selectObj}
         />
         <LaptopLoader />
+        {/* <MyRotatingBox /> */}
+        
+
         <Menu3D
             // activeItem={currentObj}
             activeItem={props.currentObject}
