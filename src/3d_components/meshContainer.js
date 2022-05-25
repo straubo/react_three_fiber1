@@ -7,11 +7,10 @@ import { a as three, useSpring } from '@react-spring/three'
 // import { useSpring } from 'react-spring'
 
 import ModelLoader from './loader'
-import ModelLoader3 from './loader3'
 import Box2 from './origBox'
 import LaptopLoader from './laptopLoader'
 import Menu3D from './menu3D'
-import MyRotatingBox from './box_again'
+import Skybox from './box_again'
 
 function Caption({ children }) {
     const { width } = useThree((state) => state.viewport)
@@ -33,63 +32,7 @@ function Caption({ children }) {
   
 
 function MeshContainer(props) {
-    // useFrame((state) => {
-    //     state.camera.lookAt(currentLook)
-    //     setCurrentLook(currentLook.lerp(nextLook, 0.09))
-    //     // setCurrentCameraPosition(new THREE.Vector3([state.camera.position.x, state.camera.position.y, state.camera.position.z ]))
-    //     // console.log(state.camera.position)
-    //     // console.log(currentCameraPosition)
-    // })
-    // const fontUrl = './3dfont.json'
-
-    // const color = useSpring(
-    //     color = props.currentObject == null ? ['black'] : 
-    //         props.currentObject == 'about' ? ['pink'] : 
-    //         props.currentObject == 'work' ? ['whitesmoke'] :
-    //         ['wheat']
-    // )
-    // const [flip, set] = useState(false)
-    // const { assignColor } = useSpring({
-    //     to: 'blue',
-    //     from: 'red',
-    //     reset: true,
-    //     reverse: flip,
-    //     delay: 200,
-    //     onRest: () => set(!flip),
-    // })
-
-    // other try
-    // const [active, setActive] = useState(0)
-
-    // const { spring } = useSpring({
-    //     spring: active,
-    //     config: { mass: 5, tension: 400, friction: 50, precision: 0.0001 }
-    // })
-
-    // const color = spring.to([0, 1], ['#6246ea', '#e45858'])
-    // const colorRef = useRef()
-    // const [color, setColor] = useState('black')
-    // const [active, setActive] = useState(false)
-    
-    // const { color } = useSpring({
-    //     color: active ? ['white'] : ['black'],
-    //     // config: config.wobbly
-    // })
-    // you couldnt quite get this to work
-    // the other one is on again!
     return (<>
-            {/* <color attach="background" args={[
-                props.currentObject == null ? 'black' : 
-                props.currentObject == 'about' ? 'pink' : 
-                props.currentObject == 'work' ? 'whitesmoke' :
-                'wheat'
-            ]}/> */}
-        
-        {/* <three.color 
-            ref={colorRef}
-            attach="background" 
-            args={color} 
-        /> */}
         <Caption>{`casey berman`}</Caption>
         <ModelLoader 
             scale={5}
@@ -111,7 +54,7 @@ function MeshContainer(props) {
             updatedCameraDirection={props.selectObj}
         />
         <LaptopLoader />
-        <MyRotatingBox 
+        <Skybox 
             activeItem={props.currentObject}
         />
         

@@ -1,10 +1,9 @@
 import * as THREE from 'three'
-import React, { useState } from "react";
-import { useFrame } from "@react-three/fiber";
+import React from "react";
 import { useSpring, animated, config } from "@react-spring/three"
 
-function MyRotatingBox(props) {
-    const myMesh = React.useRef()
+function Skybox(props) {
+    // const myMesh = React.useRef()
     const matRef = React.useRef()
     // const [active, setActive] = useState(false)
 
@@ -15,27 +14,16 @@ function MyRotatingBox(props) {
 
     const { color } = useSpring({
         color: props.activeItem == null ? 'black' : 
-        props.activeItem == 'about' ? 'midnightblue' : 
-        props.activeItem == 'work' ? 'whitesmoke' :
-        'wheat'
+        props.activeItem == 'about' ? 'pink' : 
+        props.activeItem == 'work' ? '#252D36' :
+        'wheat',
         // active ? 'white' : 'black',
         // config: config.wobbly
     })
     console.log(props.activeItem)
 
-
-//   useFrame(({ clock }) => {
-//     const a = clock.getElapsedTime();
-//     myMesh.current.rotation.x = a;
-//   });
-
     return (
         <>
-            {/* <animated.color 
-                attach="background" 
-                args={color}
-            >
-            </animated.color> */}
 
             <animated.mesh
                 position={[0, 25, 0]}
@@ -44,13 +32,12 @@ function MyRotatingBox(props) {
                 // onClick={() => {
                 //     setActive(!active)
                 // }}
-                ref={myMesh}
+                // ref={myMesh}
             >
             <boxBufferGeometry />
             <animated.meshPhongMaterial 
                 ref={matRef}
-                color={color} 
-                // color={'green'}
+                color={color}
                 attach="material"
                 side={THREE.BackSide}
             />
@@ -59,4 +46,4 @@ function MyRotatingBox(props) {
     );
 }
 
-export default MyRotatingBox
+export default Skybox
