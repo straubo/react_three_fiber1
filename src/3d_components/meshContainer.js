@@ -10,7 +10,7 @@ import ModelLoader from './loader'
 import Box2 from './origBox'
 import LaptopLoader from './laptopLoader'
 import Menu3D from './menu3D'
-import Skybox from './box_again'
+import Skybox from './skybox'
 
 function Caption({ children }) {
     const { width } = useThree((state) => state.viewport)

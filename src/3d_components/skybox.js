@@ -17,10 +17,7 @@ function Skybox(props) {
         props.activeItem == 'about' ? 'pink' : 
         props.activeItem == 'work' ? '#252D36' :
         'wheat',
-        // active ? 'white' : 'black',
-        // config: config.wobbly
     })
-    console.log(props.activeItem)
 
     return (
         <>
