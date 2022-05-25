@@ -1,7 +1,7 @@
 import { useState } from "react"
 import CanvasContainer from "./3d_components/canvasContainer"
 import UIWrapper from "./2d_components/uiWrapper"
-import './styles/index.css'
+// import './styles/index.css'
 
 function App() {
     const [currentObj, setCurrentObj] = useState(null)
