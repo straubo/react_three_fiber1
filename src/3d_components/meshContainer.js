@@ -90,7 +90,6 @@ function MeshContainer(props) {
             attach="background" 
             args={color} 
         /> */}
-
         <Caption>{`casey berman`}</Caption>
         <ModelLoader 
             scale={5}
@@ -112,7 +111,9 @@ function MeshContainer(props) {
             updatedCameraDirection={props.selectObj}
         />
         <LaptopLoader />
-        <MyRotatingBox />
+        <MyRotatingBox 
+            activeItem={props.currentObject}
+        />
         
 
         <Menu3D
