@@ -67,16 +67,29 @@ function MeshContainer(props) {
     // })
 
     // const color = spring.to([0, 1], ['#6246ea', '#e45858'])
-
+    // const colorRef = useRef()
+    // const [color, setColor] = useState('black')
+    // const [active, setActive] = useState(false)
+    
+    // const { color } = useSpring({
+    //     color: active ? ['white'] : ['black'],
+    //     // config: config.wobbly
+    // })
+    // you couldnt quite get this to work
+    // the other one is on again!
     return (<>
-            <color attach="background" args={[
+            {/* <color attach="background" args={[
                 props.currentObject == null ? 'black' : 
                 props.currentObject == 'about' ? 'pink' : 
                 props.currentObject == 'work' ? 'whitesmoke' :
                 'wheat'
-            ]}/>
+            ]}/> */}
         
-        {/* <three.color attach="background" args={[color]}></three.color> */}
+        {/* <three.color 
+            ref={colorRef}
+            attach="background" 
+            args={color} 
+        /> */}
 
         <Caption>{`casey berman`}</Caption>
         <ModelLoader 
