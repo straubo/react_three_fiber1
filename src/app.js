@@ -6,7 +6,7 @@ import './styles/index.css'
 function App() {
     const [currentObj, setCurrentObj] = useState(null)
     
-    function setCurrentObject(input) {
+    function selectObj(input) {
         if (currentObj == input) {
             setCurrentObj(null)
         } else {
@@ -21,7 +21,7 @@ function App() {
             />
             <CanvasContainer 
                 currentObj={currentObj}
-                setCurrentObject={setCurrentObject}
+                selectObj={selectObj}
             />
         </>
     )

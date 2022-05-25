@@ -17,11 +17,8 @@ function CanvasContainer(props) {
                 <OrbitControls makeDefault />
                 <MeshContainer 
                     currentObject={props.currentObj} 
-                    selectObj={props.setCurrentObject}
+                    selectObj={props.selectObj}
                 />
-                {/* <CameraShake yawFrequency={0.2} pitchFrequency={0.2} rollFrequency={0.2} intensity={0.5}/> */}
-                {/* <CameraShake yawFrequency={0} pitchFrequency={0} rollFrequency={0} intensity={0}/>
-                <Environment preset="night" /> */}
                 <Stars radius={1400} depth={50} count={5000} factor={4} saturation={0} fade speed={1} />
             </Suspense>
             

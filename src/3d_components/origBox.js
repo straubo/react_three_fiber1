@@ -28,7 +28,7 @@ function Box2(props) {
             {...props}
             onClick={(event) => {
                 setActive(!active)
-                props.updatedCameraDirection('contact')
+                props.selectObj('contact')
             }}
         >
         {/* <icosahedronGeometry /> */}

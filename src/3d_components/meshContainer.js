@@ -39,7 +39,7 @@ function MeshContainer(props) {
             modelName={'headset'} 
             modelExtension={'VR_simple'}
             position={[0, 7, 0]}
-            updatedCameraDirection={props.selectObj}
+            selectObj={props.selectObj}
             section={'work'}
         />
         <ModelLoader 
@@ -47,11 +47,11 @@ function MeshContainer(props) {
             modelName={'human'} 
             modelExtension={'BaseMesh_Man_Simple'}
             position={[-35, 0, 0]}
-            updatedCameraDirection={props.selectObj}
+            selectObj={props.selectObj}
             section={'about'}
         />
         <Box2 
-            updatedCameraDirection={props.selectObj}
+            selectObj={props.selectObj}
         />
         <LaptopLoader />
         <Skybox 
@@ -60,7 +60,6 @@ function MeshContainer(props) {
         
 
         <Menu3D
-            // activeItem={currentObj}
             activeItem={props.currentObject}
         />
         <CameraShake yawFrequency={0} pitchFrequency={0} rollFrequency={0} intensity={0}/>
