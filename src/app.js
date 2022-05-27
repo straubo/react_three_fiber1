@@ -4,7 +4,8 @@ import UIWrapper from "./2d_components/uiWrapper"
 // import './styles/index.css'
 
 function App() {
-    const [currentObj, setCurrentObj] = useState(null)
+    // null
+    const [currentObj, setCurrentObj] = useState('work')
     
     function selectObj(input) {
         if (currentObj == input) {

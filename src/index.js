@@ -2,7 +2,7 @@ import React, {useRef, Suspense, useMemo} from 'react'
 import ReactDOM from 'react-dom'
 import reportWebVitals from './reportWebVitals'
 import './styles/index.css'
-import App from './app'
+import App from './App'
 
 ReactDOM.render(
 	<React.StrictMode>

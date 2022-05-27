@@ -9,7 +9,11 @@ import MeshContainer from './meshContainer'
 
 function CanvasContainer(props) {
     return (
-        <Canvas camera={{ position: [0, 10, 80], fov: 55, near: 1, far: 20000 }}>
+        <Canvas 
+            shadows
+            camera={{ position: [0, 10, 80], fov: 55, near: 1, far: 20000 }}
+            raycaster={{ computeOffsets: ({ clientX, clientY }) => ({ offsetX: clientX, offsetY: clientY }) }}
+        >
             <LightingWrapper />
             <Suspense fallback={null}>
                 {/* <PostProcessingWrapper />    */}
