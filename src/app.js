@@ -16,12 +16,12 @@ function App() {
 
     return (
         <>
-            <UIWrapper 
-                currentObj={currentObj}
-            />
             <CanvasContainer 
                 currentObj={currentObj}
                 selectObj={selectObj}
+            />
+            <UIWrapper 
+                currentObj={currentObj}
             />
         </>
     )
