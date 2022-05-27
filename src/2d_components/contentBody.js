@@ -33,9 +33,9 @@ import Contact from "./contact"
 
 
 function ContentBody(props) {
-    const overlay = useRef()
-    const caption = useRef()
-    const scroll = useRef(0)
+    // const overlay = useRef()
+    // const caption = useRef()
+    // const scroll = useRef(0)
     return (
         <div 
             className='siteBody'
@@ -52,9 +52,9 @@ function ContentBody(props) {
                 style={props.currentObj == 'work' ? {display: 'block'} : {display: 'none'}}
             >
                 <Work 
-                    ref={overlay} 
-                    caption={caption} 
-                    scroll={scroll}
+                    ref={props.overlay} 
+                    caption={props.caption} 
+                    scroll={props.scroll}
                 />
             </div>
             <div
