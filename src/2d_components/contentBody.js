@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react"
+import React, {useEffect, useState, useRef } from "react"
 import Bio from "./bio"
 import Work from "./work"
 import Contact from "./contact"
@@ -33,6 +33,9 @@ import Contact from "./contact"
 
 
 function ContentBody(props) {
+    const overlay = useRef()
+    const caption = useRef()
+    const scroll = useRef(0)
     return (
         <div 
             className='siteBody'
@@ -48,7 +51,11 @@ function ContentBody(props) {
                 className="siteBodyInner"
                 style={props.currentObj == 'work' ? {display: 'block'} : {display: 'none'}}
             >
-                <Work/>
+                <Work 
+                    ref={overlay} 
+                    caption={caption} 
+                    scroll={scroll}
+                />
             </div>
             <div
                 className="siteBodyInner"
