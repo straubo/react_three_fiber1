@@ -10,7 +10,6 @@ function UIWrapper(props) {
                     ref={props.overlay}
                     currentObj={props.currentObj}
                     scroll={props.scroll}
-                    // overlay={props.overlay}
                     caption={props.caption}
                 />
             </div>
