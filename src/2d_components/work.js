@@ -37,8 +37,6 @@ import '../styles/work.css'
 
 // const Overlay = forwardRef(({ caption, scroll }, ref) => (
 function Overlay(props) {
-	// const ref = useRef()
-	const scrollRef = useRef()
 	return (
 	<div
 		// ref={ref}
@@ -56,45 +54,58 @@ function Overlay(props) {
 		</div>
 		<div style={{ height: "200vh" }}>
 			<div className="dot">
-				<h1>headphone</h1>
-				Headphones are a pair of small loudspeaker drivers worn on or around the head over a user's ears.
+				<h1>2021 Summer Olympics</h1>
+				<h2>(Mobile AR)</h2>
+				Using 8th Wall and THREE.js, Casey led a team that created a mobile AR Photo Op experience -
+				 customers could take a photo with the 2021 US Summer Olympians 
 			</div>
 		</div>
 		<div style={{ height: "200vh" }}>
 			<div className="dot">
-				<h1>rocket</h1>A rocket (from Italian: rocchetto, lit. 'bobbin/spool')[nb 1][1] is a projectile that spacecraft, aircraft or other
-				vehicle use to obtain thrust from a rocket engine.
+				<h1>Winter Olympics</h1>
+				<h2>(web)</h2>
+				Using React and Next.js, Casey worked on a team to deliver a scrolljacked web experience that showcased new Xfinity projects
+				and featured Comcast's Winter Olympics coverage.
 			</div>
 		</div>
 		<div style={{ height: "200vh" }}>
 			<div className="dot">
-				<h1>turbine</h1>A turbine (/ˈtɜːrbaɪn/ or /ˈtɜːrbɪn/) (from the Greek τύρβη, tyrbē, or Latin turbo, meaning vortex)[1][2] is a
-				rotary mechanical device that extracts energy from a fluid flow and converts it into useful work.
+				<h1>Sing 2 / Happy Holidays</h1>
+				<h2>(mobile AR)</h2>
+				Using THREE.js and 8th Wall, Casey led a team to deploy a customizable Photo Op holiday card,
+				featuring the cast of Sing 2
 			</div>
 		</div>
 		<div style={{ height: "200vh" }}>
 			<div className="dot">
-				<h1>table</h1>A table is an item of furniture with a flat top and one or more legs, used as a surface for working at, eating from or
-				on which to place things.[1][2]
+				<h1>elephant.is</h1>
+				<h2>(web)</h2>
+				Casey worked on a team to bring the Webby-nominated Elephant website to life using React, Sass and a number
+				of other front-end technologies.
 			</div>
 		</div>
 		<div style={{ height: "200vh" }}>
 			<div className="dot">
-				<h1>laptop</h1>A laptop, laptop computer, or notebook computer is a small, portable personal computer (PC) with a screen and
-				alphanumeric keyboard.
+				<h1>marc jacobs</h1>
+				<h2>(web)</h2>
+				Casey used handlebars.js and other front-end technologies to bring the iconic
+				designer's website to life.
 			</div>
 		</div>
 		<div style={{ height: "200vh" }}>
 			<div className="dot">
-				<h1>zeppelin</h1>A Zeppelin is a type of rigid airship named after the German inventor Count Ferdinand von Zeppelin (German
-				pronunciation: [ˈt͡sɛpəliːn]) who pioneered rigid airship development at the beginning of the 20th century.
+				<h1>Xfinity retail experiences</h1>
+				<h2>(various techs: Unity, Javascript, Brightsign et al.)</h2>
+				Casey played a massive role in developing and maintaining upwards of 
+				50 evergreen experiences in Xfinity's premiere and flagship stores. In addition, he prototypes and maintains
+				experiences that exist in their 500+ stores nationwide. 
 			</div>
 		</div>
 		{/* <span className="caption" ref={props.caption}> */}
 		{/* ref={scrollRef} */}
-		<span className="caption" >
+		{/* <span className="caption" >
 			0.00
-		</span>
+		</span> */}
 	</div>
   	)
 	// )
