@@ -9,7 +9,6 @@ import Contact from "./contact"
         <div
             ref={ref}
             className='siteBody'
-                // style={props.currentObj == null ? {display: 'none'} : {display: 'block'}}
         >   
             <div
                 className="siteBodyInner"
@@ -24,8 +23,7 @@ import Contact from "./contact"
                 <Work 
                     // ref={props.overlay} 
                     // caption={caption} 
-                    // doing this just to see if the forwardRefs works
-                    caption={props.caption} 
+                    caption={props.caption}
                     scroll={props.scroll}
                 />
             </div>

@@ -13,7 +13,7 @@ function CanvasContainer(props) {
             shadows
             onCreated={(state) => state.events.connect(props.overlay.current)}
             camera={{ position: [0, 10, 80], fov: 55, near: 1, far: 20000 }}
-            // raycaster={{ computeOffsets: ({ clientX, clientY }) => ({ offsetX: clientX, offsetY: clientY }) }}
+            raycaster={{ computeOffsets: ({ clientX, clientY }) => ({ offsetX: clientX, offsetY: clientY }) }}
         >
             <LightingWrapper />
             <Suspense fallback={null}>

@@ -38,19 +38,20 @@ import '../styles/work.css'
 // const Overlay = forwardRef(({ caption, scroll }, ref) => (
 function Overlay(props) {
 	// const ref = useRef()
+	const scrollRef = useRef()
 	return (
 	<div
 		// ref={ref}
 			onScroll={(e) => {
 			props.scroll.current = e.target.scrollTop / (e.target.scrollHeight - window.innerHeight)
-			props.caption.current.innerText = props.scroll.current.toFixed(2)
+			// props.caption.current.innerText = props.scroll.current.toFixed(2)
 		}}
 	  	className="scroll"
 	>
 		<div style={{ height: "400vh" }}>
 			<div className="dot">
-				<h1>headset</h1>
-				Virtual reality (VR) is a simulated experience that can be similar to or completely different from the real world.
+				<h1>technologies</h1>
+				Casey uses technologies such as THREE.js, Unity, React, 8th Wall, Spark AR and many others to make a wide range of colorful, impactful experiences. Some examples of his work:
 			</div>
 		</div>
 		<div style={{ height: "200vh" }}>
@@ -89,7 +90,9 @@ function Overlay(props) {
 				pronunciation: [ˈt͡sɛpəliːn]) who pioneered rigid airship development at the beginning of the 20th century.
 			</div>
 		</div>
-		<span className="caption" ref={props.caption}>
+		{/* <span className="caption" ref={props.caption}> */}
+		{/* ref={scrollRef} */}
+		<span className="caption" >
 			0.00
 		</span>
 	</div>
