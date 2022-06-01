@@ -1,11 +1,7 @@
 function LaptopScreen(props) {
     return(
         <div className="annotation"
-            onClick={function() {
-                // props.laptopChange()
-                props.everything()
-                // console.log(props)
-            }}>
+            onClick={props.laptopChange}>
             welcome to Casey Berman's website <span style={{ fontSize: '4em' }}>🥲</span>
         </div>
     )

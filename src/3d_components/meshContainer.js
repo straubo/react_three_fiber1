@@ -53,7 +53,7 @@ function MeshContainer(props) {
         <Box2 
             selectObj={props.selectObj}
         />
-        {/* <LaptopLoader /> */}
+        <LaptopLoader />
         <Skybox 
             activeItem={props.currentObject}
         />

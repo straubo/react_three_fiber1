@@ -8,7 +8,7 @@ function App() {
     const overlay = useRef()
     const caption = useRef()
     // null
-    const [currentObj, setCurrentObj] = useState('work')
+    const [currentObj, setCurrentObj] = useState(null)
     
     function selectObj(input) {
         if (currentObj == input) {
