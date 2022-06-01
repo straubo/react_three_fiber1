@@ -3,38 +3,32 @@ import Bio from "./bio"
 import Work from "./work"
 import Contact from "./contact"
 
-// function ContentBody(props) {
-    // return (
-    const ContentBody = forwardRef((props, ref) => (
+const ContentBody = forwardRef((props, ref) => (
+    <div
+        ref={ref}
+        className='siteBody'
+    >   
         <div
-            ref={ref}
-            className='siteBody'
-        >   
-            <div
-                className="siteBodyInner"
-                style={props.currentObj == 'about' ? {display: 'block'} : {display: 'none'}}
-            >
-                <Bio/>
-            </div>
-            <div
-                className="siteBodyInner"
-                style={props.currentObj == 'work' ? {display: 'block'} : {display: 'none'}}
-            >
-                <Work 
-                    // ref={props.overlay} 
-                    // caption={caption} 
-                    caption={props.caption}
-                    scroll={props.scroll}
-                />
-            </div>
-            <div
-                className="siteBodyInner"
-                style={props.currentObj == 'contact' ? {display: 'block'} : {display: 'none'}}
-            >
-                <Contact/>
-            </div>
+            className="siteBodyInner"
+            style={props.currentObj == 'about' ? {display: 'block'} : {display: 'none'}}
+        >
+            <Bio/>
         </div>
-    )
-    )
-// }
+        <div
+            className="siteBodyInner"
+            style={props.currentObj == 'work' ? {display: 'block'} : {display: 'none'}}
+        >
+            <Work 
+                caption={props.caption}
+                scroll={props.scroll}
+            />
+        </div>
+        <div
+            className="siteBodyInner"
+            style={props.currentObj == 'contact' ? {display: 'block'} : {display: 'none'}}
+        >
+            <Contact/>
+        </div>
+    </div>
+))
 export default ContentBody
