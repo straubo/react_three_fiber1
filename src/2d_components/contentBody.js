@@ -1,11 +1,13 @@
-import React, {useEffect, useState, useRef } from "react"
+import React, {useEffect, useState, useRef, forwardRef } from "react"
 import Bio from "./bio"
 import Work from "./work"
 import Contact from "./contact"
 
-function ContentBody(props) {
-    return (
-        <div 
+// function ContentBody(props) {
+    // return (
+    const ContentBody = forwardRef((props, ref) => (
+        <div
+            ref={ref}
             className='siteBody'
                 style={props.currentObj == null ? {display: 'none'} : {display: 'block'}}
         >   
@@ -21,6 +23,8 @@ function ContentBody(props) {
             >
                 <Work 
                     ref={props.overlay} 
+                    // caption={caption} 
+                    // doing this just to see if the forwardRefs works
                     caption={props.caption} 
                     scroll={props.scroll}
                 />
@@ -33,5 +37,6 @@ function ContentBody(props) {
             </div>
         </div>
     )
-}
+    )
+// }
 export default ContentBody
