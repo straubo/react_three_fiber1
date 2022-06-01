@@ -1,46 +1,49 @@
-import React, { forwardRef } from "react"
+import React, { forwardRef, useRef } from "react"
 import '../styles/work.css'
-function Work() {
-    return (
-        <div>
-            <div classNameName='sectionHeader'>
-                work
-            </div>
-			{/* classNameName="siteBody" */}
-			<div>
-				Casey uses technologies such as THREE.js, Unity, React, 8th Wall, Spark AR and many others to make a wide range of colorful, impactful experiences. Some examples of his work:
-				<br/> <br/>
-				<span classNameName="subHeader">Web AR experiences (Xfinity)</span><br/>
-				<a href="https://www.adweek.com/performance-marketing/xfinity-retail-is-putting-shoppers-on-tv-via-augmented-reality-qr-codes/" target="_blank">
-					Entertainment/Peacock Promotion (Zappar)
-				</a>
-				<br/>
-				<span>2021 Summer Olympics (8th Wall/Three.js)</span>
-				<br/>
-				<span>Sing 2/Happy Holidays (8th Wall/Three.js)</span><br/>
-				<br/>
-				<span classNameName="subHeader">Flat Web:</span>
-				<br/>
-				<a href="https://www.elephant.is" target="_blank">Elephant website (Webby-nominated)</a>
-				<br/>
-				<a href="https://www.marcjacobs.com/" target="_blank">Marc Jacobs</a>
-				<br/>
-				2022 Winter Olympics Promotion
-				<br/> <br/>
+// function Work() {
+//     return (
+//         <div>
+//             <div classNameName='sectionHeader'>
+//                 work
+//             </div>
+// 			{/* classNameName="siteBody" */}
+// 			<div>
+// 				Casey uses technologies such as THREE.js, Unity, React, 8th Wall, Spark AR and many others to make a wide range of colorful, impactful experiences. Some examples of his work:
+// 				<br/> <br/>
+// 				<span classNameName="subHeader">Web AR experiences (Xfinity)</span><br/>
+// 				<a href="https://www.adweek.com/performance-marketing/xfinity-retail-is-putting-shoppers-on-tv-via-augmented-reality-qr-codes/" target="_blank">
+// 					Entertainment/Peacock Promotion (Zappar)
+// 				</a>
+// 				<br/>
+// 				<span>2021 Summer Olympics (8th Wall/Three.js)</span>
+// 				<br/>
+// 				<span>Sing 2/Happy Holidays (8th Wall/Three.js)</span><br/>
+// 				<br/>
+// 				<span classNameName="subHeader">Flat Web:</span>
+// 				<br/>
+// 				<a href="https://www.elephant.is" target="_blank">Elephant website (Webby-nominated)</a>
+// 				<br/>
+// 				<a href="https://www.marcjacobs.com/" target="_blank">Marc Jacobs</a>
+// 				<br/>
+// 				2022 Winter Olympics Promotion
+// 				<br/> <br/>
 
-			</div>
-        </div>
-    )
-}
+// 			</div>
+//         </div>
+//     )
+// }
 
 // export default Work
 
-const Overlay = forwardRef(({ caption, scroll }, ref) => (
+// const Overlay = forwardRef(({ caption, scroll }, ref) => (
+function Overlay(props) {
+	// const ref = useRef()
+	return (
 	<div
-		ref={ref}
+		// ref={ref}
 			onScroll={(e) => {
-			scroll.current = e.target.scrollTop / (e.target.scrollHeight - window.innerHeight)
-			caption.current.innerText = scroll.current.toFixed(2)
+			props.scroll.current = e.target.scrollTop / (e.target.scrollHeight - window.innerHeight)
+			props.caption.current.innerText = props.scroll.current.toFixed(2)
 		}}
 	  	className="scroll"
 	>
@@ -86,10 +89,12 @@ const Overlay = forwardRef(({ caption, scroll }, ref) => (
 				pronunciation: [ˈt͡sɛpəliːn]) who pioneered rigid airship development at the beginning of the 20th century.
 			</div>
 		</div>
-		<span className="caption" ref={caption}>
+		<span className="caption" ref={props.caption}>
 			0.00
 		</span>
 	</div>
-  ))
+  	)
+	// )
+	}
   
   export default Overlay

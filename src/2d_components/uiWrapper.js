@@ -7,9 +7,10 @@ function UIWrapper(props) {
             <div className='uiWrapper'>
                 {/* <Header menuClicked={(section)=> this.menuClicked(section)}/> */}
                 <ContentBody 
+                    ref={props.overlay}
                     currentObj={props.currentObj}
                     scroll={props.scroll}
-                    overlay={props.overlay}
+                    // overlay={props.overlay}
                     caption={props.caption}
                 />
             </div>
