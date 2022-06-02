@@ -11,8 +11,8 @@ function Menu3D(props) {
         ref.current.position.copy(camera.position)
         ref.current.quaternion.copy(camera.quaternion)
         // Apply offset - going to have to make this responsive
+        ref.current.translateX(-3.4) // full screen pc, 1 on mobile
         ref.current.translateZ(-5)
-        ref.current.translateX(-4.4) // full screen pc, 1 on mobile
         ref.current.translateY(2)
     })
     // apparently theres a drei thing for this called Billboard.. 

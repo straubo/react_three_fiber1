@@ -9,9 +9,6 @@ import { useSpring } from '@react-spring/core'
 import { a as three } from '@react-spring/three'
 import LaptopScreen from '../2d_components/laptopScreen'
 
-const vec = new THREE.Vector3()
-
-// function Model({ open, hinge, laptopChange, ...props }) {
 function Model(props) {
     const group = useRef()
     const { nodes, materials } = useGLTF('/mac-draco.glb')
@@ -20,10 +17,8 @@ function Model(props) {
     useEffect(() => void (document.body.style.cursor = hovered ? 'pointer' : 'auto'), [hovered])
     
     useFrame((state, delta) => {
-
         // rotation
         const t = state.clock.getElapsedTime()
-
         group.current.rotation.y = THREE.MathUtils.lerp(
             group.current.rotation.y, !props.beenInit ? 
                 Math.sin(t / 3) / 4 :
@@ -37,9 +32,18 @@ function Model(props) {
         // group.current.position.y = THREE.MathUtils.lerp(group.current.position.y, props.open ? 0 : 60, 0.007)
         // group.current.position.z = THREE.MathUtils.lerp(group.current.position.z, props.open ? -3 : -75, 0.014)
         
-        group.current.position.x = THREE.MathUtils.lerp(group.current.position.x, !props.beenInit ? 0 : 35, 0.01)
-        group.current.position.y = THREE.MathUtils.lerp(group.current.position.y, !props.beenInit ? -3 : 1, 0.007)
-        group.current.position.z = THREE.MathUtils.lerp(group.current.position.z, !props.beenInit ? -7 : -75, 0.014)
+        group.current.position.x = THREE.MathUtils.lerp(group.current.position.x, !props.beenInit ? 0 :
+            props.activeItem == null ? 35 :
+            props.activeItem == "contact" ? 0 :
+            0, 0.01)
+        group.current.position.y = THREE.MathUtils.lerp(group.current.position.y, !props.beenInit ? -3 :
+            props.activeItem == null ? 1 :
+            props.activeItem == "contact" ? -2 :
+            -30, 0.007)
+        group.current.position.z = THREE.MathUtils.lerp(group.current.position.z, !props.beenInit ? -7 :
+            props.activeItem == null ? -75 :
+             props.activeItem == "contact" ? -20 :
+            -75, 0.014)
     })
 
     return (
