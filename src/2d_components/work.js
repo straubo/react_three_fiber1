@@ -1,42 +1,6 @@
 import React, { forwardRef, useRef } from "react"
 import '../styles/work.css'
-// function Work() {
-//     return (
-//         <div>
-//             <div classNameName='sectionHeader'>
-//                 work
-//             </div>
-// 			{/* classNameName="siteBody" */}
-// 			<div>
-// 				Casey uses technologies such as THREE.js, Unity, React, 8th Wall, Spark AR and many others to make a wide range of colorful, impactful experiences. Some examples of his work:
-// 				<br/> <br/>
-// 				<span classNameName="subHeader">Web AR experiences (Xfinity)</span><br/>
-// 				<a href="https://www.adweek.com/performance-marketing/xfinity-retail-is-putting-shoppers-on-tv-via-augmented-reality-qr-codes/" target="_blank">
-// 					Entertainment/Peacock Promotion (Zappar)
-// 				</a>
-// 				<br/>
-// 				<span>2021 Summer Olympics (8th Wall/Three.js)</span>
-// 				<br/>
-// 				<span>Sing 2/Happy Holidays (8th Wall/Three.js)</span><br/>
-// 				<br/>
-// 				<span classNameName="subHeader">Flat Web:</span>
-// 				<br/>
-// 				<a href="https://www.elephant.is" target="_blank">Elephant website (Webby-nominated)</a>
-// 				<br/>
-// 				<a href="https://www.marcjacobs.com/" target="_blank">Marc Jacobs</a>
-// 				<br/>
-// 				2022 Winter Olympics Promotion
-// 				<br/> <br/>
-
-// 			</div>
-//         </div>
-//     )
-// }
-
-// export default Work
-
-// const Overlay = forwardRef(({ caption, scroll }, ref) => (
-function Overlay(props) {
+function Work(props) {
 	return (
 	<div
 		// ref={ref}
@@ -46,7 +10,13 @@ function Overlay(props) {
 		}}
 	  	className="scroll"
 	>
-		<div style={{ height: "400vh" }}>
+		<div style={{ height: "100vh" }}>
+			<div className="dot">
+				<h1>work</h1>
+				casey has been working as a creative technologist and front-end developer for over five years. scroll down to learn more
+			</div>
+		</div>
+		<div style={{ height: "100vh" }}>
 			<div className="dot">
 				<h1>technologies</h1>
 				Casey uses technologies such as THREE.js, Unity, React, 8th Wall, Spark AR and many others to make a wide range of colorful, impactful experiences. Some examples of his work:
@@ -54,8 +24,8 @@ function Overlay(props) {
 		</div>
 		<div style={{ height: "200vh" }}>
 			<div className="dot">
-				<h1>2021 Summer Olympics</h1>
-				<h2>(Mobile AR)</h2>
+				<h1>2021 summer olympics</h1>
+				<h2>(mobile AR)</h2>
 				Using 8th Wall and THREE.js, Casey led a team that created a mobile AR Photo Op experience -
 				 customers could take a photo with the 2021 US Summer Olympians 
 			</div>
@@ -70,7 +40,7 @@ function Overlay(props) {
 		</div>
 		<div style={{ height: "200vh" }}>
 			<div className="dot">
-				<h1>Sing 2 / Happy Holidays</h1>
+				<h1>sing 2 / happy holidays</h1>
 				<h2>(mobile AR)</h2>
 				Using THREE.js and 8th Wall, Casey led a team to deploy a customizable Photo Op holiday card,
 				featuring the cast of Sing 2
@@ -111,4 +81,4 @@ function Overlay(props) {
 	// )
 	}
   
-  export default Overlay
+  export default Work

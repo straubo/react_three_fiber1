@@ -21,7 +21,6 @@ function Skybox(props) {
 
     return (
         <>
-
             <animated.mesh
                 position={[0, 25, 0]}
                 // scale={scale}

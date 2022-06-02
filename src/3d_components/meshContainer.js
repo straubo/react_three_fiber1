@@ -13,20 +13,32 @@ import Menu3D from './menu3D'
 import Skybox from './skybox'
 import Model from './Model'
 
-function Caption({ children }) {
+function Caption(props) {
     const { width } = useThree((state) => state.viewport)
     return (
       <Text
-        position={[0, 18, -5]}
+        // position={[0, 18, -5]}
+        position={
+            props.activeItem == null ?
+            [0, 30, -5] : 
+            props.activeItem == "contact" ? [0, -30, -75] :
+            [0, 10, -75]
+        }
         lineHeight={0.8}
         font="/Ki-Medium.ttf"
         fontSize={width / 8}
         material-toneMapped={false}
         anchorX="center"
         anchorY="middle"
-        color={'#001e0f'}
+        // '#001e0f' : // green
+        color={
+            props.activeItem == null || 
+            props.activeItem == 'about' ? 
+            '#ffffff' : props.activeItem == 'work' ?
+            '#000000' : '#001e0f'
+        }
         >
-        {children}
+        {props.children}
       </Text>
     )
 }
@@ -34,7 +46,10 @@ function Caption({ children }) {
 
 function MeshContainer(props) {
     return (<>
-        <Caption>{`casey berman`}</Caption>
+        <Caption
+            children={`casey berman`}
+            activeItem={props.currentObject}
+        />
         <ModelLoader 
             scale={4}
             modelName={'headset'} 
