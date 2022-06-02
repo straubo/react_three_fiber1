@@ -61,11 +61,12 @@ function MeshContainer(props) {
         <Skybox 
             activeItem={props.currentObject}
         />
-        <Model 
+        
+        {/* <Model 
         scroll={props.scroll}
         scale={3}
-        />
-        
+        rotation={[0, 0, Math.PI * 2]}
+        /> */}
 
         <Menu3D
             activeItem={props.currentObject}
