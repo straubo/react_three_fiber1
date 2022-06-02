@@ -56,6 +56,7 @@ function MeshContainer(props) {
             modelExtension={'VR_simple'}
             position={[0, 7, 0]}
             selectObj={props.selectObj}
+            activeItem={props.currentObject}
             section={'work'}
         />
         <ModelLoader 
@@ -64,6 +65,7 @@ function MeshContainer(props) {
             modelExtension={'BaseMesh_Man_Simple'}
             position={[-35, 0, 0]}
             selectObj={props.selectObj}
+            activeItem={props.currentObject}
             section={'about'}
         />
         {/* <Box2 

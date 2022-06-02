@@ -56,7 +56,8 @@ function ModelLoader4 (props) {
             // material={shinyMaterial}
             
         >
-            <meshStandardMaterial transparent />
+            {/* transparent */}
+            <meshStandardMaterial />
             <Edges />
             {/* <MeshWobbleMaterial factor={0.001} speed={1} /> */}
             {/* distort={0.2} speed={4}  */}

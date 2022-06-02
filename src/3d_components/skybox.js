@@ -16,7 +16,8 @@ function Skybox(props) {
         color: props.activeItem == null ? 'black' : 
         props.activeItem == 'about' ? 'pink' : 
         props.activeItem == 'work' ? '#252D36' :
-        'wheat',
+        'wheat'
+        // '#F2BB1D',
     })
 
     return (
