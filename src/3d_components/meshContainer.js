@@ -61,7 +61,10 @@ function MeshContainer(props) {
         <Skybox 
             activeItem={props.currentObject}
         />
-        <Model />
+        <Model 
+        scroll={props.scroll}
+        scale={3}
+        />
         
 
         <Menu3D
