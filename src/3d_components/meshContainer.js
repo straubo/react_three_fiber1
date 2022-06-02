@@ -11,6 +11,7 @@ import Box2 from './origBox'
 import LaptopLoader from './laptopLoader'
 import Menu3D from './menu3D'
 import Skybox from './skybox'
+import Model from './Model'
 
 function Caption({ children }) {
     const { width } = useThree((state) => state.viewport)
@@ -60,6 +61,7 @@ function MeshContainer(props) {
         <Skybox 
             activeItem={props.currentObject}
         />
+        <Model />
         
 
         <Menu3D

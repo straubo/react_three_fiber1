@@ -23,6 +23,7 @@ function CanvasContainer(props) {
                 <MeshContainer 
                     currentObject={props.currentObj} 
                     selectObj={props.selectObj}
+                    scroll={props.scroll}
                 />
                 <Stars radius={1400} depth={50} count={5000} factor={4} saturation={0} fade speed={1} />
             </Suspense>
