@@ -50,10 +50,13 @@ function MeshContainer(props) {
             selectObj={props.selectObj}
             section={'about'}
         />
-        <Box2 
+        {/* <Box2 
+            selectObj={props.selectObj}
+        /> */}
+        <LaptopLoader
+            activeItem={props.currentObject}
             selectObj={props.selectObj}
         />
-        <LaptopLoader />
         <Skybox 
             activeItem={props.currentObject}
         />
