@@ -31,13 +31,18 @@ function ModelLoader (props) {
     //     // state.camera.position.lerp(v.set(zoom ? 0 : 0, zoom ? 40 : 35, zoom ? 150 : 125), 0.01)
         
     //     state.camera.updateProjectionMatrix()
+
+    // emphasizing the active item
         ref.current.position.lerp(v.set(
+            props.activeItem == null ? props.position[0] :
+            props.activeItem == props.section ? 0 :
             props.position[0],
             props.activeItem == null ? props.position[1] :
             props.activeItem == props.section ? props.position[1] :
             -20,
-            // props.position[1],
-            props.position[2]
+            props.activeItem == null ? props.position[2] :
+            props.activeItem == props.section ? 40 :
+            props.position[2],
         ), 0.01)
         
         ref.current.rotation.z = ref.current.rotation.z += delta * 1.5

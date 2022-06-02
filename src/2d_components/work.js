@@ -13,7 +13,7 @@ function Work(props) {
 		<div style={{ height: "100vh" }}>
 			<div className="dot">
 				<h1>work</h1>
-				casey has been working as a creative technologist and front-end developer for over five years. scroll down to learn more
+				casey has been working as a creative technologist and front-end developer for over five years. scroll down to learn more.
 			</div>
 		</div>
 		<div style={{ height: "100vh" }}>
