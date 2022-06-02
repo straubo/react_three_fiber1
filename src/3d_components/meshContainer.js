@@ -35,7 +35,7 @@ function MeshContainer(props) {
     return (<>
         <Caption>{`casey berman`}</Caption>
         <ModelLoader 
-            scale={5}
+            scale={4}
             modelName={'headset'} 
             modelExtension={'VR_simple'}
             position={[0, 7, 0]}

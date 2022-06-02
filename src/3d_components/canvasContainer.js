@@ -19,7 +19,7 @@ function CanvasContainer(props) {
             <Suspense fallback={null}>
                 {/* <PostProcessingWrapper />    */}
                 <Ocean />
-                <OrbitControls makeDefault />
+                {/* <OrbitControls makeDefault /> */}
                 <MeshContainer 
                     currentObject={props.currentObj} 
                     selectObj={props.selectObj}
