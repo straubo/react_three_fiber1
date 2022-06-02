@@ -28,18 +28,24 @@ function Menu3D(props) {
                 meshExtension={'BaseMesh_Man_Simple'}
                 fullMeshExtension={'nodes.BaseMesh_Man_Simple.geometry'}
                 position={[0, -1, 0]}
+                activeItem={props.activeItem}
+                selectObj={props.selectObj}
             />
             <ModelLoader3
                 scale={0.2}
                 modelName={'headset'}
                 modelExtension={'VR_simple'}
                 position={[0, -2.1, 0]}
+                activeItem={props.activeItem}
+                selectObj={props.selectObj}
             />
             <ModelLoader5
                 scale={0.2}
                 modelName={'headset'} 
                 modelExtension={'VR_simple'}
                 position={[0, -3.8, 0]}
+                activeItem={props.activeItem}
+                selectObj={props.selectObj}
             />
         </ mesh>
     )

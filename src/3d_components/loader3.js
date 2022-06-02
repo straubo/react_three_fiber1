@@ -32,7 +32,7 @@ function ModelLoader3 (props) {
             {...props}
             onClick={() => {
                 set(!zoom)
-                // props.updatedCameraDirection('work')
+                props.selectObj('work')
             }} 
             onPointerOver={() => setActive(true)} 
             onPointerOut={() => setActive(false)}

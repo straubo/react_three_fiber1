@@ -42,7 +42,7 @@ function ModelLoader4 (props) {
         <mesh
             onClick={() => {
                 // setActive(!zoom)
-                props.updatedCameraDirection('about')
+                props.selectObj('about')
             }}
             onPointerOver={() => set(true)} 
             onPointerOut={() => set(false)}

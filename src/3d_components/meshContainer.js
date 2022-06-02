@@ -69,6 +69,7 @@ function MeshContainer(props) {
         /> */}
 
         <Menu3D
+            selectObj={props.selectObj}
             activeItem={props.currentObject}
         />
         <CameraShake yawFrequency={0} pitchFrequency={0} rollFrequency={0} intensity={0}/>
