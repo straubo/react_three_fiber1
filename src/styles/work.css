@@ -97,5 +97,8 @@
 	.dot > h1 {
 	  font-size: 3em;
 	}
+	.dot {
+		padding: 30px
+	}
   }
   

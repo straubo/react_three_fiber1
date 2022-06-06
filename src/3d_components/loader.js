@@ -14,7 +14,7 @@ function ModelLoader (props) {
     const [zoom, set] = useState(false)
 
     const shinyMaterial = new THREE.MeshPhysicalMaterial({
-        color: new THREE.Color('#000000').convertSRGBToLinear(),
+        color: new THREE.Color('#D8B29A').convertSRGBToLinear(),
         roughness: 0,
         clearcoat: 1,
         clearcoatRoughness: 0,
@@ -43,7 +43,7 @@ function ModelLoader (props) {
             props.activeItem == null ? props.position[2] :
             props.activeItem == props.section ? 40 :
             props.position[2],
-        ), 0.01)
+        ), 0.05)
         
         ref.current.rotation.z = ref.current.rotation.z += delta * 1.5
     })

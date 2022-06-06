@@ -35,11 +35,11 @@ function Model(props) {
         group.current.position.x = THREE.MathUtils.lerp(group.current.position.x, !props.beenInit ? 0 :
             props.activeItem == null ? 35 :
             props.activeItem == "contact" ? 0 :
-            0, 0.01)
+            0, 0.02)
         group.current.position.y = THREE.MathUtils.lerp(group.current.position.y, !props.beenInit ? -3 :
             props.activeItem == null ? 1 :
             props.activeItem == "contact" ? -2 :
-            -30, 0.007)
+            -10, 0.07)
         group.current.position.z = THREE.MathUtils.lerp(group.current.position.z, !props.beenInit ? -7 :
             props.activeItem == null ? -75 :
              props.activeItem == "contact" ? -20 :
