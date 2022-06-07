@@ -70,6 +70,7 @@ function MeshContainer(props) {
             activeItem={props.currentObject}
             section={'about'}
             color={'#3E6E90'}
+            selectedColor={'#000000'}
         />
         <ModelLoader
             scale={4}
@@ -80,6 +81,7 @@ function MeshContainer(props) {
             activeItem={props.currentObject}
             section={'work'}
             color={'#679DAE'}
+            selectedColor={'#000000'}
         />
         <LaptopLoader
             activeItem={props.currentObject}
