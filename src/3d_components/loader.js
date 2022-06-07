@@ -16,7 +16,7 @@ function ModelLoader (props) {
     const shinyMaterial = new THREE.MeshPhysicalMaterial({
         color: new THREE.Color(
             props.activeItem == props.section ?
-            '#000000' :props.color
+            props.selectedColor : props.color
             ).convertSRGBToLinear(),
         roughness: 0,
         clearcoat: 1,
