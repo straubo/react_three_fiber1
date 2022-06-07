@@ -22,7 +22,13 @@ function Caption(props) {
             props.activeItem == null ?
             [0, 30, -5] : 
             props.activeItem == "contact" ? [0, -30, -75] :
-            [0, 10, -75]
+            [0, 60, -75]
+        }
+        color={
+            props.activeItem == null || 
+            props.activeItem == 'about' ? 
+            '#ffffff' : props.activeItem == 'work' ?
+            '#000000' : '#001e0f'
         }
         lineHeight={0.8}
         font="/Ki-Medium.ttf"
@@ -30,13 +36,6 @@ function Caption(props) {
         material-toneMapped={false}
         anchorX="center"
         anchorY="middle"
-        // '#001e0f' : // green
-        color={
-            props.activeItem == null || 
-            props.activeItem == 'about' ? 
-            '#ffffff' : props.activeItem == 'work' ?
-            '#000000' : '#001e0f'
-        }
         >
         {props.children}
       </Text>
@@ -50,7 +49,29 @@ function MeshContainer(props) {
             children={`casey berman`}
             activeItem={props.currentObject}
         />
+        {/* mesh colors:
+        green: 428F70
+        deep blue(not navy but darker): 313D6B
+        lighter blue (cyrulean?): 3E6E90
+        lighter cyrulean: 679DAE
+        "brighter" blue: 3957A5
+        orange (slightly ugly, reflective): D46C40
+        flesh-ish (not reflective): DDBF99
+        deep grey: 3A3B3B
+        bright yellow (n-r):F2BB1D
+        cream: EADBC0
+         */}
         <ModelLoader 
+            scale={0.08} 
+            modelName={'human'} 
+            modelExtension={'BaseMesh_Man_Simple'}
+            position={[-35, 3, 0]}
+            selectObj={props.selectObj}
+            activeItem={props.currentObject}
+            section={'about'}
+            color={'#3E6E90'}
+        />
+        <ModelLoader
             scale={4}
             modelName={'headset'} 
             modelExtension={'VR_simple'}
@@ -58,19 +79,8 @@ function MeshContainer(props) {
             selectObj={props.selectObj}
             activeItem={props.currentObject}
             section={'work'}
+            color={'#679DAE'}
         />
-        <ModelLoader 
-            scale={0.1} 
-            modelName={'human'} 
-            modelExtension={'BaseMesh_Man_Simple'}
-            position={[-35, 0, 0]}
-            selectObj={props.selectObj}
-            activeItem={props.currentObject}
-            section={'about'}
-        />
-        {/* <Box2 
-            selectObj={props.selectObj}
-        /> */}
         <LaptopLoader
             activeItem={props.currentObject}
             selectObj={props.selectObj}
@@ -82,7 +92,6 @@ function MeshContainer(props) {
         {/* <Model 
         scroll={props.scroll}
         scale={3}
-        rotation={[0, 0, Math.PI * 2]}
         /> */}
 
         <Menu3D

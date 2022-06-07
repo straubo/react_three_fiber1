@@ -1,8 +1,23 @@
 function LaptopScreen(props) {
     return(
         <div className="annotation"
-            onClick={props.laptopChange}>
-            welcome to Casey Berman's website <span style={{ fontSize: '4em' }}>🥲</span>
+            onClick={props.laptopChange}
+        >
+            <div
+                style={props.activeItem != 'contact' ? {display: 'block'} : {display: 'none'}}
+            >
+                welcome to Casey Berman's website <span style={{ fontSize: '4em' }}>🥲</span>
+            </div>
+            <div className="contactLaptop"
+                style={props.activeItem == 'contact' ? {display: 'block'} : {display: 'none'}}
+            >
+                <div className="contactHeader">
+                    hmu
+                </div>
+                <div>
+                    caseybermanprograms@gmail.com
+                </div>
+            </div>
         </div>
     )
 }

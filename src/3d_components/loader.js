@@ -14,7 +14,10 @@ function ModelLoader (props) {
     const [zoom, set] = useState(false)
 
     const shinyMaterial = new THREE.MeshPhysicalMaterial({
-        color: new THREE.Color('#D8B29A').convertSRGBToLinear(),
+        color: new THREE.Color(
+            props.activeItem == props.section ?
+            '#000000' :props.color
+            ).convertSRGBToLinear(),
         roughness: 0,
         clearcoat: 1,
         clearcoatRoughness: 0,
@@ -32,16 +35,18 @@ function ModelLoader (props) {
         
     //     state.camera.updateProjectionMatrix()
 
-    // emphasizing the active item
+    // bring active item closer to camera
         ref.current.position.lerp(v.set(
             props.activeItem == null ? props.position[0] :
             props.activeItem == props.section ? 0 :
             props.position[0],
+
             props.activeItem == null ? props.position[1] :
-            props.activeItem == props.section ? props.position[1] :
+            props.activeItem == props.section ? props.position[1] - 3 :
             -20,
+
             props.activeItem == null ? props.position[2] :
-            props.activeItem == props.section ? 40 :
+            props.activeItem == props.section ? 55 :
             props.position[2],
         ), 0.05)
         

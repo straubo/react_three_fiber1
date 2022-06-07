@@ -23,12 +23,12 @@ const ContentBody = forwardRef((props, ref) => (
                 scroll={props.scroll}
             />
         </div>
-        <div
+        {/* <div
             className="siteBodyInner"
             style={props.currentObj == 'contact' ? {display: 'block'} : {display: 'none'}}
         >
             <Contact/>
-        </div>
+        </div> */}
     </div>
 ))
 export default ContentBody

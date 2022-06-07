@@ -39,7 +39,7 @@ function Model(props) {
         group.current.position.y = THREE.MathUtils.lerp(group.current.position.y, !props.beenInit ? -3 :
             props.activeItem == null ? 1 :
             props.activeItem == "contact" ? -2 :
-            -10, 0.07)
+            -20, 0.07)
         group.current.position.z = THREE.MathUtils.lerp(group.current.position.z, !props.beenInit ? -7 :
             props.activeItem == null ? -75 :
              props.activeItem == "contact" ? -20 :
@@ -68,6 +68,7 @@ function Model(props) {
                         >
                             <LaptopScreen 
                                 laptopChange={props.laptopChange}
+                                activeItem={props.activeItem}
                             />
                         </Html>
                     </mesh>
