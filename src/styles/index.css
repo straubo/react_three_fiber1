@@ -52,7 +52,7 @@ code {
 	/*  */
 	-webkit-font-smoothing: auto;
 	pointer-events: none;
-	color: white;
+	color: black;
 	font-size: 5em;
 	font-weight: 100;
 	line-height: 1em;
@@ -78,7 +78,7 @@ code {
 }
 
 .bioInner {
-	color: #a0a0a0;
+	color: #000000;
 	line-height: 1.6em;
 	font-size: 15px;
 	letter-spacing: 1.5px;
@@ -135,10 +135,13 @@ code {
 	}
 	.siteBody {
 		/* padding: 50vh 5% 0px 5%; */
-		padding: 44vh 5% 0px 5%;
+		/* padding: 44vh 5% 0px 5%; */
 		/* padding: 0px 5%; */
 		/* height: 46vh; */
 		overflow-y: scroll;
 		/* pointer-events: ; */
+	}
+	.siteBodyInner {
+		padding: 50px 0 0 0;
 	}
 } 

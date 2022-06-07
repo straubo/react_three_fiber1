@@ -24,7 +24,7 @@ function Work(props) {
 		</div>
 		<div style={{ height: "200vh" }}>
 			<div className="dot">
-				<h1>2021 summer olympics</h1>
+				<h1>2021 Summer Olympics</h1>
 				<h2>(mobile AR)</h2>
 				Using 8th Wall and THREE.js, Casey led a team that created a mobile AR Photo Op experience -
 				 customers could take a photo with the 2021 US Summer Olympians 
@@ -40,7 +40,7 @@ function Work(props) {
 		</div>
 		<div style={{ height: "200vh" }}>
 			<div className="dot">
-				<h1>sing 2 / happy holidays</h1>
+				<h1>Sing 2 / Happy Holidays</h1>
 				<h2>(mobile AR)</h2>
 				Using THREE.js and 8th Wall, Casey led a team to deploy a customizable Photo Op holiday card,
 				featuring the cast of Sing 2
@@ -56,7 +56,7 @@ function Work(props) {
 		</div>
 		<div style={{ height: "200vh" }}>
 			<div className="dot">
-				<h1>marc jacobs</h1>
+				<h1>Marc Jacobs</h1>
 				<h2>(web)</h2>
 				Casey used handlebars.js and other front-end technologies to bring the iconic
 				designer's website to life.
@@ -64,7 +64,7 @@ function Work(props) {
 		</div>
 		<div style={{ height: "200vh" }}>
 			<div className="dot">
-				<h1>Xfinity retail experiences</h1>
+				<h1>Xfinity Retail Experiences</h1>
 				<h2>(various techs: Unity, Javascript, Brightsign et al.)</h2>
 				Casey played a massive role in developing and maintaining upwards of 
 				50 evergreen experiences in Xfinity's premiere and flagship stores. In addition, he prototypes and maintains
