@@ -19,12 +19,16 @@ function Model(props) {
     useFrame((state, delta) => {
         // rotation
         const t = state.clock.getElapsedTime()
-        group.current.rotation.y = THREE.MathUtils.lerp(
-            group.current.rotation.y, !props.beenInit ? 
-                Math.sin(t / 3) / 4 :
-                group.current.rotation.y -= delta * 8.5,
-                0.1
-        )
+        if (props.activeItem == 'contact' && group.current.rotation.y % (Math.PI*2) >= -0.5) {
+        } else {
+            group.current.rotation.y = THREE.MathUtils.lerp(
+                group.current.rotation.y, !props.beenInit ? 
+                    Math.sin(t / 3) / 4 :
+                    group.current.rotation.y -= delta * 8.5,
+                    0.1
+            )
+        }
+
         group.current.rotation.z = THREE.MathUtils.lerp(group.current.rotation.z, !props.beenInit ? Math.sin(t) / 20 : 0, 0.1)
 
         // old

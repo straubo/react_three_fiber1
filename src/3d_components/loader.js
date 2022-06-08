@@ -49,8 +49,8 @@ function ModelLoader (props) {
             props.activeItem == props.section ? 55 :
             props.position[2],
         ), 0.05)
-        // console.log(ref.current.rotation.z % (Math.PI*2))
-        if (props.activeItem != props.section && ref.current.rotation.z % (Math.PI*2) >= 0.0000000001) {
+        if (props.activeItem == props.section && ref.current.rotation.z % (Math.PI*2) <= 0.15) {
+        } else {
             ref.current.rotation.z = ref.current.rotation.z += delta * 1.5
         }
     })
