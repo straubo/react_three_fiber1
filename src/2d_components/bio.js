@@ -5,7 +5,7 @@ function Bio() {
 			<div className='bioInner'>
                 Casey Berman (he/him) is a creative technologist, developer and <span>musician</span> living in Brooklyn, New York.
 				A professional saxophonist in a past life, Casey went to NYU as a Jazz Studies major. He studied with the likes of 
-				Lee Konitz (of Miles Davis fame), Mark Turner, Bill McHenry, Ben Street and many more of his heroes. He has toured on three continents 
+				Lee Konitz (of Miles Davis fame), Mark Turner, Bill McHenry, Ben Street, and many more of his heroes. He has toured on three continents 
 				and played at over a hundred venues, including the Kennedy Center, Jazz at Lincoln Center, the Blue Note, the Jazz Gallery and countless others.
 				<br></br><br></br>
 
@@ -22,8 +22,8 @@ function Bio() {
 				go to the Work page.
 				{/* click here? */}
 				<br></br><br></br>
-				Casey maintains a rich life of learning and making. His musical pursuits are have also gone digital - 
-				Ableton and analog synthesis are now his main tools for composing and sound design. When he gets a chance,
+				Casey maintains a rich life of learning and making. His musical pursuits have also gone digital - 
+				Ableton and analog synthesis have become his main tools for composing and sound design. When he gets a chance,
 				he rides his bike around the five boroughs, breaks things in TouchDesigner, and
 				spends time with his sphynx cat, Phoebe. 
 				<br/> 
