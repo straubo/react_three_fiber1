@@ -3,6 +3,7 @@ import ModelLoader4 from "./loader4"
 import ModelLoader3 from "./loader3"
 import { useRef } from "react"
 import { useFrame } from "@react-three/fiber"
+import { Text } from "@react-three/drei"
 
 function Menu3D(props) {
     const ref = useRef()
@@ -31,6 +32,20 @@ function Menu3D(props) {
                 activeItem={props.activeItem}
                 selectObj={props.selectObj}
             />
+            <Text
+                position={[
+                    0,
+                    -1.2,
+                    0
+                ]}
+                lineHeight={0.8}
+                font="/Ki-Medium.ttf"
+                fontSize={.18}
+                material-toneMapped={false}
+                anchorX="center"
+                anchorY="middle"
+                color={'#ffffff'}
+            >about</Text>
             <ModelLoader3
                 scale={0.2}
                 modelName={'headset'}
@@ -39,6 +54,20 @@ function Menu3D(props) {
                 activeItem={props.activeItem}
                 selectObj={props.selectObj}
             />
+            <Text
+                position={[
+                    0,
+                    -2.5,
+                    0
+                ]}
+                lineHeight={0.8}
+                font="/Ki-Medium.ttf"
+                fontSize={.18}
+                material-toneMapped={false}
+                anchorX="center"
+                anchorY="middle"
+                color={'#ffffff'}
+            >work</Text>
             <ModelLoader5
                 scale={0.2}
                 modelName={'headset'} 
@@ -47,6 +76,20 @@ function Menu3D(props) {
                 activeItem={props.activeItem}
                 selectObj={props.selectObj}
             />
+            <Text
+                position={[
+                    0, 
+                    -4.2, 
+                    0
+                ]}
+                lineHeight={0.8}
+                font="/Ki-Medium.ttf"
+                fontSize={.18}
+                material-toneMapped={false}
+                anchorX="center"
+                anchorY="middle"
+                color={'#ffffff'}
+            >contact</Text>
         </ mesh>
     )
 }

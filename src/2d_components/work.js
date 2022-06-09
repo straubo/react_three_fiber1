@@ -56,26 +56,15 @@ function Work(props) {
 		</div>
 		<div style={{ height: "200vh" }}>
 			<div className="dot">
-				<h1>Summer Olympics (2021)</h1>
+				<h1>
+					<a href="https://youtu.be/U8Si-5INrNA" target="_blank" rel="noreferrer">
+						Summer Olympics (2021)
+					</a>
+				</h1>
+				{/* https://youtu.be/U8Si-5INrNA */}
 				<h2>(mobile AR)</h2>
 				Using 8th Wall and THREE.js, Casey led a team that created a mobile AR Photo Op experience -
 				 customers could take a photo with the 2021 US Summer Olympians 
-			</div>
-		</div>
-		<div style={{ height: "200vh" }}>
-			<div className="dot">
-				<h1>Winter Olympics (2022)</h1>
-				<h2>(web)</h2>
-				Using React and Next.js, Casey worked on a team to deliver a scrolljacked web experience that showcased new Xfinity projects
-				and featured Comcast's Winter Olympics coverage.
-			</div>
-		</div>
-		<div style={{ height: "200vh" }}>
-			<div className="dot">
-				<h1>Sing 2 / Happy Holidays (2021)</h1>
-				<h2>(mobile AR)</h2>
-				Using THREE.js and 8th Wall, Casey led a team to deploy a customizable Photo Op holiday card,
-				featuring the cast of Sing 2
 			</div>
 		</div>
 		<div style={{ height: "200vh" }}>
@@ -98,6 +87,22 @@ function Work(props) {
 				<h2>(web)</h2>
 				Casey used handlebars.js and other front-end technologies to bring the iconic
 				designer's website to life.
+			</div>
+		</div>
+		<div style={{ height: "200vh" }}>
+			<div className="dot">
+				<h1>Winter Olympics (2022)</h1>
+				<h2>(web)</h2>
+				Using React and Next.js, Casey worked on a team to deliver a scrolljacked web experience that showcased new Xfinity projects
+				and featured Comcast's Winter Olympics coverage.
+			</div>
+		</div>
+		<div style={{ height: "200vh" }}>
+			<div className="dot">
+				<h1>Sing 2 / Happy Holidays (2021)</h1>
+				<h2>(mobile AR)</h2>
+				Using THREE.js and 8th Wall, Casey led a team to deploy a customizable Photo Op holiday card,
+				featuring the cast of Sing 2
 			</div>
 		</div>
 		<div style={{ height: "200vh" }}>

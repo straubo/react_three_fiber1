@@ -1,7 +1,7 @@
 import * as THREE from 'three'
 import React, { useRef, useState } from 'react'
 import {useFrame} from '@react-three/fiber'
-import { useGLTF, useCursor } from "@react-three/drei";
+import { useGLTF, useCursor, Text } from "@react-three/drei";
 
 
 function ModelLoader (props) {   
@@ -75,6 +75,22 @@ function ModelLoader (props) {
                 {/* <meshStandardMaterial color={0x000000}/> */}
                 {/* <meshStandardMaterial color={0xFFFFFF}/> */}
             </mesh>
+            <Text
+                position={[
+                    props.position[0] * 0.9,
+                    3,
+                    props.position[2] + 15
+                ]}
+                lineHeight={0.8}
+                font="/Ki-Medium.ttf"
+                fontSize={2}
+                material-toneMapped={false}
+                anchorX="center"
+                anchorY="middle"
+                color={'#ffffff'}
+            >
+                {props.section}
+            </Text>
         </>
     )
 }
