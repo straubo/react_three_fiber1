@@ -15,7 +15,7 @@ function ModelLoader (props) {
 
     const shinyMaterial = new THREE.MeshPhysicalMaterial({
         color: new THREE.Color(
-            props.activeItem == props.section ?
+            props.activeItem === props.section ?
             props.selectedColor : props.color
             ).convertSRGBToLinear(),
         roughness: 0,
@@ -38,42 +38,44 @@ function ModelLoader (props) {
     // bring active item closer to camera
         ref.current.position.lerp(v.set(
             props.activeItem == null ? props.position[0] :
-            props.activeItem == props.section ? 0 :
+            props.activeItem === props.section ? 0 :
             props.position[0],
 
             props.activeItem == null ? props.position[1] :
-            props.activeItem == props.section ? props.position[1] - 3 :
+            props.activeItem === props.section ? props.position[1] - 3 :
             -20,
 
             props.activeItem == null ? props.position[2] :
-            props.activeItem == props.section ? 55 :
+            props.activeItem === props.section ? 55 :
             props.position[2],
         ), 0.05)
-        if (props.activeItem == props.section && ref.current.rotation.z % (Math.PI*2) <= 0.15) {
+        if (props.activeItem === props.section && ref.current.rotation.z % (Math.PI*2) <= 0.15) {
         } else {
             ref.current.rotation.z = ref.current.rotation.z += delta * 1.5
         }
     })
 
     return (
-        <mesh
-            ref={ref} 
-            {...props}
-            onClick={() => {
-                set(!zoom)
-                props.selectObj(props.section)
-            }} 
-            onPointerOver={() => setActive(true)} 
-            onPointerOut={() => setActive(false)}
-            receiveShadow
-            castShadow
-            geometry={nodes[props.modelExtension].geometry} 
-            rotation={[Math.PI / 2, 0, 0]} 
-            material={shinyMaterial}
-        >
-            {/* <meshStandardMaterial color={0x000000}/> */}
-            {/* <meshStandardMaterial color={0xFFFFFF}/> */}
-        </mesh>
+        <>
+            <mesh
+                ref={ref} 
+                {...props}
+                onClick={() => {
+                    set(!zoom)
+                    props.selectObj(props.section)
+                }} 
+                onPointerOver={() => setActive(true)} 
+                onPointerOut={() => setActive(false)}
+                receiveShadow
+                castShadow
+                geometry={nodes[props.modelExtension].geometry} 
+                rotation={[Math.PI / 2, 0, 0]} 
+                material={shinyMaterial}
+            >
+                {/* <meshStandardMaterial color={0x000000}/> */}
+                {/* <meshStandardMaterial color={0xFFFFFF}/> */}
+            </mesh>
+        </>
     )
 }
 

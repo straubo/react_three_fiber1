@@ -1,4 +1,4 @@
-import React, { forwardRef, useRef } from "react"
+import React from "react"
 import '../styles/work.css'
 
 // function Work() {
@@ -37,10 +37,8 @@ import '../styles/work.css'
 function Work(props) {
 	return (
 	<div
-		// ref={ref}
-			onScroll={(e) => {
+		onScroll={(e) => {
 			props.scroll.current = e.target.scrollTop / (e.target.scrollHeight - window.innerHeight)
-			// props.caption.current.innerText = props.scroll.current.toFixed(2)
 		}}
 	  	className="scroll"
 	>
@@ -83,7 +81,7 @@ function Work(props) {
 		<div style={{ height: "200vh" }}>
 			<div className="dot">
 				<h1>
-					<a href="https://www.elephant.is" target="_blank">elephant.is</a>
+					<a href="https://www.elephant.is" target="_blank" rel="noreferrer">elephant.is</a>
 						
 
 				</h1>
@@ -94,7 +92,9 @@ function Work(props) {
 		</div>
 		<div style={{ height: "200vh" }}>
 			<div className="dot">
-				<h1>Marc Jacobs</h1>
+				<h1>
+					<a href="https://www.marcjacobs.com/" target="_blank" rel="noreferrer">Marc Jacobs</a>
+				</h1>
 				<h2>(web)</h2>
 				Casey used handlebars.js and other front-end technologies to bring the iconic
 				designer's website to life.
@@ -111,9 +111,16 @@ function Work(props) {
 		</div>
 		<div style={{ height: "200vh" }}>
 			<div className="dot">
-				<h1>Entertainment In-Store Experience (2021)</h1>
+				<h1>
+					<a href="https://www.adweek.com/performance-marketing/xfinity-retail-is-putting-shoppers-on-tv-via-augmented-reality-qr-codes/" target="_blank" rel="noreferrer">
+						Entertainment
+					</a>
+				</h1>
 				<h2>(mobile AR)</h2>
 				Casey prototyped creative designs using multiple technologies. Final product was made with Zappar.
+				Read the Adweek coverage of this experience <a href="https://www.adweek.com/performance-marketing/xfinity-retail-is-putting-shoppers-on-tv-via-augmented-reality-qr-codes/" target="_blank" rel="noreferrer">
+						here
+					</a>
 			</div>
 		</div>
 		{/* <span className="caption" ref={props.caption}> */}

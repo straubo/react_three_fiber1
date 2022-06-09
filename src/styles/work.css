@@ -32,7 +32,6 @@
   
 
 .dot {
-	/* pointer-events: none; */
 	position: sticky;
 	top: 0px;
 	display: inline-block;
@@ -47,7 +46,6 @@
   
   .dot > h1 {
 	-webkit-font-smoothing: auto;
-	/* pointer-events: none; */
 	color: white;
 	font-size: 5em;
 	font-weight: 100;

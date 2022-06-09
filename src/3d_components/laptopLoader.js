@@ -4,7 +4,7 @@
 import * as THREE from 'three'
 import React, { useEffect, useRef, useState } from 'react'
 import { useFrame } from '@react-three/fiber'
-import { useGLTF, ContactShadows, Html } from '@react-three/drei'
+import { useGLTF, Html } from '@react-three/drei'
 import { useSpring } from '@react-spring/core'
 import { a as three } from '@react-spring/three'
 import LaptopScreen from '../2d_components/laptopScreen'
@@ -19,7 +19,7 @@ function Model(props) {
     useFrame((state, delta) => {
         // rotation
         const t = state.clock.getElapsedTime()
-        if (props.activeItem == 'contact' && group.current.rotation.y % (Math.PI*2) >= -0.5) {
+        if (props.activeItem === 'contact' && group.current.rotation.y % (Math.PI*2) >= -0.5) {
         } else {
             group.current.rotation.y = THREE.MathUtils.lerp(
                 group.current.rotation.y, !props.beenInit ? 
@@ -38,15 +38,15 @@ function Model(props) {
         
         group.current.position.x = THREE.MathUtils.lerp(group.current.position.x, !props.beenInit ? 0 :
             props.activeItem == null ? 35 :
-            props.activeItem == "contact" ? 0 :
+            props.activeItem === "contact" ? 0 :
             0, 0.02)
         group.current.position.y = THREE.MathUtils.lerp(group.current.position.y, !props.beenInit ? -3 :
             props.activeItem == null ? 1 :
-            props.activeItem == "contact" ? -2 :
+            props.activeItem === "contact" ? -2 :
             -20, 0.07)
         group.current.position.z = THREE.MathUtils.lerp(group.current.position.z, !props.beenInit ? -7 :
             props.activeItem == null ? -75 :
-             props.activeItem == "contact" ? -20 :
+             props.activeItem === "contact" ? -20 :
             -75, 0.014)
     })
 

@@ -3,14 +3,13 @@
 // try again tomorrow?
 import * as THREE from 'three'
 import React, { useEffect, useRef, useState } from 'react'
-import {useFrame, useThree } from '@react-three/fiber'
 import { useGLTF, useCursor, Edges } from "@react-three/drei"
 
 
 function ModelLoader3 (props) {   
     const v = new THREE.Vector3()
     // ref and mesh/material stuff 
-    const {nodes, materials} = useGLTF('/headset.glb')
+    const {nodes} = useGLTF('/headset.glb')
     const shinyMaterial = new THREE.MeshPhysicalMaterial({
         color: new THREE.Color('#000000').convertSRGBToLinear(),
         roughness: 0,

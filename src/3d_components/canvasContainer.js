@@ -1,7 +1,6 @@
-import * as THREE from 'three'
-import React, {useRef, Suspense, useState, useMemo} from 'react';
-import { Canvas, extend, useFrame, useThree, useLoader } from '@react-three/fiber'
-import { OrbitControls, CameraShake, Environment, Stars } from '@react-three/drei'
+import React, {Suspense} from 'react';
+import { Canvas,  } from '@react-three/fiber'
+import { OrbitControls, Stars } from '@react-three/drei'
 import Ocean from "../three_js_components/ocean"
 import PostProcessingWrapper from '../three_js_components/postProcessing'
 import LightingWrapper from '../three_js_components/lighting'
