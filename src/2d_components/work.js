@@ -1,39 +1,6 @@
 import React from "react"
 import '../styles/work.css'
 
-// function Work() {
-//     return (
-//         <div>
-//             <div classNameName='sectionHeader'>
-//                 work
-//             </div>
-// 			{/* classNameName="siteBody" */}
-// 			<div>
-// 				Casey uses technologies such as THREE.js, Unity, React, 8th Wall, Spark AR and many others to make a wide range of colorful, impactful experiences. Some examples of his work:
-// 				<br/> <br/>
-// 				<span classNameName="subHeader">Web AR experiences (Xfinity)</span><br/>
-// 				<a href="https://www.adweek.com/performance-marketing/xfinity-retail-is-putting-shoppers-on-tv-via-augmented-reality-qr-codes/" target="_blank">
-// 					Entertainment/Peacock Promotion (Zappar)
-// 				</a>
-// 				<br/>
-// 				<span>2021 Summer Olympics (8th Wall/Three.js)</span>
-// 				<br/>
-// 				<span>Sing 2/Happy Holidays (8th Wall/Three.js)</span><br/>
-// 				<br/>
-// 				<span classNameName="subHeader">Flat Web:</span>
-// 				<br/>
-// 				<a href="https://www.elephant.is" target="_blank">Elephant website (Webby-nominated)</a>
-// 				<br/>
-// 				<a href="https://www.marcjacobs.com/" target="_blank">Marc Jacobs</a>
-// 				<br/>
-// 				2022 Winter Olympics Promotion
-// 				<br/> <br/>
-
-// 			</div>
-//         </div>
-//     )
-// }
-
 function Work(props) {
 	return (
 	<div
@@ -61,7 +28,6 @@ function Work(props) {
 						Summer Olympics (2021)
 					</a>
 				</h1>
-				{/* https://youtu.be/U8Si-5INrNA */}
 				<h2>(mobile AR)</h2>
 				Using 8th Wall and THREE.js, Casey led a team that created a mobile AR Photo Op experience -
 				 customers could take a photo with the 2021 US Summer Olympians 
@@ -71,8 +37,6 @@ function Work(props) {
 			<div className="dot">
 				<h1>
 					<a href="https://www.elephant.is" target="_blank" rel="noreferrer">elephant.is</a>
-						
-
 				</h1>
 				<h2>(web)</h2>
 				Casey worked on a team to bring the Webby-nominated Elephant website to life using React, Sass and a number

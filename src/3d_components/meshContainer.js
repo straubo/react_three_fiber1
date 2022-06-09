@@ -1,6 +1,5 @@
-import * as THREE from 'three'
-import React, {useRef, Suspense, useState, useMemo} from 'react';
-import { Canvas, extend, useFrame, useThree, useLoader } from '@react-three/fiber'
+import React from 'react';
+import { useThree, useLoader } from '@react-three/fiber'
 import { Text, MeshDistortMaterial, Environment, CameraShake } from '@react-three/drei'
 import { a as three, useSpring } from '@react-spring/three'
 // import { a as web } from '@react-spring/web'
@@ -21,7 +20,7 @@ function Caption(props) {
         position={
             props.activeItem == null ?
             [0, 30, -5] : 
-            props.activeItem == "contact" ? [0, -30, -75] :
+            // props.activeItem == "contact" ? [0, -30, -75] :
             [0, 60, -75]
         }
         color={
