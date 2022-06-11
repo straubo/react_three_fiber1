@@ -4,7 +4,7 @@
 import * as THREE from 'three'
 import React, { useEffect, useRef, useState } from 'react'
 import { useFrame } from '@react-three/fiber'
-import { useGLTF, Html } from '@react-three/drei'
+import { useGLTF, Html, Text } from '@react-three/drei'
 import { useSpring } from '@react-spring/core'
 import { a as three } from '@react-spring/three'
 import LaptopScreen from '../2d_components/laptopScreen'
@@ -30,11 +30,6 @@ function Model(props) {
         }
 
         group.current.rotation.z = THREE.MathUtils.lerp(group.current.rotation.z, !props.beenInit ? Math.sin(t) / 20 : 0, 0.1)
-
-        // old
-        // group.current.position.x = THREE.MathUtils.lerp(group.current.position.x, props.open ? 0 : -25, 0.007)
-        // group.current.position.y = THREE.MathUtils.lerp(group.current.position.y, props.open ? 0 : 60, 0.007)
-        // group.current.position.z = THREE.MathUtils.lerp(group.current.position.z, props.open ? -3 : -75, 0.014)
         
         group.current.position.x = THREE.MathUtils.lerp(group.current.position.x, !props.beenInit ? 0 :
             props.activeItem == null ? 35 :
@@ -106,6 +101,7 @@ export default function LaptopLoader(props) {
     }
 
     return (   
+        <>
         <group
             onClick={(e) => {
                 e.stopPropagation()
@@ -122,5 +118,21 @@ export default function LaptopLoader(props) {
                 activeItem={props.activeItem}
             />
         </group>
+        <Text
+            position={[34, 2, 0]}
+            lineHeight={0.8}
+            font="/Ki-Medium.ttf"
+            fontSize={2.3}
+            material-toneMapped={false}
+            anchorX="center"
+            anchorY="middle"
+            color={'#ffffff'}
+            fillOpacity={props.activeItem === null && beenInit ?
+                1 : 0
+            }
+        >
+            contact
+        </Text>
+    </>
   )
 }
