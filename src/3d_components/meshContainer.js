@@ -21,7 +21,7 @@ function Caption(props) {
             props.activeItem == null ?
             [0, 30, -5] : 
             // props.activeItem == "contact" ? [0, -30, -75] :
-            [0, 60, -75]
+            [0, 58, -75]
         }
         color={
             props.activeItem == null || 

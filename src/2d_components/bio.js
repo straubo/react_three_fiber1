@@ -11,6 +11,7 @@ function Bio() {
 				go to the Work page.
 				{/* click here? */}
 				<br></br><br></br>
+				
 				A professional saxophonist in a past life, Casey went to NYU as a Jazz Studies major. He studied with the likes of 
 				Lee Konitz (of Miles Davis fame), Mark Turner, Bill McHenry, Ben Street, and many more of his heroes. He has toured on three continents 
 				and played at over a hundred venues, including the Kennedy Center, Jazz at Lincoln Center, the Blue Note, the Jazz Gallery and countless others.
@@ -20,7 +21,8 @@ function Bio() {
 				 quickly developed a knack for it. Starting his technical career 
 				as a front-end Angular 1 developer at a touchscreen kiosk company called MetroClick, Casey started fooling around with Unity 
 				during a few development off-weeks. He quickly saw the potential and creative opportunities of working in 3D. Since then, 
-				3D development and the promise of AR have been areas of focus and interest for him. <br></br><br></br>
+				3D development and the promise of AR have been areas of focus and interest for him. 
+				<br></br><br></br>
 				
 				Casey maintains a rich life of learning and making. His musical pursuits have also gone digital - 
 				Ableton and analog synthesis have become his main tools for composing and sound design. When he gets a chance,

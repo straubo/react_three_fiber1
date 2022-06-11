@@ -87,6 +87,9 @@ function ModelLoader (props) {
                 material-toneMapped={false}
                 anchorX="center"
                 anchorY="middle"
+                fillOpacity={props.activeItem === null ?
+                    1 : 0
+                }
                 color={'#ffffff'}
             >
                 {props.section}
