@@ -8,44 +8,56 @@ import { useThree } from '@react-three/fiber'
 import { useGLTF, Float, RoundedBox } from '@react-three/drei'
 
 // Base
-import { LayerMaterial, Depth, Fresnel, Noise, Color } from 'lamina/vanilla'
+import { LayerMaterial, Depth, Fresnel, Noise, Color,  } from 'lamina/vanilla'
 
+// blue-black - works
 const colorA = new THREE.Color('#2053a5').convertSRGBToLinear()
 const colorB = new THREE.Color('#0F1C4D').convertSRGBToLinear()
 const fresnel = new THREE.Color('#469cab').convertSRGBToLinear()
-// const fresnel = new THREE.Color('#E7B473').convertSRGBToLinear()
+
+// greener
+// const colorA = new THREE.Color('#184521').convertSRGBToLinear()
+// const colorB = new THREE.Color('#0F1C4D').convertSRGBToLinear()
+// const fresnel = new THREE.Color('#469cab').convertSRGBToLinear()
+
+// const colorA = new THREE.Color('#5a415c').convertSRGBToLinear()
+// const colorB = new THREE.Color('#c430cf').convertSRGBToLinear()
+// const fresnel = new THREE.Color('#991515').convertSRGBToLinear()
+
+
 const material = new LayerMaterial({
   layers: [
     new Color({ color: colorA }),
     new Depth({ colorA: colorA, colorB: colorB, alpha: 0.7, mode: 'normal', near: 0, far: 2, origin: [1, 1, 1] }),
-    // new Depth({ colorA: 'purple', colorB: colorB, alpha: 0.5, mode: 'add', near: 3, far: 2, origin: [1, 1, 1] }),
-    new Fresnel({ mode: 'add', color: fresnel, intensity: 0.3, power: 2.5, bias: 0.0 }),
-    new Noise({ mapping: 'local', type: 'simplex', scale: 1000, colorA: '#ffaf40', colorB: 'black', mode: 'overlay' })
-  ]
+    // new Depth({ colorA: colorA, colorB: colorB, alpha: 0.5, mode: 'add', near: 3, far: 2, origin: [1, 1, 1] }),
+    new Fresnel({ mode: 'add', color: fresnel, intensity: 0.3, power: 2.5, bias: 0 }),
+    new Noise({ mapping: 'local', type: 'simplex', scale: 10000, colorA: '#ffaf40', colorB: 'red', mode: 'overlay' })
+  ], 
+  // lighting: 'phong'
 })
 
 function Noodle() {
   const { viewport, camera } = useThree()
   const { nodes } = useGLTF('/worms-transformed.glb')
   const [geometry] = useState(() => nodes[`noodle_${Math.ceil(Math.random() * 4)}`].geometry)
-  const [speed] = useState(() => 0.1 + Math.random() * 3)
+  const [speed] = useState(() => 0.1 + Math.random() * 2)
   const position = useMemo(() => {
     const z = Math.random() * -30
     const bounds = viewport.getCurrentViewport(camera, [0, 0, z])
     return [THREE.MathUtils.randFloatSpread(bounds.width), THREE.MathUtils.randFloatSpread(bounds.height * 0.75), z - 10]
   }, [viewport])
   return (
-    <Float position={position} speed={speed} rotationIntensity={10} floatIntensity={40} dispose={null}>
+    <Float position={position} speed={speed} rotationIntensity={5} floatIntensity={40} dispose={null}>
       {/* <mesh scale={30} geometry={geometry} material={material} /> */}
       <mesh scale={5} material={material} >
-        <sphereBufferGeometry />
+        <boxGeometry />
       </mesh>
     </Float>
   )
 }
 
 export default function Noodles() {
-  return Array.from({ length: 35 }, (_, i) => <Noodle key={i} />)
+  return Array.from({ length: 75 }, (_, i) => <Noodle key={i} />)
 }
 
-useGLTF.preload('/worm-transformed.glb')
+// useGLTF.preload('/worm-transformed.glb')
