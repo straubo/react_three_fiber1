@@ -103,6 +103,7 @@ function MeshContainer(props) {
         <Menu3D
             selectObj={props.selectObj}
             activeItem={props.currentObject}
+            width={width/3.6}
         />
         <CameraShake yawFrequency={0} pitchFrequency={0} rollFrequency={0} intensity={0}/>
         <Environment preset="night" />

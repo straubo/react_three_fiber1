@@ -70,6 +70,7 @@ code {
 	height: 100vh;
 	padding: 0px 15%;
 	color: white;
+	overflow-y: scroll;
 }
 
 .siteBodyInner {

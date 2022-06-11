@@ -120,7 +120,7 @@ export default function LaptopLoader(props) {
             />
         </group>
         <Text
-            position={[props.width - 1, 2, 0]}
+            position={[props.width - 1, 2, 15]}
             lineHeight={0.8}
             font="/Ki-Medium.ttf"
             fontSize={2.3}

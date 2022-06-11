@@ -12,7 +12,7 @@ function Menu3D(props) {
         ref.current.position.copy(camera.position)
         ref.current.quaternion.copy(camera.quaternion)
         // Apply offset - going to have to make this responsive
-        ref.current.translateX(-3.4) // full screen pc, 1 on mobile
+        ref.current.translateX(-props.width/13) // full screen pc, 1 on mobile
         ref.current.translateZ(-5)
         ref.current.translateY(2)
     })
