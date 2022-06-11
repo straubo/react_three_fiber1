@@ -17,11 +17,9 @@ function Caption(props) {
     const { width } = useThree((state) => state.viewport)
     return (
       <Text
-        // position={[0, 18, -5]}
         position={
             props.activeItem == null ?
             [0, 30, -5] : 
-            // props.activeItem == "contact" ? [0, -30, -75] :
             [0, 58, -75]
         }
         color={
@@ -44,6 +42,9 @@ function Caption(props) {
   
 
 function MeshContainer(props) {
+
+    const { width } = useThree((state) => state.viewport)
+
     return (<>
         <Caption
             children={`casey berman`}
@@ -65,7 +66,9 @@ function MeshContainer(props) {
             scale={0.08} 
             modelName={'human'} 
             modelExtension={'BaseMesh_Man_Simple'}
-            position={[-35, 3, 0]}
+            // position={[-35, 3, 0]}
+            position={[
+                -width/3.6, 3, 0]}
             selectObj={props.selectObj}
             activeItem={props.currentObject}
             section={'about'}
@@ -86,6 +89,7 @@ function MeshContainer(props) {
         <LaptopLoader
             activeItem={props.currentObject}
             selectObj={props.selectObj}
+            width={width/3.6}
         />
         <Skybox 
             activeItem={props.currentObject}

@@ -32,14 +32,14 @@ function Model(props) {
         group.current.rotation.z = THREE.MathUtils.lerp(group.current.rotation.z, !props.beenInit ? Math.sin(t) / 20 : 0, 0.1)
         
         group.current.position.x = THREE.MathUtils.lerp(group.current.position.x, !props.beenInit ? 0 :
-            props.activeItem == null ? 35 :
+            props.activeItem == null ? props.width :
             props.activeItem === "contact" ? 0 :
             0, 0.02)
         group.current.position.y = THREE.MathUtils.lerp(group.current.position.y, !props.beenInit ? -3 :
             props.activeItem == null ? 1 :
             props.activeItem === "contact" ? -2 :
             -20, 0.07)
-        group.current.position.z = THREE.MathUtils.lerp(group.current.position.z, !props.beenInit ? -7 :
+        group.current.position.z = THREE.MathUtils.lerp(group.current.position.z, !props.beenInit ? -15 :
             props.activeItem == null ? -75 :
              props.activeItem === "contact" ? -20 :
             -75, 0.014)
@@ -116,10 +116,11 @@ export default function LaptopLoader(props) {
                 laptopChange={laptopChange}
                 scale={1.8}
                 activeItem={props.activeItem}
+                width={props.width}
             />
         </group>
         <Text
-            position={[34, 2, 0]}
+            position={[props.width - 1, 2, 0]}
             lineHeight={0.8}
             font="/Ki-Medium.ttf"
             fontSize={2.3}
