@@ -73,7 +73,7 @@ function MeshContainer(props) {
             selectedColor={'pink'}
         />
         <ModelLoader
-            scale={4}
+            scale={3}
             modelName={'headset'} 
             modelExtension={'VR_simple'}
             position={[0, 7, 0]}
@@ -102,7 +102,9 @@ function MeshContainer(props) {
         />
         <CameraShake yawFrequency={0} pitchFrequency={0} rollFrequency={0} intensity={0}/>
         <Environment preset="night" />
-        <Noodles />
+        <Noodles 
+            activeItem={props.currentObject}
+        />
 
         {/* undulating sphere, only useful at radius~1 */}
         {/* <a.mesh>

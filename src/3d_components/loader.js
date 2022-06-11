@@ -60,10 +60,12 @@ function ModelLoader (props) {
             <mesh
                 ref={ref} 
                 {...props}
+                
                 onClick={() => {
                     set(!zoom)
                     props.selectObj(props.section)
                 }} 
+                
                 onPointerOver={() => setActive(true)} 
                 onPointerOut={() => setActive(false)}
                 receiveShadow
@@ -72,8 +74,6 @@ function ModelLoader (props) {
                 rotation={[Math.PI / 2, 0, 0]} 
                 material={shinyMaterial}
             >
-                {/* <meshStandardMaterial color={0x000000}/> */}
-                {/* <meshStandardMaterial color={0xFFFFFF}/> */}
             </mesh>
             <Text
                 position={[
