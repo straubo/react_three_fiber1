@@ -11,6 +11,7 @@ import LaptopLoader from './laptopLoader'
 import Menu3D from './menu3D'
 import Skybox from './skybox'
 import Model from './Model'
+import Noodles from './Noodles'
 
 function Caption(props) {
     const { width } = useThree((state) => state.viewport)
@@ -101,6 +102,9 @@ function MeshContainer(props) {
         />
         <CameraShake yawFrequency={0} pitchFrequency={0} rollFrequency={0} intensity={0}/>
         <Environment preset="night" />
+        <Noodles />
+        <Noodles />
+        {/* <Noodles /> */}
 
         {/* undulating sphere, only useful at radius~1 */}
         {/* <a.mesh>

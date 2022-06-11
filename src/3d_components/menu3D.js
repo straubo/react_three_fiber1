@@ -33,11 +33,7 @@ function Menu3D(props) {
                 selectObj={props.selectObj}
             />
             <Text
-                position={[
-                    0,
-                    -1.2,
-                    0
-                ]}
+                position={[0, -1.2, 0]}
                 lineHeight={0.8}
                 font="/Ki-Medium.ttf"
                 fontSize={.18}
@@ -55,11 +51,7 @@ function Menu3D(props) {
                 selectObj={props.selectObj}
             />
             <Text
-                position={[
-                    0,
-                    -2.5,
-                    0
-                ]}
+                position={[0, -2.5, 0]}
                 lineHeight={0.8}
                 font="/Ki-Medium.ttf"
                 fontSize={.18}
@@ -77,11 +69,7 @@ function Menu3D(props) {
                 selectObj={props.selectObj}
             />
             <Text
-                position={[
-                    0, 
-                    -4.2, 
-                    0
-                ]}
+                position={[0, -4.2, 0]}
                 lineHeight={0.8}
                 font="/Ki-Medium.ttf"
                 fontSize={.18}
