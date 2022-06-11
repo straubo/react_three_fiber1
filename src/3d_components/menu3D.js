@@ -11,7 +11,7 @@ function Menu3D(props) {
         // Move mesh to be flush with camera
         ref.current.position.copy(camera.position)
         ref.current.quaternion.copy(camera.quaternion)
-        // Apply offset - going to have to make this responsive
+        // Apply responsive offset
         ref.current.translateX(-props.width/13) // full screen pc, 1 on mobile
         ref.current.translateZ(-5)
         ref.current.translateY(2)
