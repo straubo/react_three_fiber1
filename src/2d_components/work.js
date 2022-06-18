@@ -72,7 +72,7 @@ function Work(props) {
 		<div style={{ height: "200vh" }}>
 			<div className="dot">
 				<h1>Xfinity Retail Experiences</h1>
-				<h2>(various techs: Unity, Javascript, Brightsign et al.)</h2>
+				<h2>(Unity, Javascript, Brightsign, etc.)</h2>
 				Casey played a massive role in developing and maintaining upwards of 
 				50 evergreen experiences in Xfinity's premiere and flagship stores. In addition, he prototypes and maintains
 				experiences that exist in their 500+ stores nationwide. 
