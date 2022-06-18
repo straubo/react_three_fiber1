@@ -1,39 +1,42 @@
 import ModelLoader5 from "./loader5"
 import ModelLoader4 from "./loader4"
 import ModelLoader3 from "./loader3"
-import { useRef } from "react"
+import { useRef, useState } from "react"
 import { useFrame } from "@react-three/fiber"
 import { Text } from "@react-three/drei"
 
 function Menu3D(props) {
+    const [mobile, setMobile] = useState(true)
     const ref = useRef()
     useFrame(({ camera }) => {
         // Move mesh to be flush with camera
         ref.current.position.copy(camera.position)
         ref.current.quaternion.copy(camera.quaternion)
         // Apply responsive offset
-        ref.current.translateX(-props.width/46.8) // full screen pc, 1 on mobile
+        ref.current.translateX(mobile ? 0 : -props.width/46.8)
+        ref.current.translateY(mobile ? 1.9 : 2)
         ref.current.translateZ(-5)
-        ref.current.translateY(2)
     })
-    // apparently theres a drei thing for this called Billboard.. 
-    // maybe refactor to use that later
     return (
         <mesh
         ref={ref}
         visible={props.activeItem != null}
             >
             <ModelLoader4
-                scale={0.006} 
+                scale={mobile ? 0.0035 : 0.006} 
                 modelName={'human'} 
                 meshExtension={'BaseMesh_Man_Simple'}
                 fullMeshExtension={'nodes.BaseMesh_Man_Simple.geometry'}
-                position={[0, -1, 0]}
+                position={mobile ?
+                    // [-width/47, 3, 0] :
+                    [-props.width/47, 0, 0] :
+                    [0, -1, 0]
+                }
                 activeItem={props.activeItem}
                 selectObj={props.selectObj}
             />
             <Text
-                position={[0, -1.2, 0]}
+                position={mobile ? [-props.width/47, -0.1, 0] : [0, -1.2, 0]}
                 lineHeight={0.8}
                 font="/Ki-Medium.ttf"
                 fontSize={.18}
