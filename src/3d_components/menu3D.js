@@ -36,20 +36,22 @@ function Menu3D(props) {
                 selectObj={props.selectObj}
             />
             <Text
-                position={mobile ? [-props.width/47, -0.1, 0] : [0, -1.2, 0]}
+                position={mobile ? [-props.width/47, -0.13, 0] : [0, -1.2, 0]}
                 lineHeight={0.8}
                 font="/Ki-Medium.ttf"
-                fontSize={.18}
+                fontSize={mobile ? .12 : .18}
                 material-toneMapped={false}
                 anchorX="center"
                 anchorY="middle"
                 color={'#ffffff'}
             >about</Text>
             <ModelLoader3
-                scale={0.2}
+                scale={mobile ? 0.14 : 0.2}
                 modelName={'headset'}
                 modelExtension={'VR_simple'}
-                position={[0, -2.1, 0]}
+                position={mobile ? 
+                    [0, 0.3, 0] :
+                    [0, -2.1, 0]}
                 activeItem={props.activeItem}
                 selectObj={props.selectObj}
             />
@@ -64,10 +66,11 @@ function Menu3D(props) {
                 color={'#ffffff'}
             >work</Text>
             <ModelLoader5
-                scale={0.2}
+                scale={mobile ? 0.14 : 0.2}
                 modelName={'headset'} 
                 modelExtension={'VR_simple'}
-                position={[0, -3.8, 0]}
+                position={mobile ? 
+                    [props.width/47, 0.3, 0] : [0, -3.8, 0]}
                 activeItem={props.activeItem}
                 selectObj={props.selectObj}
             />
