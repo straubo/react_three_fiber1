@@ -46,13 +46,11 @@ code {
 
 .sectionHeader {
 	padding-top: 15px;
-	/* font-size: 3em; */
-	/* font-weight: 500; */
 	text-align: center;
 	/*  */
 	-webkit-font-smoothing: auto;
 	pointer-events: none;
-	color: black;
+	color: white;
 	font-size: 5em;
 	font-weight: 100;
 	line-height: 1em;
@@ -104,7 +102,6 @@ code {
 	background: rgb(215, 215, 215);
 	color: #000000;
 	padding: 2px 10px;
-	/* border-radius: 4px; */
 	letter-spacing: 1px;
 	display: flex;
 	justify-content: center;
@@ -112,7 +109,6 @@ code {
 	gap: 5px;
 	width: 312px;
 	height: 212px;
-	/* pointer-events: none; */
 }
 
 .contactLaptop {
@@ -130,17 +126,13 @@ code {
 	}
 	.sectionHeader {
 		font-size: 2em;
+		padding-top: 80px;
 	}
 	.subHeader {
 		font-size: 1.2em;
 	}
 	.siteBody {
-		/* padding: 50vh 5% 0px 5%; */
-		/* padding: 44vh 5% 0px 5%; */
-		/* padding: 0px 5%; */
-		/* height: 46vh; */
 		overflow-y: scroll;
-		/* pointer-events: ; */
 	}
 	.siteBodyInner {
 		padding: 50px 0;

@@ -53,7 +53,7 @@ function MeshContainer(props) {
     });
     useFrame((state) => {
         if (props.currentObject === "about") {
-            state.camera.position.lerp(v.set(0, 210, 110), 0.04)
+            state.camera.position.lerp(v.set(0, 175, 150), 0.04)
             // state.camera.lookAt(0, 250, 200)
             // state.camera.lookAt(0, 0, 0)
             // state.camera.rotation.set(.4, 0, 0);

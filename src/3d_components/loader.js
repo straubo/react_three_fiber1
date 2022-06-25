@@ -26,16 +26,6 @@ function ModelLoader (props) {
     useCursor(active)
     
     useFrame((state, delta) => {
-    //     state.camera.fov = THREE.MathUtils.lerp(state.camera.fov, zoom ? 55 : 42, 0.05)
-    //     if (zoom) {
-    //         state.camera.position.lerp(v.set(0, 40, 150), 0.01)
-    //         // state.camera.lookAt(0, 0, 0)
-    //     }
-    //     // state.camera.position.lerp(v.set(zoom ? 0 : 0, zoom ? 40 : 35, zoom ? 150 : 125), 0.01)
-        
-    //     state.camera.updateProjectionMatrix()
-
-    // bring active item closer to camera
         ref.current.position.lerp(v.set(
             props.activeItem == null ? props.position[0] :
             props.activeItem === props.section ? 0 :
