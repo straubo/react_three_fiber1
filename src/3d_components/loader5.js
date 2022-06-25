@@ -1,7 +1,6 @@
 import * as THREE from 'three'
 import React, { useRef, useState } from 'react'
-import {useFrame} from '@react-three/fiber'
-import { useGLTF, useCursor } from "@react-three/drei";
+import { useGLTF, useCursor, MeshDistortMaterial } from "@react-three/drei";
 
 
 function ModelLoader5 (props) {   
@@ -19,17 +18,6 @@ function ModelLoader5 (props) {
     })
 
     useCursor(active)
-    useFrame((state, delta) => {
-    //     state.camera.fov = THREE.MathUtils.lerp(state.camera.fov, zoom ? 55 : 42, 0.05)
-    //     if (zoom) {
-    //         state.camera.position.lerp(v.set(0, 40, 150), 0.01)
-    //         // state.camera.lookAt(0, 0, 0)
-    //     }
-    //     // state.camera.position.lerp(v.set(zoom ? 0 : 0, zoom ? 40 : 35, zoom ? 150 : 125), 0.01)
-        
-    //     state.camera.updateProjectionMatrix()
-        // ref.current.rotation.z = ref.current.rotation.z += delta * 1.5
-    })
 
     return (
         <mesh
@@ -43,12 +31,21 @@ function ModelLoader5 (props) {
             onPointerOut={() => setActive(false)}
             receiveShadow
             castShadow
-            geometry={nodes.VR_simple.geometry} 
+            // geometry={nodes.VR_simple.geometry} 
             rotation={[Math.PI / 2, 0, 0]} 
-            material={shinyMaterial}
+            // material={shinyMaterial}
         >
-            {/* <meshStandardMaterial color={0x000000}/> */}
-            {/* <meshStandardMaterial color={0xFFFFFF}/> */}
+            <sphereBufferGeometry args={[1, 64, 64]} >
+            </sphereBufferGeometry>
+             <MeshDistortMaterial 
+                    color={0x222222}
+                    distort={0.3}
+                    speed={3}
+                    metalness={0.1}
+                    envMapIntensity={1}
+                    clearcoat={1}
+                    clearcoatRoughness={0}
+                />
         </mesh>
     )
 }
