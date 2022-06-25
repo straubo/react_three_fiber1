@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useThree, useLoader } from '@react-three/fiber'
+import { useThree, useFrame } from '@react-three/fiber'
 import { Text, MeshDistortMaterial, Environment, CameraShake } from '@react-three/drei'
 import { a as three, useSpring } from '@react-spring/three'
 // import { a as web } from '@react-spring/web'
@@ -11,6 +11,7 @@ import Menu3D from './menu3D'
 import Skybox from './skybox'
 import Model from './Model'
 import Noodles from './Noodles'
+import * as THREE from 'three'
 
 function Caption(props) {
     return (
@@ -43,11 +44,26 @@ function Caption(props) {
   
 
 function MeshContainer(props) {
+    const v = new THREE.Vector3()
+    const r = new THREE.Vector3()
     const [mobile, setMobile] = useState(false)
     const { width } = useThree((state) => state.viewport)
     useEffect(() => {
         width < 50 ? setMobile(true) : setMobile(false)        
     });
+    useFrame((state) => {
+        if (props.currentObject === "about") {
+            state.camera.position.lerp(v.set(0, 210, 110), 0.04)
+            // state.camera.lookAt(0, 250, 200)
+            // state.camera.lookAt(0, 0, 0)
+            // state.camera.rotation.set(.4, 0, 0);
+            // state.camera.rotation.lerp(r.set(.4, 0, 0), 0.01);
+        } else {
+            state.camera.position.lerp(v.set(0, 10, 80), 0.04)
+            // state.camera.lookAt(0, 0, 0)
+        }
+        state.camera.lookAt(0, 0, 0)
+    })
 
     return (<>
         <Caption
