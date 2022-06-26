@@ -25,21 +25,18 @@ function ModelLoader5 (props) {
             {...props}
             onClick={() => {
                 set(!zoom)
-                props.selectObj('contact')
+                props.selectObj(props.section)
             }} 
             onPointerOver={() => setActive(true)} 
             onPointerOut={() => setActive(false)}
             receiveShadow
             castShadow
-            // geometry={nodes.VR_simple.geometry} 
-            rotation={[Math.PI / 2, 0, 0]} 
-            // material={shinyMaterial}
         >
             <sphereBufferGeometry args={[1, 64, 64]} >
             </sphereBufferGeometry>
              <MeshDistortMaterial 
-                    color={0x222222}
-                    distort={0.3}
+                    color={props.color}
+                    distort={0.4}
                     speed={3}
                     metalness={0.1}
                     envMapIntensity={1}

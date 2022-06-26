@@ -22,18 +22,16 @@ function Menu3D(props) {
         ref={ref}
         visible={props.activeItem != null}
             >
-            <ModelLoader4
-                scale={props.mobile ? 0.0035 : 0.006} 
-                modelName={'human'} 
-                meshExtension={'BaseMesh_Man_Simple'}
-                fullMeshExtension={'nodes.BaseMesh_Man_Simple.geometry'}
+            <ModelLoader5
+                scale={props.mobile ? 0.14 : 0.2}
+                section={'about'}
                 position={props.mobile ?
-                    // [-width/47, 3, 0] :
-                    [-props.width/47, 0, 0] :
-                    [0, -1, 0]
+                    [-props.width/47, 0.3, 0] :
+                    [0, -0.5, 0]
                 }
                 activeItem={props.activeItem}
                 selectObj={props.selectObj}
+                color={0xaaaaaa}
             />
             <Text
                 position={props.mobile ? [-props.width/47, -0.13, 0] : [0, -1.2, 0]}
@@ -45,15 +43,15 @@ function Menu3D(props) {
                 anchorY="middle"
                 color={'#ffffff'}
             >about</Text>
-            <ModelLoader3
+            <ModelLoader5
                 scale={props.mobile ? 0.14 : 0.2}
-                modelName={'headset'}
-                modelExtension={'VR_simple'}
+                section={'work'}
                 position={props.mobile ? 
                     [0, 0.3, 0] :
                     [0, -2.1, 0]}
                 activeItem={props.activeItem}
                 selectObj={props.selectObj}
+                color={0x555555}
             />
             <Text
                 position={props.mobile ? [0, -0.13, 0] : [0, -2.5, 0]}
@@ -67,12 +65,12 @@ function Menu3D(props) {
             >work</Text>
             <ModelLoader5
                 scale={props.mobile ? 0.14 : 0.2}
-                modelName={'headset'} 
-                modelExtension={'VR_simple'}
+                section={'contact'}
                 position={props.mobile ? 
                     [props.width/47, 0.3, 0] : [0, -3.8, 0]}
                 activeItem={props.activeItem}
                 selectObj={props.selectObj}
+                color={0x000000}
             />
             <Text
                 position={props.mobile ? [props.width/47, -0.13, 0] : [0, -4.2, 0]}
