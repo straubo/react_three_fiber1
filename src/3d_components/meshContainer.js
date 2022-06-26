@@ -115,7 +115,7 @@ function MeshContainer(props) {
             width={width}
             mobile={mobile}
         />
-        <CameraShake yawFrequency={0.2} pitchFrequency={0.2} rollFrequency={0.2} intensity={0.2}/>
+        {/* <CameraShake yawFrequency={0.2} pitchFrequency={0.2} rollFrequency={0.2} intensity={0.2}/> */}
         <Environment preset="night" />
         <Noodles 
             activeItem={props.currentObject}

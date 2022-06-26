@@ -1,21 +1,12 @@
 import * as THREE from 'three'
 import React, { useRef, useState } from 'react'
-import { useGLTF, useCursor, MeshDistortMaterial } from "@react-three/drei";
+import { useCursor, MeshDistortMaterial } from "@react-three/drei";
 
 
 function ModelLoader5 (props) {   
-    const v = new THREE.Vector3()
     const ref = useRef()
-    const {nodes, materials} = useGLTF('/headset.glb')
     const [active, setActive] = useState(false)
     const [zoom, set] = useState(false)
-
-    const shinyMaterial = new THREE.MeshPhysicalMaterial({
-        color: new THREE.Color('#000000').convertSRGBToLinear(),
-        roughness: 0,
-        clearcoat: 1,
-        clearcoatRoughness: 0,
-    })
 
     useCursor(active)
 
