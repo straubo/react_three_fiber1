@@ -81,6 +81,7 @@ function ModelLoader (props) {
                     1 : 0
                 }
                 color={'#ffffff'}
+                onClick={() => props.selectObj(props.section)}
             >
                 {props.section}
             </Text>

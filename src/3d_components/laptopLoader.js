@@ -113,23 +113,23 @@ export default function LaptopLoader(props) {
                 e.stopPropagation()
                 laptopChange()
             }}
-            position={[0, 6.3, 77]}
+            position={[0, 4.3, 77]}
         >
             <Model 
                 open={open}
                 beenInit={beenInit}
                 hinge={hingeSpring.open.to([0, 1], [1.575, -0.25])}
                 laptopChange={laptopChange}
-                scale={1.8}
+                scale={1.3}
                 activeItem={props.activeItem}
                 width={props.width}
             />
         </group>
         <Text
-            position={[props.width - 1, 2, 15]}
+            position={[(props.width - 2.3) * .95, 3.2, 15]}
             lineHeight={0.8}
             font="/Ki-Medium.ttf"
-            fontSize={2.3}
+            fontSize={2}
             material-toneMapped={false}
             anchorX="center"
             anchorY="middle"
@@ -137,6 +137,7 @@ export default function LaptopLoader(props) {
             fillOpacity={props.activeItem === null && beenInit ?
                 1 : 0
             }
+            onClick={()=> props.selectObj('contact')}
         >
             contact
         </Text>
