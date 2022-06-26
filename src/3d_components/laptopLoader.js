@@ -11,7 +11,7 @@ import LaptopScreen from '../2d_components/laptopScreen'
 
 function Model(props) {
     const group = useRef()
-    const { nodes, materials } = useGLTF('/mac-draco.glb')
+    const { nodes, materials } = useGLTF('./src/3d_assets/mac-draco.glb')
     const [hovered, setHovered] = useState(false)
     
     useEffect(() => void (document.body.style.cursor = hovered ? 'pointer' : 'auto'), [hovered])
