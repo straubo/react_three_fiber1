@@ -100,6 +100,12 @@ export default function LaptopLoader(props) {
         }
     }
 
+    useEffect(() => {
+        if (props.activeItem === 'contact') {
+           setOpen(true)
+        }
+    })
+
     return (   
         <>
         <group
