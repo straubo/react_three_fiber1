@@ -1,15 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useThree, useFrame } from '@react-three/fiber'
-import { Text, MeshDistortMaterial, Environment, CameraShake } from '@react-three/drei'
-import { a as three, useSpring } from '@react-spring/three'
-// import { a as web } from '@react-spring/web'
-// import { useSpring } from 'react-spring'
+import { Text, Environment, CameraShake } from '@react-three/drei'
 import ModelLoader from './loader'
-import Box2 from './origBox'
 import LaptopLoader from './laptopLoader'
 import Menu3D from './menu3D'
 import Skybox from './skybox'
-import Model from './Model'
 import Noodles from './Noodles'
 import * as THREE from 'three'
 
@@ -19,10 +14,7 @@ function Caption(props) {
         position={
             props.activeItem == null ?
             [0, 30, -5] : 
-            // props.mobile ?
             [0, -20, -75] 
-            // :
-            // [0, 58, -75]
         }
         color={
             props.activeItem == null || 
@@ -116,11 +108,6 @@ function MeshContainer(props) {
         <Skybox 
             activeItem={props.currentObject}
         />
-        
-        {/* <Model 
-        scroll={props.scroll}
-        scale={3}
-        /> */}
 
         <Menu3D
             selectObj={props.selectObj}
@@ -128,25 +115,11 @@ function MeshContainer(props) {
             width={width}
             mobile={mobile}
         />
-        <CameraShake yawFrequency={0} pitchFrequency={0} rollFrequency={0} intensity={0}/>
+        <CameraShake yawFrequency={0.2} pitchFrequency={0.2} rollFrequency={0.2} intensity={0.2}/>
         <Environment preset="night" />
         <Noodles 
             activeItem={props.currentObject}
         />
-
-        {/* undulating sphere, only useful at radius~1 */}
-        {/* <a.mesh>
-        <sphereBufferGeometry  
-            args={[2, 64, 64]} 
-            >
-            </sphereBufferGeometry>
-            <MeshDistortMaterial 
-                color={0x000000}
-                distort={0.7}
-                speed={1.4}
-                />
-        </a.mesh> */}
-
     </>)
 }
 

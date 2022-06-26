@@ -93,10 +93,10 @@ export default function LaptopLoader(props) {
     const laptopChange = function() {
         if(!beenInit) {
             setBeenInit(true)
-            setOpen(false)
+            // setOpen(false)
         } else {
             props.selectObj('contact')
-            setOpen(!open)
+            // setOpen(!open)
         }
     }
 
