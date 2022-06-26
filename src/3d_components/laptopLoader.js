@@ -35,7 +35,7 @@ function Model(props) {
             props.activeItem == null ? props.width :
             props.activeItem === "contact" ? 0 :
             0, 0.02)
-        group.current.position.y = THREE.MathUtils.lerp(group.current.position.y, !props.beenInit ? -3 :
+        group.current.position.y = THREE.MathUtils.lerp(group.current.position.y, !props.beenInit ? 1 :
             props.activeItem == null ? 1 :
             props.activeItem === "contact" ? -2 :
             -20, 0.07)
@@ -93,10 +93,8 @@ export default function LaptopLoader(props) {
     const laptopChange = function() {
         if(!beenInit) {
             setBeenInit(true)
-            // setOpen(false)
         } else {
             props.selectObj('contact')
-            // setOpen(!open)
         }
     }
 

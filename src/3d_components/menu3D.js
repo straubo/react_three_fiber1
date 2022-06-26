@@ -1,6 +1,4 @@
 import ModelLoader5 from "./loader5"
-import ModelLoader4 from "./loader4"
-import ModelLoader3 from "./loader3"
 import { useRef, useState } from "react"
 import { useFrame } from "@react-three/fiber"
 import { Text } from "@react-three/drei"
@@ -42,6 +40,7 @@ function Menu3D(props) {
                 anchorX="center"
                 anchorY="middle"
                 color={'#ffffff'}
+                onClick={()=> props.selectObj('about')}
             >about</Text>
             <ModelLoader5
                 scale={props.mobile ? 0.14 : 0.2}
@@ -62,6 +61,7 @@ function Menu3D(props) {
                 anchorX="center"
                 anchorY="middle"
                 color={'#ffffff'}
+                onClick={()=> props.selectObj('work')}
             >work</Text>
             <ModelLoader5
                 scale={props.mobile ? 0.14 : 0.2}
@@ -81,6 +81,7 @@ function Menu3D(props) {
                 anchorX="center"
                 anchorY="middle"
                 color={'#ffffff'}
+                onClick={()=> props.selectObj('contact')}
             >contact</Text>
         </ mesh>
     )
