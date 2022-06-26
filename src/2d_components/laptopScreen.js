@@ -6,7 +6,8 @@ function LaptopScreen(props) {
             <div
                 style={props.activeItem !== 'contact' ? {display: 'block'} : {display: 'none'}}
             >
-                welcome to Casey Berman's website <span style={{ fontSize: '4em' }}>🥲</span>
+                Welcome to Casey Berman's website! 
+                {/* <span style={{ fontSize: '4em' }}>🥲</span> */}
             </div>
             <div className="contactLaptop"
                 style={props.activeItem === 'contact' ? {display: 'block'} : {display: 'none'}}

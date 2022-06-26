@@ -106,6 +106,7 @@ code {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	text-align: center;
 	gap: 5px;
 	width: 312px;
 	height: 212px;
