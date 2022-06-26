@@ -1,4 +1,4 @@
-import React, {useRef, Suspense, useMemo} from 'react'
+import React from 'react'
 import ReactDOM from 'react-dom'
 import reportWebVitals from './reportWebVitals'
 import './styles/index.css'

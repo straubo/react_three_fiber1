@@ -1,10 +1,11 @@
 import React, {Suspense} from 'react';
 import { Canvas,  } from '@react-three/fiber'
-import { OrbitControls, Stars } from '@react-three/drei'
+import { Stars } from '@react-three/drei'
 import Ocean from "../three_js_components/ocean"
-import PostProcessingWrapper from '../three_js_components/postProcessing'
+// import PostProcessingWrapper from '../three_js_components/postProcessing'
 import LightingWrapper from '../three_js_components/lighting'
 import MeshContainer from './meshContainer'
+// import { OrbitControls } from '@react-three/drei'
 
 function CanvasContainer(props) {
     return (

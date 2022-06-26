@@ -1,12 +1,11 @@
-import { useFrame } from "@react-three/fiber"
-import { useRef } from "react"
+// import { useFrame } from "@react-three/fiber"
 
 function LightingWrapper() {
     // const light = useRef()
-    useFrame((state) => {
+    // useFrame((state) => {
         // light.current.position.x = state.mouse.x * 20
         // light.current.position.y = state.mouse.y * 20
-    })
+    // })
 
     return (
         <>
