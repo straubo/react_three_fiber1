@@ -21,7 +21,6 @@ function PostProcessingWrapper() {
         /> */}
         
         {/* <Outline
-        // Box2
           selection={[]} // selection of objects that will be outlined
           selectionLayer={10} // selection layer
           blendFunction={BlendFunction.SCREEN} // set this to BlendFunction.ALPHA for dark outlines
