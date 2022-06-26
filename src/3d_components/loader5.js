@@ -1,4 +1,3 @@
-import * as THREE from 'three'
 import React, { useRef, useState } from 'react'
 import { useCursor, MeshDistortMaterial } from "@react-three/drei";
 

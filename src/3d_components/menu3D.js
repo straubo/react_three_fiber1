@@ -1,10 +1,9 @@
 import ModelLoader5 from "./loader5"
-import { useRef, useState } from "react"
+import { useRef } from "react"
 import { useFrame } from "@react-three/fiber"
 import { Text } from "@react-three/drei"
 
 function Menu3D(props) {
-    // const [props.mobile, setMobile] = useState(true)
     const ref = useRef()
     useFrame(({ camera }) => {
         // Move mesh to be flush with camera

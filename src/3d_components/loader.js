@@ -8,7 +8,8 @@ function ModelLoader (props) {
     const v = new THREE.Vector3()
     const ref = useRef()
     const modelString = '/' + props.modelName + '.glb'
-    const {nodes, materials} = useGLTF(modelString)
+    // , materials
+    const {nodes} = useGLTF(modelString)
 
     const [active, setActive] = useState(false)
     const [zoom, set] = useState(false)

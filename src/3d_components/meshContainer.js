@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useThree, useFrame } from '@react-three/fiber'
-import { Text, Environment, CameraShake } from '@react-three/drei'
+import { Text, Environment } from '@react-three/drei'
 import ModelLoader from './loader'
 import LaptopLoader from './laptopLoader'
 import Menu3D from './menu3D'
@@ -18,8 +18,8 @@ function Caption(props) {
         }
         color={
             props.activeItem == null || 
-            props.activeItem == 'about' ? 
-            '#ffffff' : props.activeItem == 'work' ?
+            props.activeItem === 'about' ? 
+            '#ffffff' : props.activeItem === 'work' ?
             '#000000' : '#001e0f'
         }
         lineHeight={0.8}
@@ -37,12 +37,11 @@ function Caption(props) {
 
 function MeshContainer(props) {
     const v = new THREE.Vector3()
-    const r = new THREE.Vector3()
     const [mobile, setMobile] = useState(false)
     const { width } = useThree((state) => state.viewport)
     useEffect(() => {
         width < 63 ? setMobile(true) : setMobile(false)        
-    });
+    }, [width]);
     useFrame((state) => {
         if (props.currentObject === "about") {
             state.camera.position.lerp(v.set(0, 175, 150), 0.04)

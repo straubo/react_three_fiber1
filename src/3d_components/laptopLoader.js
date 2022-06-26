@@ -102,7 +102,7 @@ export default function LaptopLoader(props) {
         if (props.activeItem === 'contact') {
            setOpen(true)
         }
-    })
+    }, [props.activeItem])
 
     return (   
         <>
