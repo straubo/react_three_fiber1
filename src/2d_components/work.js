@@ -21,18 +21,6 @@ function Work(props) {
 		<div style={{ height: "200vh" }}>
 			<div className="dot">
 				<h1>
-					<a href="https://youtu.be/U8Si-5INrNA" target="_blank" rel="noreferrer">
-						Summer Olympics (2021)
-					</a>
-				</h1>
-				<h2>(mobile AR)</h2>
-				Using 8th Wall and THREE.js, Casey led a team that created a mobile AR Photo Op experience - 
-				customers could take a photo with the 2021 US Summer Olympians 
-			</div>
-		</div>
-		<div style={{ height: "200vh" }}>
-			<div className="dot">
-				<h1>
 					<a href="https://www.elephant.is" target="_blank" rel="noreferrer">elephant.is</a>
 				</h1>
 				<h2>(web)</h2>
@@ -52,6 +40,32 @@ function Work(props) {
 		</div>
 		<div style={{ height: "200vh" }}>
 			<div className="dot">
+				<h1>
+					<a href="https://www.adweek.com/performance-marketing/xfinity-retail-is-putting-shoppers-on-tv-via-augmented-reality-qr-codes/" target="_blank" rel="noreferrer">
+						Entertainment
+					</a>
+				</h1>
+				<h2>(mobile AR)</h2>
+				Casey prototyped creative designs using multiple technologies. Final product was made with Zappar.
+				Read the Adweek coverage of this experience <a href="https://www.adweek.com/performance-marketing/xfinity-retail-is-putting-shoppers-on-tv-via-augmented-reality-qr-codes/" target="_blank" rel="noreferrer">
+						here
+					</a>
+			</div>
+		</div>
+		<div style={{ height: "200vh" }}>
+			<div className="dot">
+				<h1>
+					<a href="https://youtu.be/U8Si-5INrNA" target="_blank" rel="noreferrer">
+						Summer Olympics (2021)
+					</a>
+				</h1>
+				<h2>(mobile AR)</h2>
+				Using 8th Wall and THREE.js, Casey led a team that created a mobile AR Photo Op experience - 
+				customers could take a photo with the 2021 US Summer Olympians 
+			</div>
+		</div>
+		<div style={{ height: "200vh" }}>
+			<div className="dot">
 				<h1>Winter Olympics (2022)</h1>
 				<h2>(web)</h2>
 				Using React and Next.js, Casey worked on a team to deliver a scrolljacked web experience that showcased new Xfinity projects
@@ -64,20 +78,6 @@ function Work(props) {
 				<h2>(mobile AR)</h2>
 				Using THREE.js and 8th Wall, Casey led a team to deploy a customizable Photo Op holiday card,
 				featuring the cast of Sing 2
-			</div>
-		</div>
-		<div style={{ height: "200vh" }}>
-			<div className="dot">
-				<h1>
-					<a href="https://www.adweek.com/performance-marketing/xfinity-retail-is-putting-shoppers-on-tv-via-augmented-reality-qr-codes/" target="_blank" rel="noreferrer">
-						Entertainment
-					</a>
-				</h1>
-				<h2>(mobile AR)</h2>
-				Casey prototyped creative designs using multiple technologies. Final product was made with Zappar.
-				Read the Adweek coverage of this experience <a href="https://www.adweek.com/performance-marketing/xfinity-retail-is-putting-shoppers-on-tv-via-augmented-reality-qr-codes/" target="_blank" rel="noreferrer">
-						here
-					</a>
 			</div>
 		</div>
 		<div style={{ height: "200vh" }}>
