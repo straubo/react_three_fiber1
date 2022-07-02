@@ -31,7 +31,7 @@ function Menu3D(props) {
                 color={0xaaaaaa}
             />
             <Text
-                position={props.mobile ? [-props.width/47, 0, 0] : [0, -1.2, 0]}
+                position={props.mobile ? [-props.width/47, 0, 0] : [0, -0.9, 0]}
                 lineHeight={0.8}
                 font="/Ki-Medium.ttf"
                 fontSize={props.mobile ? .12 : .18}
