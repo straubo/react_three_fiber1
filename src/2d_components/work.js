@@ -12,13 +12,10 @@ function Work(props) {
 		<div style={{ height: "100vh" }}>
 			<div className="dot">
 				<h1>work</h1>
-				casey has been working as a creative technologist and front-end developer for over five years. scroll down to learn more.
-			</div>
-		</div>
-		<div style={{ height: "100vh" }}>
-			<div className="dot">
-				<h1>technologies</h1>
-				Casey uses technologies such as THREE.js, Unity, React, 8th Wall, Spark AR and many others to make a wide range of colorful, impactful experiences. Some examples of his work:
+				casey has been working as a creative technologist and front-end developer 
+				for over five years. Casey uses technologies such as THREE.js, Unity, React, 
+				8th Wall, Spark AR and many others to make a wide range of colorful, impactful 
+				experiences. Scroll down to see some examples of his work:
 			</div>
 		</div>
 		<div style={{ height: "200vh" }}>
@@ -29,8 +26,8 @@ function Work(props) {
 					</a>
 				</h1>
 				<h2>(mobile AR)</h2>
-				Using 8th Wall and THREE.js, Casey led a team that created a mobile AR Photo Op experience -
-				 customers could take a photo with the 2021 US Summer Olympians 
+				Using 8th Wall and THREE.js, Casey led a team that created a mobile AR Photo Op experience - 
+				customers could take a photo with the 2021 US Summer Olympians 
 			</div>
 		</div>
 		<div style={{ height: "200vh" }}>
@@ -71,15 +68,6 @@ function Work(props) {
 		</div>
 		<div style={{ height: "200vh" }}>
 			<div className="dot">
-				<h1>Xfinity Retail Experiences</h1>
-				<h2>(Unity, Javascript, Brightsign, etc.)</h2>
-				Casey played a massive role in developing and maintaining upwards of 
-				50 evergreen experiences in Xfinity's premiere and flagship stores. In addition, he prototypes and maintains
-				experiences that exist in their 500+ stores nationwide. 
-			</div>
-		</div>
-		<div style={{ height: "200vh" }}>
-			<div className="dot">
 				<h1>
 					<a href="https://www.adweek.com/performance-marketing/xfinity-retail-is-putting-shoppers-on-tv-via-augmented-reality-qr-codes/" target="_blank" rel="noreferrer">
 						Entertainment
@@ -90,6 +78,15 @@ function Work(props) {
 				Read the Adweek coverage of this experience <a href="https://www.adweek.com/performance-marketing/xfinity-retail-is-putting-shoppers-on-tv-via-augmented-reality-qr-codes/" target="_blank" rel="noreferrer">
 						here
 					</a>
+			</div>
+		</div>
+		<div style={{ height: "200vh" }}>
+			<div className="dot">
+				<h1>Xfinity Retail Experiences</h1>
+				<h2>(Unity, Javascript, Brightsign, etc.)</h2>
+				Casey played a massive role in developing and maintaining upwards of 
+				50 evergreen experiences in Xfinity's premiere and flagship stores. In addition, he prototypes and maintains
+				experiences that exist in their 500+ stores nationwide. 
 			</div>
 		</div>
 		{/* <span className="caption" ref={props.caption}> */}

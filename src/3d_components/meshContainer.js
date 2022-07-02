@@ -40,7 +40,7 @@ function MeshContainer(props) {
     const [mobile, setMobile] = useState(false)
     const { width } = useThree((state) => state.viewport)
     useEffect(() => {
-        width < 63 ? setMobile(true) : setMobile(false)        
+        width < 71.9 ? setMobile(true) : setMobile(false)        
     }, [width]);
     useFrame((state) => {
         if (props.currentObject === "about") {

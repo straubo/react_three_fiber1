@@ -37,10 +37,10 @@
 	display: inline-block;
 	max-width: 600px;
 	padding: 0;
-	padding: 80px;
+	/* padding: 80px; */
 	color: #ffffff;
 	line-height: 1.6em;
-	font-size: 15px;
+	font-size: 20px;
 	letter-spacing: 1.5px;
   }
   
@@ -88,6 +88,9 @@ a:visited {
 	.dot > h1 {
 	  font-size: 3em;
 	}
+	.dot {
+		padding-top: 80px;
+	}
   }
   
   @media only screen and (max-width: 700px) {
@@ -110,7 +113,8 @@ a:visited {
 	  font-size: 3em;
 	}
 	.dot {
-		padding: 30px
+		/* padding: 30px; */
+		font-size: 15px;
 	}
 	.scroll {
 		padding: 135px 0 0 0;

@@ -10,7 +10,7 @@ function Menu3D(props) {
         ref.current.position.copy(camera.position)
         ref.current.quaternion.copy(camera.quaternion)
         // Apply responsive offset
-        ref.current.translateX(props.mobile ? 0 : -props.width/46.8)
+        ref.current.translateX(props.mobile ? 0 : -props.width/38)
         ref.current.translateY(props.mobile ? 1.9 : 2)
         ref.current.translateZ(-5)
     })
@@ -31,7 +31,7 @@ function Menu3D(props) {
                 color={0xaaaaaa}
             />
             <Text
-                position={props.mobile ? [-props.width/47, -0.13, 0] : [0, -1.2, 0]}
+                position={props.mobile ? [-props.width/47, 0, 0] : [0, -1.2, 0]}
                 lineHeight={0.8}
                 font="/Ki-Medium.ttf"
                 fontSize={props.mobile ? .12 : .18}
@@ -52,7 +52,7 @@ function Menu3D(props) {
                 color={0x555555}
             />
             <Text
-                position={props.mobile ? [0, -0.13, 0] : [0, -2.5, 0]}
+                position={props.mobile ? [0, 0, 0] : [0, -2.5, 0]}
                 lineHeight={0.8}
                 font="/Ki-Medium.ttf"
                 fontSize={props.mobile ? .12 : .18}
@@ -72,7 +72,7 @@ function Menu3D(props) {
                 color={0x000000}
             />
             <Text
-                position={props.mobile ? [props.width/47, -0.13, 0] : [0, -4.2, 0]}
+                position={props.mobile ? [props.width/47, 0, 0] : [0, -4.2, 0]}
                 lineHeight={0.8}
                 font="/Ki-Medium.ttf"
                 fontSize={props.mobile ? .12 : .18}
