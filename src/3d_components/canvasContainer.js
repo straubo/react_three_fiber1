@@ -2,10 +2,12 @@ import React, {Suspense} from 'react';
 import { Canvas,  } from '@react-three/fiber'
 import { Stars } from '@react-three/drei'
 import Ocean from "../three_js_components/ocean"
+import { Html } from '@react-three/drei/web'
 // import PostProcessingWrapper from '../three_js_components/postProcessing'
 import LightingWrapper from '../three_js_components/lighting'
 import MeshContainer from './meshContainer'
 // import { OrbitControls } from '@react-three/drei'
+import "../styles/index.css"
 
 function CanvasContainer(props) {
     return (
@@ -16,7 +18,7 @@ function CanvasContainer(props) {
             raycaster={{ computeOffsets: ({ clientX, clientY }) => ({ offsetX: clientX, offsetY: clientY }) }}
         >
             <LightingWrapper />
-            <Suspense fallback={null}>
+            <Suspense fallback={<Html center className="loading" children="Loading..." />}>
                 {/* <PostProcessingWrapper />    */}
                 <Ocean />
                 {/* <OrbitControls makeDefault /> */}

@@ -16,13 +16,6 @@ function Bio() {
 				Lee Konitz (of Miles Davis fame), Mark Turner, Bill McHenry, Ben Street, and many more of his heroes. He has toured on three continents 
 				and played at over a hundred venues, including the Kennedy Center, Jazz at Lincoln Center, the Blue Note, the Jazz Gallery and countless others.
 				<br></br><br></br>
-
-				{/* Initially a financial decision, Casey took to Youtube to learn web development, and
-				 quickly developed a knack for it. Starting his technical career 
-				as a front-end Angular 1 developer at a touchscreen kiosk company called MetroClick, Casey started fooling around with Unity 
-				during a few development off-weeks. He quickly saw the potential and creative opportunities of working in 3D. Since then, 
-				3D development and the promise of AR have been areas of focus and interest for him. 
-				<br></br><br></br> */}
 				
 				Casey maintains a rich life of learning and making. When he gets a chance,
 				he rides his bike around the five boroughs, composes in Ableton, breaks things in TouchDesigner, and
