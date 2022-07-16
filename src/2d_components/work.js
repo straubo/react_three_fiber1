@@ -18,7 +18,7 @@ function Work(props) {
 				experiences. Scroll down to see some examples of his work:
 			</div>
 		</div>
-		<div style={{ height: "200vh" }}>
+		<div style={{ height: "80vh" }}>
 			<div className="dot">
 				<h1>
 					<a href="https://www.elephant.is" target="_blank" rel="noreferrer">elephant.is</a>
@@ -28,7 +28,7 @@ function Work(props) {
 				of other front-end technologies.
 			</div>
 		</div>
-		<div style={{ height: "200vh" }}>
+		<div style={{ height: "80vh" }}>
 			<div className="dot">
 				<h1>
 					<a href="https://www.marcjacobs.com/" target="_blank" rel="noreferrer">Marc Jacobs</a>
@@ -38,7 +38,7 @@ function Work(props) {
 				designer's website to life.
 			</div>
 		</div>
-		<div style={{ height: "200vh" }}>
+		<div style={{ height: "80vh" }}>
 			<div className="dot">
 				<h1>
 					<a href="https://www.adweek.com/performance-marketing/xfinity-retail-is-putting-shoppers-on-tv-via-augmented-reality-qr-codes/" target="_blank" rel="noreferrer">
@@ -52,7 +52,7 @@ function Work(props) {
 					</a>
 			</div>
 		</div>
-		<div style={{ height: "200vh" }}>
+		<div style={{ height: "80vh" }}>
 			<div className="dot">
 				<h1>
 					<a href="https://youtu.be/U8Si-5INrNA" target="_blank" rel="noreferrer">
@@ -64,7 +64,7 @@ function Work(props) {
 				customers could take a photo with the 2021 US Summer Olympians 
 			</div>
 		</div>
-		<div style={{ height: "200vh" }}>
+		<div style={{ height: "80vh" }}>
 			<div className="dot">
 				<h1>Winter Olympics (2022)</h1>
 				<h2>(web)</h2>
@@ -72,7 +72,7 @@ function Work(props) {
 				and featured Comcast's Winter Olympics coverage.
 			</div>
 		</div>
-		<div style={{ height: "200vh" }}>
+		<div style={{ height: "80vh" }}>
 			<div className="dot">
 				<h1>Sing 2 / Happy Holidays (2021)</h1>
 				<h2>(mobile AR)</h2>
@@ -80,7 +80,7 @@ function Work(props) {
 				featuring the cast of Sing 2
 			</div>
 		</div>
-		<div style={{ height: "200vh" }}>
+		<div style={{ height: "150vh" }}>
 			<div className="dot">
 				<h1>Xfinity Retail Experiences</h1>
 				<h2>(Unity, Javascript, Brightsign, etc.)</h2>
