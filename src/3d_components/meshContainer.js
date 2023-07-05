@@ -7,6 +7,14 @@ import Menu3D from './menu3D'
 import Skybox from './skybox'
 import Noodles from './Noodles'
 import * as THREE from 'three'
+// import * from '../3d_assets/nightSkyBox'
+import negx from '../3d_assets/nightSkyBox/negx.jpg'
+import negy from '../3d_assets/nightSkyBox/negy.jpg'
+import negz from '../3d_assets/nightSkyBox/negz.jpg'
+import posx from '../3d_assets/nightSkyBox/posx.jpg'
+import posy from '../3d_assets/nightSkyBox/posy.jpg'
+import posz from '../3d_assets/nightSkyBox/posz.jpg'
+
 
 function Caption(props) {
     return (
@@ -110,7 +118,8 @@ function MeshContainer(props) {
             mobile={mobile}
         />
         {/* <CameraShake yawFrequency={0.2} pitchFrequency={0.2} rollFrequency={0.2} intensity={0.2}/> */}
-        <Environment preset="night" />
+        {/* <Environment preset="night" /> */}
+        <Environment files={[posx, negx, posy, negy, posz, negz]} /> 
         <Noodles 
             activeItem={props.currentObject}
         />
