@@ -35,7 +35,8 @@
 	position: sticky;
 	top: 0px;
 	display: inline-block;
-	max-width: 800px;
+	/* max-width: 800px; */
+	max-width: 70%;
 	padding: 0;
 	color: #ffffff;
 	line-height: 1.6em;
@@ -93,15 +94,18 @@ a:visited {
   }
   
   @media only screen and (max-width: 700px) {
-	.caption {
-	  font-size: 2em;
-	}
-	.dot > h1 {
-	  font-size: 3em;
-	}
-	.dot > h2 {
-		font-size: 1.8em;
-	}
+		.caption {
+			font-size: 2em;
+		}
+		.dot > h1 {
+			font-size: 3em;
+		}
+		.dot > h2 {
+			font-size: 1.8em;
+		}
+		.scroll {
+			padding: 135px 0 0 0;
+		}
   }
   
   @media only screen and (max-width: 600px) {
@@ -115,8 +119,6 @@ a:visited {
 		/* padding: 30px; */
 		font-size: 15px;
 	}
-	.scroll {
-		padding: 135px 0 0 0;
-	}
+
   }
   
