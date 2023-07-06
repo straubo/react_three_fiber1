@@ -46,9 +46,11 @@ function MeshContainer(props) {
     const v = new THREE.Vector3()
     const [mobile, setMobile] = useState(false)
     const { width } = useThree((state) => state.viewport)
+    
     useEffect(() => {
         width < 71.9 ? setMobile(true) : setMobile(false)        
-    }, [width]);
+    }, [width])
+    
     useFrame((state) => {
         if (props.currentObject === "about") {
             state.camera.position.lerp(v.set(0, 175, 150), 0.04)
