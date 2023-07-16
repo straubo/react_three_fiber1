@@ -52,6 +52,7 @@
 	line-height: 1em;
 	margin: 0;
 	margin-bottom: 0.25em;
+	pointer-events: auto;
 }
 
 a { 
@@ -73,6 +74,7 @@ a:visited {
 	line-height: 1em;
 	margin: 0;
 	margin-bottom: 0.25em;
+	pointer-events: auto;
 }
 
 @media only screen and (max-width: 1000px) {

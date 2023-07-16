@@ -3,7 +3,7 @@ import { Canvas,  } from '@react-three/fiber'
 import { Stars } from '@react-three/drei'
 import Ocean from "../three_js_components/ocean"
 import { Html } from '@react-three/drei/web'
-import PostProcessingWrapper from '../three_js_components/postProcessing'
+// import PostProcessingWrapper from '../three_js_components/postProcessing'
 import LightingWrapper from '../three_js_components/lighting'
 import MeshContainer from './meshContainer'
 // import { OrbitControls } from '@react-three/drei'
