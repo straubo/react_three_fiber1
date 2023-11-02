@@ -90,7 +90,8 @@ function MeshContainer(props) {
             activeItem={props.currentObject}
             section={'about'}
             color={'#3E6E90'}
-            selectedColor={'pink'}
+            // selectedColor={'pink'}
+            selectedColor={'#1f3e2c'}
         />
         <ModelLoader
             scale={3}

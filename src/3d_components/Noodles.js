@@ -37,8 +37,8 @@ const material2 = new LayerMaterial({
   // color: 'red',
   layers: [
     new Color({ color: colorA }),
-    new Depth({ colorA: colorC, colorB: colorD, alpha: 0.3, mode: 'normal', near: 0, far: 2, origin: [1, 1, 1] }),
-    // new Depth({ colorA: colorA, colorB: colorB, alpha: 0.5, mode: 'add', near: 3, far: 2, origin: [1, 1, 1] }),
+    // new Depth({ colorA: colorC, colorB: colorD, alpha: 0.3, mode: 'normal', near: 0, far: 2, origin: [1, 1, 1] }),
+    new Depth({ colorA: colorA, colorB: colorB, alpha: 0.5, mode: 'add', near: 3, far: 2, origin: [1, 1, 1] }),
     new Fresnel({ mode: 'add', color: fresnel2, intensity: 1, power: 2.5, bias: 0 }),
     new Noise({ mapping: 'local', type: 'simplex', scale: 10000, colorA: colorC, colorB: colorD, mode: 'multiply' })
   ], 

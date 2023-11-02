@@ -81,9 +81,9 @@ a:visited {
 	.caption {
 	  font-size: 4em;
 	}
-  }
+}
   
-  @media only screen and (max-width: 800px) {
+@media only screen and (max-width: 800px) {
 	.caption {
 	  font-size: 3em;
 	}
@@ -93,40 +93,40 @@ a:visited {
 	/* .dot {
 		padding-top: 80px;
 	} */
-  }
+}
 
-	@media only screen and (max-width: 770px) {
-		.scroll {
-			padding: 135px 0 0 0;
-		}
+@media only screen and (max-width: 770px) {
+	.scroll {
+		padding: 135px 0 0 0;
 	}
+}
   
-  @media only screen and (max-width: 700px) {
-		.caption {
-			font-size: 2em;
-		}
-		.dot > h1 {
-			font-size: 3em;
-		}
-		.dot > h2 {
-			font-size: 1.8em;
-		}
-		.scroll {
-			padding: 135px 0 0 0;
-		}
-  }
-  
-  @media only screen and (max-width: 600px) {
+@media only screen and (max-width: 700px) {
 	.caption {
-	  font-size: 1em;
+		font-size: 2em;
 	}
 	.dot > h1 {
-	  font-size: 3em;
+		font-size: 3em;
+	}
+	.dot > h2 {
+		font-size: 1.8em;
+	}
+	.scroll {
+		padding: 135px 0 0 0;
+	}
+}
+  
+@media only screen and (max-width: 600px) {
+	.caption {
+		font-size: 1em;
+	}
+	.dot > h1 {
+		font-size: 3em;
 	}
 	.dot {
 		/* padding: 30px; */
 		font-size: 15px;
 	}
 
-  }
+}
   

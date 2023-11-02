@@ -6,7 +6,8 @@ function Skybox(props) {
     const matRef = React.useRef()
     const { color } = useSpring({
         color: props.activeItem == null ? 'black' : 
-        props.activeItem === 'about' ? 'pink' : 
+        // props.activeItem === 'about' ? 'pink' : 
+        props.activeItem === 'about' ? '#1f3e2c' : 
         props.activeItem === 'work' ? '#252D36' :
         'wheat'
     })
