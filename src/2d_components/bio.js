@@ -6,14 +6,14 @@ function Bio() {
 				<div className='bioBody'>
 					Casey Berman (he/him) is a senior webXR developer, creative technologist and <span>musician</span> living in Brooklyn, New York.
 					Casey has worked at Aircards, Elephant, Bonzai Media/Metroclick, Saatchi & Saatchi, and as a freelancer.
-
 					<br></br><br></br>
-
-					At Aircards, Casey worked with worldwide brands such as Durex, Johnnie Walker, Comcast, The British Royal Navy, and many more.
+					Originally a Jazz saxophonist, Casey learned to code on YouTube after completing a degree in Jazz Performance at the New York University.
+					At Aircards, Casey worked with worldwide brands such as Durex, Johnnie Walker, The British Royal Navy, and many more.
 					He has helped push webXR into more people's hands and eyes, and has created experiences that are both beautiful and functional.
 					<br></br><br></br>
 					At Elephant, Casey worked with a team to bring the Webby-nominated Elephant website to life using React, Sass and a number of other techs.
-					He was a dedicated developer for Comcast, but additionally worked on projects for Marc Jacobs, and others.
+					He was a dedicated developer for Comcast, and managed all experiences in their flagship and premiere stores, but additionally worked
+					on internal projects, and projects for Marc Jacobs and other clients.
 
 					<br></br><br></br>
 

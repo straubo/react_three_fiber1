@@ -1,11 +1,10 @@
 function Contact() {
-    return (
-
-        <div>
-            <div className='sectionHeader'>contact</div>
+	return (
+		<div>
+			<div className='sectionHeader'>contact</div>
 			<div>email: caseybermanprograms@gmail.com</div>
-        </div>
-    )
+		</div>
+	)
 }
 
 export default Contact
