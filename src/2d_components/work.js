@@ -52,7 +52,7 @@ function Work(props) {
 				<h2>(mobile AR)</h2>
 				Casey prototyped creative designs using multiple technologies. Final product was made with Zappar.
 				Read the Adweek coverage of this experience <a href="https://www.adweek.com/performance-marketing/xfinity-retail-is-putting-shoppers-on-tv-via-augmented-reality-qr-codes/" target="_blank" rel="noreferrer">
-						here
+					here
 					</a>
 			</div>
 		</div>
