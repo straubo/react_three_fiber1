@@ -16,22 +16,20 @@ function App() {
         }
     }
 
-    return (
-        <>
-            <CanvasContainer 
-                currentObj={currentObj}
-                selectObj={selectObj}
-                scroll={scroll}
-                overlay={overlay}
-                caption={caption}
-            />
-            <UIWrapper 
-                currentObj={currentObj}
-                scroll={scroll}
-                overlay={overlay}
-            />
-        </>
-    )
+	return (<>
+		<CanvasContainer 
+			currentObj={currentObj}
+			selectObj={selectObj}
+			scroll={scroll}
+			overlay={overlay}
+			caption={caption}
+		/>
+		<UIWrapper 
+			currentObj={currentObj}
+			scroll={scroll}
+			overlay={overlay}
+		/>
+	</>)
 }
 
 export default App
