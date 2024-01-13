@@ -44,8 +44,17 @@ import { useGLTF, Float } from '@react-three/drei'
 //   lighting: 'physical'
 // })
 
-const shinyMaterial = new THREE.MeshPhysicalMaterial({
-  color: new THREE.Color('#bb86a1').convertSRGBToLinear(),
+const shinyMaterial1 = new THREE.MeshPhysicalMaterial({
+  // color: new THREE.Color('#bb86a1').convertSRGBToLinear(),
+  color: new THREE.Color('#2d2d2d').convertSRGBToLinear(),
+  roughness: 0,
+  clearcoat: 1,
+  clearcoatRoughness: 0,
+})
+
+const shinyMaterial2 = new THREE.MeshPhysicalMaterial({
+  // color: new THREE.Color('#bb86a1').convertSRGBToLinear(),
+  color: new THREE.Color('#808080').convertSRGBToLinear(),
   roughness: 0,
   clearcoat: 1,
   clearcoatRoughness: 0,
@@ -67,7 +76,9 @@ function Noodle(props) {
     <Float position={position} speed={speed} rotationIntensity={3} floatIntensity={60} dispose={null}>
       <mesh scale={30} geometry={geometry} material={
         // props.activeItem === "about" ?  material2 : material
-        shinyMaterial
+        props.activeItem === "about" ?  shinyMaterial1 :
+          props.activeItem === "work" ?  shinyMaterial1 :
+            shinyMaterial2
       } />
       {/* <mesh scale={5} material={
         props.activeItem === "about" ?  material2 : material

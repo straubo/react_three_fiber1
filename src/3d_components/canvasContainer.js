@@ -13,7 +13,7 @@ function CanvasContainer(props) {
   const {scroll, ...other} = props
   console.log(other)
   return (
-    <Canvas 
+    <Canvas
       shadows
       onCreated={(state) => state.events.connect(props.overlay.current)}
       camera={{ position: [0, 10, 80], fov: 55, near: 1, far: 20000 }}
@@ -27,7 +27,7 @@ function CanvasContainer(props) {
         selectObj={props.selectObj}
         scroll={props.scroll}
       />
-      <Stars radius={1400} depth={50} count={5000} factor={4} saturation={0} fade speed={1} />
+      <Stars radius={70} depth={50} count={5000} factor={4} saturation={0} fade speed={1} />
       {/* <PostProcessingWrapper /> */}
     </Suspense>
     </Canvas>

@@ -140,6 +140,7 @@ code {
 	.siteBodyInner {
 		padding: 50px 5px 0px 5px;
 		height: 80vh;
+		pointer-events: none;
 	}
 	.bioInner {
 		color: #ffffff;
@@ -148,6 +149,7 @@ code {
 		letter-spacing: 1.5px;
 		height: 74vh;
 		overflow-y: auto;
+		pointer-events: all;
 	}
 	.bioBody {
 		padding-bottom: 90px;
