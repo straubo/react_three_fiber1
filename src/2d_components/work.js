@@ -14,7 +14,7 @@ function Work(props) {
 			<div className="dot">
 				<h1>work</h1>
 				Casey has been working as a creative technologist and front-end developer 
-				for over six years. Casey uses technologies such as THREE.js, Aframe, Unity, React,
+				for over eight years. Casey uses technologies such as THREE.js, Aframe, Unity, React,
 				8th Wall, and many others to make a wide range of colorful, impactful 
 				experiences. Scroll down to see some examples of his work:
 			</div>

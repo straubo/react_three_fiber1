@@ -100,15 +100,15 @@ export default function LaptopLoader(props) {
 
 	useEffect(() => {
 		if (props.activeItem === 'contact') {
-				setOpen(true)
+			setOpen(true)
 		}
 	}, [props.activeItem])
 
 	return (<>
 		<group
 				onClick={(e) => {
-						e.stopPropagation()
-						laptopChange()
+					e.stopPropagation()
+					laptopChange()
 				}}
 				position={[0, 4.3, 77]}
 		>
@@ -132,7 +132,7 @@ export default function LaptopLoader(props) {
 			anchorY="middle"
 			color={'#ffffff'}
 			fillOpacity={props.activeItem === null && beenInit ?
-					1 : 0
+				1 : 0
 			}
 			onClick={()=> props.selectObj('contact')}
 		>

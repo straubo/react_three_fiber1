@@ -40,7 +40,6 @@ function Caption(props) {
     </Text>
   )
 }
-  
 
 function MeshContainer(props) {
   const v = new THREE.Vector3()
@@ -89,9 +88,11 @@ function MeshContainer(props) {
           selectObj={props.selectObj}
           activeItem={props.currentObject}
           section={'about'}
-          color={'#3E6E90'}
+          // color={'#3E6E90'} // extreme blue color
+          color={'#24282b'}
           // selectedColor={'pink'}
-          selectedColor={'#1f3e2c'}
+          // selectedColor={'#1f3e2c'}
+          selectedColor={'#24282b'}
       />
       <ModelLoader
         scale={3}
@@ -101,7 +102,8 @@ function MeshContainer(props) {
         selectObj={props.selectObj}
         activeItem={props.currentObject}
         section={'work'}
-        color={'#679DAE'}
+        // color={'#679DAE'}
+        color={'#000000'}
         selectedColor={'#000000'}
       />
       <LaptopLoader

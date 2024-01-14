@@ -9,11 +9,11 @@ function App() {
     const [currentObj, setCurrentObj] = useState(null)
     
     function selectObj(input) {
-        if (currentObj === input) {
-            setCurrentObj(null)
-        } else {
-            setCurrentObj(input)
-        }
+			if (currentObj === input) {
+				setCurrentObj(null)
+			} else {
+				setCurrentObj(input)
+			}
     }
 
 	return (<>
